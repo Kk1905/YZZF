@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">社区头条</string>
+
+    <string name="dingwei">定位</string>
+    <string name="login">登录</string>
+    <string name="xingtong">系统发布</string>
+    <string name="more">更多精彩>></string>
+    <string name="share">分享</string>
+    <string name="zheye">主页</string>
+    <string name="bankuai">版块</string>
+    <string name="yangzi_daohang">智服</string>
+    <string name="gexing">个性</string>
+    <string name="wode">我的</string>
+    <string name="meirijingxuan">每日精选</string>
+    <string name="fanhui">返回</string>
+    <string name="xiangqing">详情</string>
+</resources>

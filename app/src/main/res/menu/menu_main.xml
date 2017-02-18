@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_dingwei"
+        android:icon="@drawable/dingwei"
+        android:title="@string/dingwei"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource"/>
+    <item android:id="@+id/login"
+          android:title="@string/login"
+          android:showAsAction="always"
+          tools:ignore="AppCompatResource"/>
+</menu>
