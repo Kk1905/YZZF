@@ -10,11 +10,12 @@ import android.view.Window;
 public abstract class BaseFragmentActivity extends AppCompatActivity {
     protected abstract Fragment createFragment();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_fragment);
+        setContentView(R.layout.activity_main);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(R.id.fragment_container);
@@ -26,3 +27,5 @@ public abstract class BaseFragmentActivity extends AppCompatActivity {
         }
     }
 }
+
+
