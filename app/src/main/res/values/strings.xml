@@ -14,4 +14,8 @@
     <string name="meirijingxuan">每日精选</string>
     <string name="fanhui">返回</string>
     <string name="xiangqing">详情</string>
+    <string name="jubao">举报</string>
+    <string name="remenpinglun">热门评论</string>
+    <string name="gengduopinglun">更多评论</string>
+    <string name="woyaopinglun">我也要评论</string>
 </resources>

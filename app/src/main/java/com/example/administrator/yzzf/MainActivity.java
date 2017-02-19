@@ -18,7 +18,7 @@ public class MainActivity extends BaseFragmentActivity implements BottomNavigati
     Fragment mFragment;
     @Override
     protected Fragment createFragment() {
-        mFragment=new ZhuyeFragment();
+        mFragment=new XiangqingFragment();
         return mFragment;
     }
 
@@ -45,13 +45,14 @@ public class MainActivity extends BaseFragmentActivity implements BottomNavigati
                 .setBarBackgroundColor(R.color.main_background)
                 .setInActiveColor(R.color.daohang)
                 .initialise();
+
         bottomNavigationBar.setTabSelectedListener(this);
     }
 
 
     @Override
     public void onTabSelected(int position) {
-//DO SOMETHING
+
     }
 
     @Override
