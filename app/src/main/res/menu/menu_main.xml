@@ -5,10 +5,10 @@
         android:id="@+id/item_dingwei"
         android:icon="@drawable/dingwei"
         android:title="@string/dingwei"
-        android:showAsAction="always"
+        android:showAsAction="never"
         tools:ignore="AppCompatResource"/>
     <item android:id="@+id/login"
           android:title="@string/login"
-          android:showAsAction="always"
+          android:showAsAction="never"
           tools:ignore="AppCompatResource"/>
 </menu>

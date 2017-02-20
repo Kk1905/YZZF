@@ -92,11 +92,11 @@
         <!--android:text="@string/more"-->
         <!--android:textSize="20dp"/>-->
         <!--</android.support.v7.widget.RecyclerView>-->
-        <include layout="@layout/recyclerview_item"/>
+        <include layout="@layout/item_recyclerview"/>
 
-        <include layout="@layout/recyclerview_item"/>
+        <include layout="@layout/item_recyclerview"/>
 
-        <include layout="@layout/recyclerview_item"/>
+        <include layout="@layout/item_recyclerview"/>
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

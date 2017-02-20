@@ -1,12 +1,15 @@
 package com.example.administrator.yzzf;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
+import static android.view.View.X;
 
 
 /**
@@ -15,10 +18,12 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
 public class MainActivity extends BaseFragmentActivity implements BottomNavigationBar.OnTabSelectedListener {
 
+    BottomNavigationBar bottomNavigationBar;
     Fragment mFragment;
+
     @Override
     protected Fragment createFragment() {
-        mFragment=new XiangqingFragment();
+        mFragment = new ZhuyeFragment();
         return mFragment;
     }
 
@@ -33,7 +38,7 @@ public class MainActivity extends BaseFragmentActivity implements BottomNavigati
 
     //初始化BottomNavigationBar
     private void iniBottomNavigationBar() {
-        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
+        bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.zhuye, R.string.zheye))
@@ -52,7 +57,12 @@ public class MainActivity extends BaseFragmentActivity implements BottomNavigati
 
     @Override
     public void onTabSelected(int position) {
+        switch (position) {
+            case 1:
+                Intent intent = new Intent(MainActivity.this, XiangQingActivity.class);
+                startActivity(intent);
 
+        }
     }
 
     @Override
