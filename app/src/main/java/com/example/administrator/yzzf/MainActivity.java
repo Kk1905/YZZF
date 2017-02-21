@@ -5,10 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
+import static android.R.attr.fragment;
 import static android.view.View.X;
 
 
@@ -16,23 +23,43 @@ import static android.view.View.X;
  * Created by Administrator on 2017/2/15 0015.
  */
 
-public class MainActivity extends BaseFragmentActivity implements BottomNavigationBar.OnTabSelectedListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
 
     BottomNavigationBar bottomNavigationBar;
-    Fragment mFragment;
-
-    @Override
-    protected Fragment createFragment() {
-        mFragment = new ZhuyeFragment();
-        return mFragment;
-    }
+    FragmentManager mFragmentManager;
+//    Fragment mFragment;
+//
+//    @Override
+//    protected Fragment createFragment() {
+//        mFragment = new ZhuyeFragment();
+//        return mFragment;
+//    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_main);
         iniBottomNavigationBar();
+        initView();
+        ImageView imageView = (ImageView) findViewById(R.id.xinwen_imageview);
+//        imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, XiangQingActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+    }
 
+    protected void initView() {
+        mFragmentManager = getSupportFragmentManager();
+        Fragment fragment = mFragmentManager.findFragmentById(R.id.fragment_container);
+        if (fragment == null) {
+            fragment = new ZhuyeFragment();
+            mFragmentManager.beginTransaction()
+                    .add(R.id.fragment_container, fragment)
+                    .commit();
+        }
     }
 
 
@@ -42,7 +69,7 @@ public class MainActivity extends BaseFragmentActivity implements BottomNavigati
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.zhuye, R.string.zheye))
-                .addItem(new BottomNavigationItem(R.drawable.bankuai, R.string.bankuai))
+                .addItem(new BottomNavigationItem(R.drawable.zhuye_bankuai, R.string.bankuai))
                 .addItem(new BottomNavigationItem(R.mipmap.yangzi_daohang, R.string.yangzi_daohang).setInActiveColorResource(R.color.yangzi))
                 .addItem(new BottomNavigationItem(R.drawable.gexing, R.string.gexing))
                 .addItem(new BottomNavigationItem(R.drawable.wode, R.string.wode))
@@ -54,14 +81,21 @@ public class MainActivity extends BaseFragmentActivity implements BottomNavigati
         bottomNavigationBar.setTabSelectedListener(this);
     }
 
+    private void replaceFragment(Fragment fragment) {
+        mFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
+    }
 
     @Override
     public void onTabSelected(int position) {
         switch (position) {
+            case 0:
+                replaceFragment(new ZhuyeFragment());
+                break;
             case 1:
-                Intent intent = new Intent(MainActivity.this, XiangQingActivity.class);
-                startActivity(intent);
-
+                replaceFragment(new BanKuaiFragment());
+                break;
         }
     }
 

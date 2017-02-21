@@ -54,13 +54,13 @@
         </LinearLayout>
 
         <ImageView
-            android:padding="12dp"
+            android:padding="15dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="8dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/zan_xiangqingyemian"/>
+            android:src="@drawable/xiangqing_zan"/>
 
         <TextView
             android:id="@+id/num_zan"

@@ -104,7 +104,7 @@
             android:adjustViewBounds="true"
             android:clickable="true"
             android:focusable="true"
-            android:src="@drawable/fenxiang"/>
+            android:src="@drawable/xiangqing_fenxiang"/>
 
         <Button
             android:id="@+id/share_button"

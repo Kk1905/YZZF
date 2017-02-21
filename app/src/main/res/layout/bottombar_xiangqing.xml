@@ -8,8 +8,11 @@
     android:background="@color/main_background"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingBottom="5dp"
-    android:paddingTop="5dp">
+    android:paddingBottom="8dp"
+    android:paddingTop="5dp"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
 
     <EditText
         android:id="@+id/woyao_edittext"
@@ -18,7 +21,6 @@
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="15dp"
         android:background="@drawable/edittext_selected"
-  
         android:hint="@string/woyaopinglun"
         android:textSize="15dp"/>
 
@@ -29,12 +31,12 @@
 
         <ImageView
             android:id="@+id/pinglun_imageview"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_below="@+id/pinglun_num"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/liuyan"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/xiangqing_duihua01"/>
 
         <TextView
             android:id="@+id/pinglun_num"
@@ -54,12 +56,12 @@
 
         <ImageView
             android:id="@+id/zan_imageview"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_below="@+id/zan_num"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/zan"/>
+            android:src="@drawable/xiangqing_zan"/>
 
         <TextView
             android:id="@+id/zan_num"
@@ -74,13 +76,13 @@
 
     <ImageView
         android:id="@+id/pinglun_fenxiang"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:clickable="true"
         android:focusable="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/fenxiang"/>
+        android:src="@drawable/xiangqing_fenxiang"/>
 </LinearLayout>

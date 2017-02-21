@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar_zhuye"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="@color/toolbar_background"
     app:contentInsetStart="0.0dp"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
 
     <LinearLayout
@@ -24,22 +24,25 @@
             android:paddingLeft="10dp"
             android:paddingTop="15dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/dingwei"/>
-
             <Button
+                android:id="@+id/dingwei_button"
                 android:layout_width="40dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center_vertical"
                 android:background="@null"
-                android:clickable="true"
-                android:focusable="true"
+                android:padding="0dp"
                 android:text="@string/dingwei"
                 android:textColor="@drawable/text_selected_drawable"
                 android:textSize="16dp"
                 android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/dingwei_button"
+                android:scaleType="fitXY"
+                android:src="@drawable/zhuye_xiangxiajiantou"/>
         </LinearLayout>
 
         <RelativeLayout

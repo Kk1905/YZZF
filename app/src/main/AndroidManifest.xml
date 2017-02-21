@@ -19,6 +19,7 @@
         <activity
             android:name=".XiangQingActivity"
             android:parentActivityName=".MainActivity"/>
+
     </application>
 
 </manifest>

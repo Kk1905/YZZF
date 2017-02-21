@@ -25,7 +25,7 @@
                 android:adjustViewBounds="true"
                 android:clickable="true"
                 android:focusable="true"
-                android:src="@drawable/meirijingxuan"/>
+                android:src="@drawable/zhuye_meirijingxuan"/>
 
             <ImageView
                 android:id="@+id/shequ_gonggao"
