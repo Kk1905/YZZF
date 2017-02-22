@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar_zhuye"/>
+    <include
+
+        layout="@layout/toolbar_zhuye"/>
 
     <FrameLayout
         android:layout_above="@+id/bottom_navigation_bar"
@@ -16,6 +18,7 @@
         android:layout_height="match_parent">
 
         <include
+
             layout="@layout/item_scrollview_main"/>
     </FrameLayout>
 </LinearLayout>

@@ -52,7 +52,7 @@
                     android:layout_toLeftOf="@id/xiangqing_textview"
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/eye"/>
+                    android:src="@drawable/zhuye_eye"/>
 
 
             </RelativeLayout>
@@ -148,7 +148,7 @@
                     android:ellipsize="end"
                     android:maxEms="30"
                     android:text="苏通大桥迎返程最高峰 春节假期七天约65万辆免费过境"
-                    android:textSize="22dp"
+                    android:textSize="18dp"
                     android:textStyle="bold"/>
 
                 <TextView

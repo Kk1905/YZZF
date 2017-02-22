@@ -41,14 +41,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         setContentView(R.layout.activity_main);
         iniBottomNavigationBar();
         initView();
-        ImageView imageView = (ImageView) findViewById(R.id.xinwen_imageview);
-//        imageView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, XiangQingActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+
     }
 
     protected void initView() {
@@ -73,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
                 .addItem(new BottomNavigationItem(R.mipmap.yangzi_daohang, R.string.yangzi_daohang).setInActiveColorResource(R.color.yangzi))
                 .addItem(new BottomNavigationItem(R.drawable.gexing, R.string.gexing))
                 .addItem(new BottomNavigationItem(R.drawable.wode, R.string.wode))
-                .setActiveColor(R.color.colorPrimary)
+                .setActiveColor(R.color.colorAccent)
                 .setBarBackgroundColor(R.color.main_background)
                 .setInActiveColor(R.color.daohang)
                 .initialise();

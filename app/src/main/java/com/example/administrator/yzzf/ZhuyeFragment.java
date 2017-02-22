@@ -1,5 +1,6 @@
 package com.example.administrator.yzzf;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,20 +21,26 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
  * Created by Administrator on 2017/2/19 0019.
  */
 
-public class ZhuyeFragment extends Fragment {
+public class ZhuyeFragment extends Fragment implements View.OnClickListener {
+    AppCompatActivity mAppCompatActivity;
+    PullToRefreshScrollView mPullToRefreshScrollView;
+    View xinwenView;
 
-PullToRefreshScrollView mPullToRefreshScrollView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_zhuye, container, false);
         Toolbar mToolbar = (Toolbar) view.findViewById(R.id.toolbar_zhuye);
-        AppCompatActivity activity = (AppCompatActivity) getActivity();
-        activity.setSupportActionBar(mToolbar);
-        ActionBar actionBar = activity.getSupportActionBar();
+        mAppCompatActivity = (AppCompatActivity) getActivity();
+        mAppCompatActivity.setSupportActionBar(mToolbar);
+        ActionBar actionBar = mAppCompatActivity.getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayShowTitleEnabled(false);
         }
+//        xinwenView = view.findViewById(R.id.include_item_scrollview)
+//                .findViewById(R.id.include_item_recyclerview);
+        xinwenView = view.findViewById(R.id.item_recyclerview);
+        xinwenView.setOnClickListener(this);
 
         //获取pullToRefreshScrollView组件
         mPullToRefreshScrollView = (PullToRefreshScrollView) view.findViewById(R.id.item_scrollview);
@@ -55,6 +62,14 @@ PullToRefreshScrollView mPullToRefreshScrollView;
             }
         });
         return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        Intent intent = new Intent(mAppCompatActivity, XiangQingActivity.class);
+        startActivity(intent);
+
     }
 
     private class GetDataTask extends AsyncTask<Void, Void, Object> {
