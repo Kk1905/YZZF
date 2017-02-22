@@ -1,22 +1,17 @@
-package com.example.administrator.yzzf;
+package com.example.administrator.yzzf.Activity;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ImageView;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-
-import static android.R.attr.fragment;
-import static android.view.View.X;
+import com.example.administrator.yzzf.Fragment.BanKuaiFragment;
+import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Fragment.ZhuyeFragment;
 
 
 /**
@@ -27,21 +22,32 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
     BottomNavigationBar bottomNavigationBar;
     FragmentManager mFragmentManager;
-//    Fragment mFragment;
-//
-//    @Override
-//    protected Fragment createFragment() {
-//        mFragment = new ZhuyeFragment();
-//        return mFragment;
-//    }
+    private static final String CURRENT_POSITION = "current_position";
+    private static final int ZHU_YE = 0;
+    private static final int BAN_KUAI = 1;
+    private static final int YANGZI_ZHIFU = 2;
+    private static final int GE_XING = 3;
+    private static final int WO_DE = 4;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        iniBottomNavigationBar();
         initView();
+        if (savedInstanceState != null) {
+            int currentPosition = savedInstanceState.getInt(CURRENT_POSITION, 0);
+            initBottomNavigationBar(currentPosition);
+        } else {
+            initBottomNavigationBar(ZHU_YE);
+        }
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        int currentPosition = bottomNavigationBar.getCurrentSelectedPosition();
+        outState.putInt(CURRENT_POSITION, currentPosition);
     }
 
     protected void initView() {
@@ -57,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
 
     //初始化BottomNavigationBar
-    private void iniBottomNavigationBar() {
+    private void initBottomNavigationBar(int currentPosition) {
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
         bottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
@@ -72,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
                 .initialise();
 
         bottomNavigationBar.setTabSelectedListener(this);
+
+        bottomNavigationBar.selectTab(currentPosition);
+
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -82,12 +91,19 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
 
     @Override
     public void onTabSelected(int position) {
+
         switch (position) {
-            case 0:
+            case ZHU_YE:
                 replaceFragment(new ZhuyeFragment());
                 break;
-            case 1:
+            case BAN_KUAI:
                 replaceFragment(new BanKuaiFragment());
+                break;
+            case YANGZI_ZHIFU:
+                break;
+            case GE_XING:
+                break;
+            case WO_DE:
                 break;
         }
     }

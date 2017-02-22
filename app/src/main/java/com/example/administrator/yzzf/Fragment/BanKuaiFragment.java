@@ -1,4 +1,4 @@
-package com.example.administrator.yzzf;
+package com.example.administrator.yzzf.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,6 +13,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.administrator.yzzf.Fragment.ZhuyeFragment;
+import com.example.administrator.yzzf.R;
 
 /**
  * Created by Administrator on 2017/2/20 0020.

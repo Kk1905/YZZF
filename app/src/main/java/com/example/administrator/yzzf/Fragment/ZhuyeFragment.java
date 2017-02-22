@@ -1,6 +1,8 @@
-package com.example.administrator.yzzf;
+package com.example.administrator.yzzf.Fragment;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,10 +14,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 
+import com.example.administrator.yzzf.Activity.MeiRiJingXuanActivity;
+import com.example.administrator.yzzf.Activity.XiangQingActivity;
+import com.example.administrator.yzzf.R;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
+
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 /**
  * Created by Administrator on 2017/2/19 0019.
@@ -25,6 +33,9 @@ public class ZhuyeFragment extends Fragment implements View.OnClickListener {
     AppCompatActivity mAppCompatActivity;
     PullToRefreshScrollView mPullToRefreshScrollView;
     View xinwenView;
+    View meirijingxuanView;
+    ImageView huatiTiaoZhuanImageView;
+    View tiaozhuanXiangQingView;
 
     @Nullable
     @Override
@@ -37,10 +48,16 @@ public class ZhuyeFragment extends Fragment implements View.OnClickListener {
         if (actionBar != null) {
             actionBar.setDisplayShowTitleEnabled(false);
         }
-//        xinwenView = view.findViewById(R.id.include_item_scrollview)
-//                .findViewById(R.id.include_item_recyclerview);
+        //在这里统一获取view对象
         xinwenView = view.findViewById(R.id.item_recyclerview);
+        meirijingxuanView = view.findViewById(R.id.meiri_jingxuan_imageview);
+        huatiTiaoZhuanImageView = (ImageView) view.findViewById(R.id.htjl_tiaozhuan_imageview);
+        tiaozhuanXiangQingView = view.findViewById(R.id.xiangqing_tiaozhuan_zhuye);
+        //在这里统一对view对象设置监听事件
         xinwenView.setOnClickListener(this);
+        meirijingxuanView.setOnClickListener(this);
+        huatiTiaoZhuanImageView.setOnClickListener(this);
+        tiaozhuanXiangQingView.setOnClickListener(this);
 
         //获取pullToRefreshScrollView组件
         mPullToRefreshScrollView = (PullToRefreshScrollView) view.findViewById(R.id.item_scrollview);
@@ -64,11 +81,28 @@ public class ZhuyeFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
+
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.item_recyclerview:
+                Intent intent01 = new Intent(mAppCompatActivity, XiangQingActivity.class);
+                startActivity(intent01);
+                break;
+            case R.id.meiri_jingxuan_imageview:
+                Intent intent02 = new Intent(mAppCompatActivity, MeiRiJingXuanActivity.class);
+                startActivity(intent02);
+                break;
+            case R.id.htjl_tiaozhuan_imageview:
+                Intent intent03 = new Intent(mAppCompatActivity, MeiRiJingXuanActivity.class);
+                startActivity(intent03);
+                break;
+            case R.id.xiangqing_tiaozhuan_zhuye:
+                Intent intent04 = new Intent(mAppCompatActivity, XiangQingActivity.class);
+                startActivity(intent04);
+                break;
+        }
 
-        Intent intent = new Intent(mAppCompatActivity, XiangQingActivity.class);
-        startActivity(intent);
 
     }
 

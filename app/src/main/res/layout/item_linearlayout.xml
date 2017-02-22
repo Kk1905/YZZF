@@ -1,160 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/toolbar_background"
-    android:orientation="vertical"
-    android:padding="10dp">
+<merge>
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="5dp">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/huatijiaoliu_tiaozhuan"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="3.3"
-            android:ellipsize="end"
-            android:maxEms="30"
-            android:text="中南世纪花城门口的车已经停得不好走道了~~"
-            android:textColor="@drawable/text_selected_drawable"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
-
-    <!--<android.support.v4.view.ViewPager-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"></android.support.v4.view.ViewPager>-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        android:background="@color/toolbar_background"
+        android:orientation="vertical"
         android:padding="10dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            android:adjustViewBounds="true"
-            android:src="@drawable/xinwen01"/>
-    </LinearLayout>
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/main_background"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/user"/>
-
-        <TextView
-
-            android:id="@+id/user_name"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:background="@null"
-            android:gravity="left|center_vertical"
-            android:text="用户名"/>
-
-        <TextView
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:background="@color/main_background"/>
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/zhuye_eye"/>
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/xiangqing_tiaozhuan_zhuye"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1233"/>
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="5dp">
+
+                <ImageView
+                    android:id="@+id/htjl_tiaozhuan_imageview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/zheye_huatijiaoliu_tiaozhuan"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="3.3"
+                    android:ellipsize="end"
+                    android:maxEms="30"
+                    android:text="中南世纪花城门口的车已经停得不好走道了~~"
+                    android:textColor="@drawable/text_selected_drawable"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+
+            <!--<android.support.v4.view.ViewPager-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"></android.support.v4.view.ViewPager>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/xinwen01"/>
+            </LinearLayout>
+        </LinearLayout>
+
 
         <TextView
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
             android:background="@color/main_background"/>
 
-        <ImageView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical">
 
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
-            android:adjustViewBounds="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/zhuye_liuyan"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/user"/>
+
+            <TextView
+
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:text="用户名"/>
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@color/main_background"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/zhuye_eye"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1233"/>
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:background="@color/main_background"/>
+
+            <ImageView
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/zhuye_liuyan"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="20"/>
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@color/main_background"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/xiangqing_fenxiang"/>
+
+            <TextView
+                android:id="@+id/share_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="@string/share"/>
+        </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="20"/>
-
-        <TextView
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
             android:background="@color/main_background"/>
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="5dp"
-            android:adjustViewBounds="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/xiangqing_fenxiang"/>
-
-        <TextView
-            android:id="@+id/share_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@null"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:text="@string/share"/>
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/main_background"/>
-</LinearLayout>
+</merge>
 

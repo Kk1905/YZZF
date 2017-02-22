@@ -1,4 +1,4 @@
-package com.example.administrator.yzzf;
+package com.example.administrator.yzzf.Activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+
+import com.example.administrator.yzzf.R;
 
 /**
  * Created by Administrator on 2017/2/19 0019.

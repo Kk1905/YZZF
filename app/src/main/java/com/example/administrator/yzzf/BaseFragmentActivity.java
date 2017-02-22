@@ -11,7 +11,6 @@ public abstract class BaseFragmentActivity extends AppCompatActivity {
     protected abstract Fragment createFragment();
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

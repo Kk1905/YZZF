@@ -20,5 +20,9 @@
     <string name="woyaopinglun">我也要评论</string>
     <string name="jinritiezi">今日帖子:</string>
     <string name="tiezizongshu">帖子总数:</string>
+    <string name="today">今日</string>
+    <string name="yestoday">昨日</string>
+    <string name="wangrixinwen">往日新闻</string>
+
 
 </resources>

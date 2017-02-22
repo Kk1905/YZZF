@@ -20,7 +20,7 @@
             android:padding="6dp">
 
             <ImageView
-                android:id="@+id/meiri_jingxuan"
+                android:id="@+id/meiri_jingxuan_imageview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
