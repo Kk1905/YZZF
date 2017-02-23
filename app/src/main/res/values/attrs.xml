@@ -12,4 +12,8 @@
     <declare-styleable name="CustomToolBar">
         <attr name="customtitle" format="string"/>
     </declare-styleable>
+    <declare-styleable name="Custom_WDZL_GRZX">
+        <attr name="text01" format="string"/>
+        <attr name="text02" format="string"/>
+    </declare-styleable>
 </resources>
