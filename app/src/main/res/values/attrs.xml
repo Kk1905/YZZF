@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomGRZXItem">
+        <attr name="imageView_height" format="dimension"/>
+        <attr name="imageView_width" format="dimension"/>
+        <attr name="imageView_src" format="reference"/>
+        <attr name="textView_textSize" format="dimension"/>
+        <attr name="textView_textColor" format="color"/>
+        <attr name="textView_text" format="string"/>
+        <attr name="CustomView_background" format="color|reference"/>
+
+    </declare-styleable>
+</resources>
