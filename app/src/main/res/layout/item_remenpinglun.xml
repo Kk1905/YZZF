@@ -14,13 +14,15 @@
         android:weightSum="1">
 
         <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/user"/>
@@ -38,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:text="用户名"
                     android:textColor="@color/yangzi"
-                    android:textSize="22dp"/>
+                    android:textSize="18dp"/>
 
                 <TextView
                     android:id="@+id/time"
@@ -49,14 +51,15 @@
                     android:layout_below="@+id/user_textview"
                     android:layout_marginTop="3dp"
                     android:text="3小时前"
-                    android:textSize="18dp"/>
+                    android:textSize="15dp"/>
             </RelativeLayout>
         </LinearLayout>
 
         <ImageView
+            android:layout_gravity="center_vertical"
             android:padding="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginRight="8dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -77,5 +80,5 @@
         android:layout_below="@+id/linerlayout"
         android:layout_marginLeft="65dp"
         android:text="早知道会堵，还是走上去了，结果过桥足足花了两个小时，以后再也不赶这个点了。。"
-        android:textSize="18dp"/>
+        android:textSize="16dp"/>
 </RelativeLayout>

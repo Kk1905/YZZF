@@ -9,4 +9,7 @@
         <attr name="customView_background" format="color|reference"/>
         <attr name="button_visible" format="boolean"/>
     </declare-styleable>
+    <declare-styleable name="CustomToolBar">
+        <attr name="customtitle" format="string"/>
+    </declare-styleable>
 </resources>

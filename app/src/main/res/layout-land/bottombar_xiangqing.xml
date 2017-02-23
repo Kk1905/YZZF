@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/xiangqing_bottombar"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/main_background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingTop="5dp">
+
+
+    <EditText
+        android:id="@+id/woyao_edittext"
+        android:layout_width="180dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/edittext_selected"
+        android:hint="@string/woyaopinglun"
+        android:textSize="15dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_weight="1.2">
+
+        <ImageView
+            android:id="@+id/pinglun_imageview"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/pinglun_num"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/xiangqing_duihua01"/>
+
+        <TextView
+            android:id="@+id/pinglun_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/pinglun_imageview"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/pinglun_num"
+            android:text="8888"
+            android:textColor="@color/toolbar_background"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/zan_imageview"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/zan_num"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/xiangqing_zan"/>
+
+        <TextView
+            android:id="@+id/zan_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/zan_imageview"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/pinglun_num"
+            android:text="8888"
+            android:textColor="@color/toolbar_background"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/pinglun_fenxiang"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/xiangqing_fenxiang"/>
+</LinearLayout>
