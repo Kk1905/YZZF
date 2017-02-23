@@ -1,7 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_grzx"/>
+
+    <include
+        layout="@layout/custom_zuhe_grzx"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:id="@+id/my_ziliao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:imageView_src="@drawable/grzx_wodeziliao"
+            custom:textView_text="@string/wodeziliao">
+
+        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
+
+        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:id="@+id/my_friends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:imageView_src="@drawable/grzx_wodehaoyou"
+            custom:textView_text="@string/wodehaoyou">
+
+        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:background="@color/b01"/>
+
+        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:id="@+id/my_tiezi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:imageView_src="@drawable/grzx_wodetiezi"
+            custom:textView_text="@string/wodetiezi">
+
+        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
+
+        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:id="@+id/zhan_nei_xin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:button_visible="true"
+            custom:imageView_src="@drawable/grzx_zhanneixin"
+            custom:textView_text="@string/zhanneixin">
+
+        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
+
+        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:id="@+id/privite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:imageView_src="@drawable/grzx_yinsi"
+            custom:textView_text="@string/yinsishezhi">
+
+        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
+
+        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:id="@+id/xitong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:imageView_src="@drawable/grzx_xitongxinxi"
+            custom:textView_text="@string/xitongxinxi">
+
+        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
+
+    </LinearLayout>
 
 </LinearLayout>

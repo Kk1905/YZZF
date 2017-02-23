@@ -41,7 +41,8 @@
                     android:ellipsize="end"
                     android:gravity="center_vertical"
                     android:maxEms="30"
-                    android:text="苏通大桥迎反程最高峰 春节七天假期约65万辆车免费国境"
+                    android:lines="2"
+                    android:text="苏通大桥迎反程最高峰 春节七天假期约65万辆车免费国境 苏通大桥迎反程最高峰 春节七天假期约65万辆车免费国境"
                     android:textColor="@drawable/text_selected_drawable"
                     android:textSize="15dp"
                     android:textStyle="bold"/>

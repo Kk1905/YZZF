@@ -36,13 +36,14 @@
                     android:src="@drawable/zheye_huatijiaoliu_tiaozhuan"/>
 
                 <TextView
+                    android:lines="2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_weight="3.3"
                     android:ellipsize="end"
                     android:maxEms="30"
-                    android:text="中南世纪花城门口的车已经停得不好走道了~~"
+                    android:text="中南世纪花城门口的车已经停得不好走道了~~ 中南世纪花城门口的车已经停得不好走道了~~"
                     android:textColor="@drawable/text_selected_drawable"
                     android:textSize="18dp"
                     android:textStyle="bold"/>

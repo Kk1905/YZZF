@@ -23,6 +23,14 @@
     <string name="today">今日</string>
     <string name="yestoday">昨日</string>
     <string name="wangrixinwen">往日新闻</string>
+    <string name="grzx">个人中心</string>
+    <string name="wodeziliao">我的资料</string>
+    <string name="wodehaoyou">我的好友</string>
+    <string name="wodetiezi">我的帖子</string>
+    <string name="zhanneixin">站内信</string>
+    <string name="yinsishezhi">隐私设置</string>
+    <string name="xitongxinxi">系统信息</string>
+    <string name="dengji">等级</string>
 
 
 </resources>

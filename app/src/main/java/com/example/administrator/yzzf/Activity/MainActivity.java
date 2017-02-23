@@ -1,6 +1,7 @@
 package com.example.administrator.yzzf.Activity;
 
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.administrator.yzzf.Fragment.BanKuaiFragment;
+import com.example.administrator.yzzf.Fragment.GRZXFragment;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Fragment.ZhuyeFragment;
 
@@ -95,15 +97,20 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         switch (position) {
             case ZHU_YE:
                 replaceFragment(new ZhuyeFragment());
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
                 break;
             case BAN_KUAI:
                 replaceFragment(new BanKuaiFragment());
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 break;
             case YANGZI_ZHIFU:
                 break;
             case GE_XING:
+
                 break;
             case WO_DE:
+                replaceFragment(new GRZXFragment());
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 break;
         }
     }

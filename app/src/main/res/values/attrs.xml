@@ -4,10 +4,9 @@
         <attr name="imageView_height" format="dimension"/>
         <attr name="imageView_width" format="dimension"/>
         <attr name="imageView_src" format="reference"/>
-        <attr name="textView_textSize" format="dimension"/>
         <attr name="textView_textColor" format="color"/>
         <attr name="textView_text" format="string"/>
-        <attr name="CustomView_background" format="color|reference"/>
-
+        <attr name="customView_background" format="color|reference"/>
+        <attr name="button_visible" format="boolean"/>
     </declare-styleable>
 </resources>

@@ -29,8 +29,8 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
  * Created by Administrator on 2017/2/19 0019.
  */
 
-public class ZhuyeFragment extends Fragment implements View.OnClickListener {
-    AppCompatActivity mAppCompatActivity;
+public class ZhuyeFragment extends BaseFragment implements View.OnClickListener {
+
     PullToRefreshScrollView mPullToRefreshScrollView;
     View xinwenView;
     View meirijingxuanView;
@@ -40,14 +40,10 @@ public class ZhuyeFragment extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_zhuye, container, false);
-        Toolbar mToolbar = (Toolbar) view.findViewById(R.id.toolbar_zhuye);
-        mAppCompatActivity = (AppCompatActivity) getActivity();
-        mAppCompatActivity.setSupportActionBar(mToolbar);
-        ActionBar actionBar = mAppCompatActivity.getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayShowTitleEnabled(false);
-        }
+        mToolbar = (Toolbar) view.findViewById(R.id.toolbar_zhuye);
+
         //在这里统一获取view对象
         xinwenView = view.findViewById(R.id.item_recyclerview);
         meirijingxuanView = view.findViewById(R.id.meiri_jingxuan_imageview);

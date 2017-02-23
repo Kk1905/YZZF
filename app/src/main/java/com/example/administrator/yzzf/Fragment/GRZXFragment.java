@@ -6,8 +6,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,23 +13,25 @@ import android.view.ViewGroup;
 import com.example.administrator.yzzf.R;
 
 /**
- * Created by Administrator on 2017/2/20 0020.
+ * Created by Administrator on 2017/2/23 0023.
  */
 
-public class BanKuaiFragment extends BaseFragment {
-
+public class GRZXFragment extends BaseFragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = LayoutInflater.from(mAppCompatActivity).inflate(R.layout.fragment_bankuai, container, false);
-        mToolbar = (Toolbar) view.findViewById(R.id.toolbar_bankuai);
+        View view = LayoutInflater.from(mAppCompatActivity).inflate(R.layout.fragment_grzx, container, false);
+        mToolbar = (Toolbar) view.findViewById(R.id.toolbar_grzx);
         mAppCompatActivity.setSupportActionBar(mToolbar);
+
         ActionBar actionBar = mAppCompatActivity.getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowTitleEnabled(false);
         }
+        view.setOnClickListener(this);
+
         return view;
     }
 
@@ -59,9 +59,10 @@ public class BanKuaiFragment extends BaseFragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_main, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.my_ziliao:
+                break;
+        }
     }
 }
