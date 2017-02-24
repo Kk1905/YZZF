@@ -6,16 +6,16 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/custom_wdtz_linearLayout"
+        android:id="@+id/custom_zhanneixin_duihua_linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
+        android:layout_marginRight="20dp"
         android:orientation="horizontal"
         android:paddingBottom="10dp"
         android:paddingTop="10dp">
 
         <ImageView
-            android:id="@+id/custom_item_wdtz_user"
+            android:id="@+id/custom_zhanneixin_duihua_userimage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -26,7 +26,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="15dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -37,15 +37,15 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/custom_item_wdtz_username"
+                    android:id="@+id/custom_zhanneixin_duihua_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="用户名"
                     android:textColor="@color/daohang"
-                    android:textSize="16dp"/>
+                    android:textSize="18dp"/>
 
                 <TextView
-                    android:id="@+id/custom_item_wdtz_time"
+                    android:id="@+id/custom_zhanneixin_duihua_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -57,22 +57,21 @@
                     android:layout_height="20dp"
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/zhuye_eye"/>
+                    android:src="@drawable/grzx_xie"/>
 
                 <TextView
-                    android:id="@+id/custom_item_wdtz_num"
+                    android:id="@+id/custom_zhanneixin_duihua_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="12306"/>
+                    android:layout_marginLeft="3dp"
+                    android:text="12"/>
             </LinearLayout>
 
 
             <TextView
-                android:id="@+id/custom_item_wdtz_content"
+                android:id="@+id/custom_zhanneixin_duihua_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:lines="2"
                 android:text="苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境 苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境"
                 android:textColor="@color/daohang"
                 android:textSize="17dp"/>
@@ -80,13 +79,6 @@
 
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/custom_item_wdtz_shanchu"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/grzx_wdzi_shanchu"/>
     </LinearLayout>
 
     <TextView

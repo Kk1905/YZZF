@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.administrator.yzzf.Activity.WDHYActivity;
 import com.example.administrator.yzzf.Activity.WDTZActivity;
 import com.example.administrator.yzzf.Activity.WDZLActivity;
+import com.example.administrator.yzzf.Activity.ZNXActivity;
 import com.example.administrator.yzzf.CustomView.CustomGRZXItem;
 import com.example.administrator.yzzf.R;
 
@@ -22,7 +23,7 @@ import com.example.administrator.yzzf.R;
  */
 
 public class GRZXFragment extends BaseFragment implements View.OnClickListener {
-    CustomGRZXItem wdzl, wdhy, wdtz;
+    CustomGRZXItem wdzl, wdhy, wdtz,znx;
 
     @Nullable
     @Override
@@ -41,10 +42,13 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
         wdzl = (CustomGRZXItem) view.findViewById(R.id.my_ziliao);
         wdhy = (CustomGRZXItem) view.findViewById(R.id.my_friends);
         wdtz = (CustomGRZXItem) view.findViewById(R.id.my_tiezi);
+        znx = (CustomGRZXItem) view.findViewById(R.id.zhan_nei_xin);
         //设置监听
         wdzl.setOnClickListener(this);
         wdhy.setOnClickListener(this);
         wdtz.setOnClickListener(this);
+        znx.setOnClickListener(this);
+
         return view;
     }
 
@@ -87,6 +91,10 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
             case R.id.my_tiezi:
                 Intent intent02 = new Intent(mAppCompatActivity, WDTZActivity.class);
                 mAppCompatActivity.startActivity(intent02);
+                break;
+            case R.id.zhan_nei_xin:
+                Intent intent03 = new Intent(mAppCompatActivity, ZNXActivity.class);
+                mAppCompatActivity.startActivity(intent03);
                 break;
         }
     }

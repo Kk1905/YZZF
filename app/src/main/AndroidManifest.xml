@@ -36,6 +36,9 @@
         <activity
             android:name=".Activity.WDTZActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.ZNXActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

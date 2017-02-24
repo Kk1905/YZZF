@@ -42,6 +42,9 @@
     <string name="wdzl">我的资料</string>
     <string name="wodeguanzhu">我的关注</string>
     <string name="wodehuifu">我的回复</string>
+    <string name="yikanguo">已看过</string>
+    <string name="weikanguo">未看过</string>
+
 
 
 </resources>
