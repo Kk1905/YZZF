@@ -1,5 +1,6 @@
 package com.example.administrator.yzzf.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -10,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.administrator.yzzf.Activity.WDZLActivity;
+import com.example.administrator.yzzf.CustomView.CustomGRZXItem;
 import com.example.administrator.yzzf.R;
 
 /**
@@ -30,8 +33,8 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowTitleEnabled(false);
         }
-        view.setOnClickListener(this);
-
+        CustomGRZXItem wdzl = (CustomGRZXItem) view.findViewById(R.id.my_ziliao);
+        wdzl.setOnClickListener(this);
         return view;
     }
 
@@ -60,8 +63,12 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.my_ziliao:
+                Log.d("kk", "-------------->my_ziliao");
+                Intent intent = new Intent(mAppCompatActivity, WDZLActivity.class);
+                mAppCompatActivity.startActivity(intent);
                 break;
         }
     }

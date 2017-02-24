@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_wdzl"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/toolbar_background"
+        android:orientation="vertical">
+
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_wdzl_xingming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:text01="@string/xingming"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_wdzl_nicheng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:text01="@string/nicheng"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_wdzl_xingbie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:text01="@string/xingbie"
+            custom:text02="女"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_wdzl_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:isvisible="false"
+            custom:text01="@string/chushengnianyue"
+            custom:text02="YYYY-MM-DD"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_background"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/b01"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_background"/>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_wdzl_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:text01="@string/city"
+            custom:text02="江苏省-南通市"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_wdzl_zhuzhi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:text01="@string/zhuzhi"
+            custom:isvisible="false"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_background"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/b01"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_background"/>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_wdzl_xiugaishouji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:text01="@string/xiugaishouji"
+            custom:text02="1382****439"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_wdzl_nicheng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:text01="@string/mimafuwu"
+            custom:text02="****"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+    </LinearLayout>
+</LinearLayout>

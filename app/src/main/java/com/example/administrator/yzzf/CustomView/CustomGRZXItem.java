@@ -41,6 +41,8 @@ public class CustomGRZXItem extends LinearLayout {
 
     public CustomGRZXItem(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setClickable(true);
+        setFocusable(true);
         //加载布局，并且获取里面需要操作的空间对象
         LayoutInflater.from(context).inflate(R.layout.custom_item_grzx, this, true);
         mImageView = (ImageView) findViewById(R.id.custom_grzx_imageview);
@@ -87,12 +89,13 @@ public class CustomGRZXItem extends LinearLayout {
 
             //到此为止typedArray使用完毕，手动回收
             typedArray.recycle();
+
         }
     }
 
-    public void setOnClickListener(OnClickListener onClickListener) {
-        if (onClickListener != null) {
-            mLinearLayout.setOnClickListener(onClickListener);
-        }
-    }
+//    public void setOnClickListener(OnClickListener onClickListener) {
+//        if (onClickListener != null) {
+//            mLinearLayout.setOnClickListener(onClickListener);
+//        }
+//    }
 }

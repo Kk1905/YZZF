@@ -15,5 +15,13 @@
     <declare-styleable name="Custom_WDZL_GRZX">
         <attr name="text01" format="string"/>
         <attr name="text02" format="string"/>
+        <attr name="isvisible" format="boolean"/>
+        
+    </declare-styleable>
+    <declare-styleable name="Custom_ZuHe_GRZX">
+        <attr name="user_src" format="reference"/>
+        <attr name="text1" format="string"/>
+        <attr name="text2" format="string"/>
+        <attr name="button_isvisible" format="boolean"/>
     </declare-styleable>
 </resources>

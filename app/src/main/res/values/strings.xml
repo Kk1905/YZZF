@@ -31,6 +31,17 @@
     <string name="yinsishezhi">隐私设置</string>
     <string name="xitongxinxi">系统信息</string>
     <string name="dengji">等级</string>
+    <string name="xingming">姓名</string>
+    <string name="nicheng">昵称</string>
+    <string name="xingbie">性别</string>
+    <string name="chushengnianyue">出生年月</string>
+    <string name="city">所在城市</string>
+    <string name="zhuzhi">住址</string>
+    <string name="xiugaishouji">修改手机</string>
+    <string name="mimafuwu">密码服务</string>
+    <string name="wdzl">我的资料</string>
+
+
 
 
 </resources>

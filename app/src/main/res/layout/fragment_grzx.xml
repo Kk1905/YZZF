@@ -9,15 +9,22 @@
     <include
         layout="@layout/toolbar_grzx"/>
 
-    <include
-        layout="@layout/custom_zuhe_grzx"/>
-
+    <!--<include-->
+        <!--layout="@layout/custom_zuhe_grzx"/>-->
+    <com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:button_isvisible="false"
+        custom:text1="151****4397"
+        custom:text2="1"></com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:focusable="true"
+            android:clickable="true"
             android:id="@+id/my_ziliao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

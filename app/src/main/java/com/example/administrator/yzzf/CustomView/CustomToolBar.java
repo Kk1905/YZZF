@@ -28,5 +28,6 @@ public class CustomToolBar extends Toolbar {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomToolBar);
         String title = typedArray.getString(R.styleable.CustomToolBar_customtitle);
         mTextView.setText(title);
+        typedArray.recycle();
     }
 }
