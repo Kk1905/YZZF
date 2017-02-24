@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_wdhy"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/main_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/wdhy_button_background"
+            android:text="@string/wodetiezi"
+            android:textSize="18dp"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/wdhy_button_background"
+            android:text="@string/wodehuifu"
+            android:textSize="18dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:content="苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境 苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境"
+            custom:num="12306"
+            custom:time="2017-02-17"
+            custom:user_name="张三">
+        </com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:content="苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境 苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境"
+            custom:num="12306"
+            custom:time="2017-02-17"
+            custom:user_name="张三">
+        </com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:content="苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境 苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境"
+            custom:num="12306"
+            custom:time="2017-02-17"
+            custom:user_name="张三">
+        </com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:content="苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境 苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境"
+            custom:num="12306"
+            custom:time="2017-02-17"
+            custom:user_name="张三">
+        </com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX>
+    </LinearLayout>
+
+
+</LinearLayout>

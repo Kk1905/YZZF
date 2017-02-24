@@ -1,82 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_zuhe_linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/custom_grzx_zuhe_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/grzx_user"/>
 
     <LinearLayout
-        android:id="@+id/custom_zuhe_linearLayout"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/custom_grzx_zuhe_image"
+        <TextView
+            android:id="@+id/custom_grzx_zuhe_text01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/grzx_user"/>
+            android:text="1516****397"
+            android:textColor="@color/daohang"
+            android:textSize="18dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:gravity="center_vertical">
 
             <TextView
-                android:id="@+id/custom_grzx_zuhe_text01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1516****397"
+                android:text="@string/dengji"
                 android:textColor="@color/daohang"
                 android:textSize="18dp"/>
 
-            <LinearLayout
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical">
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/grzx_level"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dengji"
-                    android:textColor="@color/daohang"
-                    android:textSize="18dp"/>
+            <TextView
+                android:id="@+id/custom_grzx_zuhe_text02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="1"
+                android:textColor="@color/daohang"
+                android:textSize="18dp"/>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/grzx_level"/>
-
-                <TextView
-                    android:id="@+id/custom_grzx_zuhe_text02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="1"
-                    android:textColor="@color/daohang"
-                    android:textSize="18dp"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/grzx_fenxiang"/>
-            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/grzx_nvxing"/>
         </LinearLayout>
-
-        <Button
-            android:id="@+id/custom_grzx_zuhe_button"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/zhanneixin_shape"
-            android:text="@string/zhanneixin"
-            android:textColor="@color/yangzi"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
     </LinearLayout>
-</merge>
+
+    <Button
+        android:id="@+id/custom_grzx_zuhe_button"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/zhanneixin_shape"
+        android:text="@string/zhanneixin"
+        android:textColor="@color/yangzi"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+</LinearLayout>

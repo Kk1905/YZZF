@@ -27,9 +27,14 @@
 
         </activity>
 
-        <activity android:name=".Activity.WDZLActivity"
+        <activity
+            android:name=".Activity.WDZLActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Activity.WDHYActivity"
+        <activity
+            android:name=".Activity.WDHYActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.WDTZActivity"
             android:screenOrientation="portrait"/>
 
     </application>

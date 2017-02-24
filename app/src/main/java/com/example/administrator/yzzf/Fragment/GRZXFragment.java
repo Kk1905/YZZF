@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.administrator.yzzf.Activity.WDHYActivity;
+import com.example.administrator.yzzf.Activity.WDTZActivity;
 import com.example.administrator.yzzf.Activity.WDZLActivity;
 import com.example.administrator.yzzf.CustomView.CustomGRZXItem;
 import com.example.administrator.yzzf.R;
@@ -21,6 +22,8 @@ import com.example.administrator.yzzf.R;
  */
 
 public class GRZXFragment extends BaseFragment implements View.OnClickListener {
+    CustomGRZXItem wdzl, wdhy, wdtz;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,11 +38,13 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
             actionBar.setDisplayShowTitleEnabled(false);
         }
         //统一找view对象
-        CustomGRZXItem wdzl = (CustomGRZXItem) view.findViewById(R.id.my_ziliao);
-        CustomGRZXItem wdhy = (CustomGRZXItem) view.findViewById(R.id.my_friends);
+        wdzl = (CustomGRZXItem) view.findViewById(R.id.my_ziliao);
+        wdhy = (CustomGRZXItem) view.findViewById(R.id.my_friends);
+        wdtz = (CustomGRZXItem) view.findViewById(R.id.my_tiezi);
         //设置监听
         wdzl.setOnClickListener(this);
         wdhy.setOnClickListener(this);
+        wdtz.setOnClickListener(this);
         return view;
     }
 
@@ -78,6 +83,10 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
             case R.id.my_friends:
                 Intent intent01 = new Intent(mAppCompatActivity, WDHYActivity.class);
                 mAppCompatActivity.startActivity(intent01);
+                break;
+            case R.id.my_tiezi:
+                Intent intent02 = new Intent(mAppCompatActivity, WDTZActivity.class);
+                mAppCompatActivity.startActivity(intent02);
                 break;
         }
     }
