@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.administrator.yzzf.Activity.WDHYActivity;
 import com.example.administrator.yzzf.Activity.WDZLActivity;
 import com.example.administrator.yzzf.CustomView.CustomGRZXItem;
 import com.example.administrator.yzzf.R;
@@ -33,8 +34,12 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowTitleEnabled(false);
         }
+        //统一找view对象
         CustomGRZXItem wdzl = (CustomGRZXItem) view.findViewById(R.id.my_ziliao);
+        CustomGRZXItem wdhy = (CustomGRZXItem) view.findViewById(R.id.my_friends);
+        //设置监听
         wdzl.setOnClickListener(this);
+        wdhy.setOnClickListener(this);
         return view;
     }
 
@@ -69,6 +74,10 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
                 Log.d("kk", "-------------->my_ziliao");
                 Intent intent = new Intent(mAppCompatActivity, WDZLActivity.class);
                 mAppCompatActivity.startActivity(intent);
+                break;
+            case R.id.my_friends:
+                Intent intent01 = new Intent(mAppCompatActivity, WDHYActivity.class);
+                mAppCompatActivity.startActivity(intent01);
                 break;
         }
     }

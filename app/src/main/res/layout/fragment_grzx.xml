@@ -10,24 +10,25 @@
         layout="@layout/toolbar_grzx"/>
 
     <!--<include-->
-        <!--layout="@layout/custom_zuhe_grzx"/>-->
+    <!--layout="@layout/custom_zuhe_grzx"/>-->
     <com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        custom:button_isvisible="false"
+        custom:my_background="@drawable/grzx_background02"
         custom:text1="151****4397"
         custom:text2="1"></com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <com.example.administrator.yzzf.CustomView.CustomGRZXItem
-            android:focusable="true"
-            android:clickable="true"
             android:id="@+id/my_ziliao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
             custom:imageView_src="@drawable/grzx_wodeziliao"
             custom:textView_text="@string/wodeziliao">
 
@@ -37,6 +38,8 @@
             android:id="@+id/my_friends"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
             custom:imageView_src="@drawable/grzx_wodehaoyou"
             custom:textView_text="@string/wodehaoyou">
 

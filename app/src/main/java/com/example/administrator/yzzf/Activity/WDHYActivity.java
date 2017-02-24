@@ -7,25 +7,34 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.administrator.yzzf.R;
 
 /**
- * Created by Administrator on 2017/2/23 0023.
+ * Created by Administrator on 2017/2/24 0024.
  */
 
-public class WDZLActivity extends AppCompatActivity implements View.OnClickListener {
+public class WDHYActivity extends AppCompatActivity implements View.OnClickListener {
+    ImageView mImageView;
+    TextView mTextView01;
+    TextView mTextView02;
+    Button mButton;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wdzl);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_wdzl);
+        setContentView(R.layout.activity_wdhy);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_wdhy);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
     }
 
     @Override
