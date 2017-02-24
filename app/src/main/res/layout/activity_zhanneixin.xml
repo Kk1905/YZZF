@@ -57,6 +57,7 @@
             android:layout_height="wrap_content">
 
             <com.example.administrator.yzzf.CustomView.Custom_ZNX_GRZX
+                android:id="@+id/znx_duihua01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
