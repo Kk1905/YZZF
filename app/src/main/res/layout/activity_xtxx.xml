@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_xtxx"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/toolbar_background"
+        android:orientation="vertical">
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_xtxx_guanyuwomen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:text01="@string/aboutus"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_xtxx_banben"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:text01="@string/version"
+            app:text02="1.0"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_xtxx_xitonggengxin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:text01="@string/xtgx"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/b01"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_background"/>
+
+        <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+            android:id="@+id/custom_xtxx_tuichu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:text01="@string/tuichu"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+    </LinearLayout>
+</LinearLayout>

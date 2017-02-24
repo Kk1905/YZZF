@@ -48,7 +48,12 @@
     <string name="shanchu">删除</string>
     <string name="chakansuoyou">查看所有回复</string>
     <string name="quxiao">取消</string>
-
+    <string name="bukantadetiezi">不看他(她)的帖子</string>
+    <string name="xuanzeduixiang">选择对象</string>
+    <string name="aboutus">关于我们</string>
+    <string name="version">版本</string>
+    <string name="xtgx">系统更新</string>
+    <string name="tuichu">退出</string>
 
 
 </resources>

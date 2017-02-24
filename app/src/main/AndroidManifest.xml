@@ -39,6 +39,12 @@
         <activity
             android:name=".Activity.ZNXActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.YSSZActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.XTXXActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

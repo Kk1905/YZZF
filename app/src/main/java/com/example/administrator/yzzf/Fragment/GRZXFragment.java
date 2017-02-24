@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import com.example.administrator.yzzf.Activity.WDHYActivity;
 import com.example.administrator.yzzf.Activity.WDTZActivity;
 import com.example.administrator.yzzf.Activity.WDZLActivity;
+import com.example.administrator.yzzf.Activity.XTXXActivity;
+import com.example.administrator.yzzf.Activity.YSSZActivity;
 import com.example.administrator.yzzf.Activity.ZNXActivity;
 import com.example.administrator.yzzf.CustomView.CustomGRZXItem;
 import com.example.administrator.yzzf.R;
@@ -23,7 +25,7 @@ import com.example.administrator.yzzf.R;
  */
 
 public class GRZXFragment extends BaseFragment implements View.OnClickListener {
-    CustomGRZXItem wdzl, wdhy, wdtz,znx;
+    CustomGRZXItem wdzl, wdhy, wdtz, znx, yssz, xtxx;
 
     @Nullable
     @Override
@@ -43,12 +45,15 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
         wdhy = (CustomGRZXItem) view.findViewById(R.id.my_friends);
         wdtz = (CustomGRZXItem) view.findViewById(R.id.my_tiezi);
         znx = (CustomGRZXItem) view.findViewById(R.id.zhan_nei_xin);
+        yssz = (CustomGRZXItem) view.findViewById(R.id.privite);
+        xtxx = (CustomGRZXItem) view.findViewById(R.id.xitong);
         //设置监听
         wdzl.setOnClickListener(this);
         wdhy.setOnClickListener(this);
         wdtz.setOnClickListener(this);
         znx.setOnClickListener(this);
-
+        yssz.setOnClickListener(this);
+        xtxx.setOnClickListener(this);
         return view;
     }
 
@@ -95,6 +100,14 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
             case R.id.zhan_nei_xin:
                 Intent intent03 = new Intent(mAppCompatActivity, ZNXActivity.class);
                 mAppCompatActivity.startActivity(intent03);
+                break;
+            case R.id.privite:
+                Intent intent04 = new Intent(mAppCompatActivity, YSSZActivity.class);
+                mAppCompatActivity.startActivity(intent04);
+                break;
+            case R.id.xitong:
+                Intent intent05 = new Intent(mAppCompatActivity, XTXXActivity.class);
+                mAppCompatActivity.startActivity(intent05);
                 break;
         }
     }

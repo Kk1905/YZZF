@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_yssz"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/main_background"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/bukantadetiezi"
+            android:textColor="@color/daohang"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="20dp"
+        android:paddingLeft="30dp"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:id="@+id/yssz_image_jia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/grzx_jia"/>
+
+        <ImageView
+            android:id="@+id/yssz_image_jian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/grzx_jian"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/main_background"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="@string/xuanzeduixiang"
+            android:textColor="@color/daohang"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.administrator.yzzf.CustomView.Custom_YSSZ_GRZX
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:yssz_ischecked="true"
+                app:yssz_phone="151****4397"></com.example.administrator.yzzf.CustomView.Custom_YSSZ_GRZX>
+
+            <com.example.administrator.yzzf.CustomView.Custom_YSSZ_GRZX
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:yssz_ischecked="false"
+                app:yssz_phone="151****4397"></com.example.administrator.yzzf.CustomView.Custom_YSSZ_GRZX>
+
+            <com.example.administrator.yzzf.CustomView.Custom_YSSZ_GRZX
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:yssz_ischecked="true"
+                app:yssz_phone="151****4397"></com.example.administrator.yzzf.CustomView.Custom_YSSZ_GRZX>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

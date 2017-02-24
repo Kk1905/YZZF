@@ -39,4 +39,9 @@
         <attr name="znx_num" format="string"/>
         <attr name="znx_content" format="string"/>
     </declare-styleable>
+    <declare-styleable name="Custom_YSSZ_GRZX">
+        <attr name="yssz_image_src" format="reference"/>
+        <attr name="yssz_phone" format="string"/>
+        <attr name="yssz_ischecked" format="boolean"/>
+    </declare-styleable>
 </resources>
