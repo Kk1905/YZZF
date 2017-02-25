@@ -54,6 +54,9 @@
     <string name="version">版本</string>
     <string name="xtgx">系统更新</string>
     <string name="tuichu">退出</string>
-
+    <string name="wancheng">完成</string>
+    <string name="shangchuan">上传图片签名</string>
+    <string name="tip">图片签名建议比例5:1,1M以下</string>
+    <string name="tupianlianjie">图片链接</string>
 
 </resources>

@@ -12,6 +12,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.administrator.yzzf.Fragment.BanKuaiFragment;
 import com.example.administrator.yzzf.Fragment.GRZXFragment;
+import com.example.administrator.yzzf.Fragment.GXQMFragment;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Fragment.ZhuyeFragment;
 
@@ -106,7 +107,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
             case YANGZI_ZHIFU:
                 break;
             case GE_XING:
-
+                replaceFragment(new GXQMFragment());
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 break;
             case WO_DE:
                 replaceFragment(new GRZXFragment());
