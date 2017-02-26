@@ -7,18 +7,113 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/main_background">
+        android:layout_height="80dp"
+        android:background="@color/main_background"
+        android:gravity="center_horizontal"
+        android:paddingTop="30dp">
 
         <ImageView
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/xiangqing_dialog_weixin_pengyouquan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:src="@drawable/xiangqing_weixin_pengyouquan"/>
 
         <ImageView
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/xiangqing_dialog_weixin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="xiangqing_weixin_pengyouquan"/>
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/xiangqing_weixin"/>
+
+        <ImageView
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/xiangqing_dialog_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/xiangqing_qq"/>
+
+        <ImageView
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/xiangqing_dialog_qqkongjian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/xiangqing_qqkongjain"/>
+
+        <ImageView
+            android:focusable="true"
+            android:clickable="true"
+            android:id="@+id/xiangqing_dialog_weibo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.00"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/xiangqing_weibo"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background"
+        android:paddingBottom="20dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            android:text="@string/pengyouquan"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:text="@string/weixin"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:text="@string/qq"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/qqkongjian"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/weibo"
+            android:textSize="16dp"/>
     </LinearLayout>
 
     <TextView
@@ -28,10 +123,83 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/main_background"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:id="@+id/xiangqing_dialog_shuaxin"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/xiangqing_shuaxin"/>
+
+        <ImageView
+            android:id="@+id/xiangqing_dialog_fuzhilianjie"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/xiangqing_fuzhilianjie"/>
+
+        <ImageView
+            android:id="@+id/xiangqing_dialog_jubao"
+            android:focusable="true"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/xiangqing_jubao"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/main_background"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/main_background"></LinearLayout>
+        android:gravity="center_horizontal"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shuaxin"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fuzhilianjie"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_marginLeft="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jubao"
+            android:textSize="16dp"/>
+    </LinearLayout>
 
     <TextView
+        android:background="@color/toolbar_background"
+        android:id="@+id/xiangqing_dialog_quxiao"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/quxiao"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

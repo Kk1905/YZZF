@@ -58,5 +58,14 @@
     <string name="shangchuan">上传图片签名</string>
     <string name="tip">图片签名建议比例5:1,1M以下</string>
     <string name="tupianlianjie">图片链接</string>
+    <string name="weixin">微信好友</string>
+    <string name="pengyouquan">朋友圈</string>
+    <string name="qqkongjian">QQ空间</string>
+    <string name="qq">QQ</string>
+    <string name="weibo">微博</string>
+    <string name="shuaxin">刷新</string>
+    <string name="fuzhilianjie">复制链接</string>
+
+
 
 </resources>
