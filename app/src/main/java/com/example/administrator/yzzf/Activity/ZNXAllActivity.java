@@ -8,25 +8,29 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.administrator.yzzf.CustomView.Custom_ZNX_GRZX;
 import com.example.administrator.yzzf.R;
 
 /**
- * Created by Administrator on 2017/2/24 0024.
+ * Created by Administrator on 2017/2/27 0027.
  */
 
-public class WDTZActivity extends AppCompatActivity implements View.OnClickListener {
+public class ZNXAllActivity extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wdtz);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_wdtz);
+        setContentView(R.layout.activity_zhanneixin_haoyou);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_zhanneixin);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowTitleEnabled(false);
         }
+        Custom_ZNX_GRZX custom_znx_grzx01 = (Custom_ZNX_GRZX) findViewById(R.id.znx_haoyou_duihua01);
+        custom_znx_grzx01.setOnClickListener(this);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

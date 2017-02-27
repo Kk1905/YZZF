@@ -1,37 +1,38 @@
-package com.example.administrator.yzzf.Fragment;
+package com.example.administrator.yzzf.Activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.administrator.yzzf.Fragment.BaseFragment;
+import com.example.administrator.yzzf.Fragment.XiangQing_RMPL_Fragment;
 import com.example.administrator.yzzf.R;
 
 /**
- * Created by Administrator on 2017/2/20 0020.
+ * Created by Administrator on 2017/2/27 0027.
  */
 
-public class BanKuaiFragment extends BaseFragment {
-
+public class AllPinglunFragment extends BaseFragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = LayoutInflater.from(mAppCompatActivity).inflate(R.layout.fragment_bankuai, container, false);
-        mToolbar = (Toolbar) view.findViewById(R.id.toolbar_bankuai);
+
+        View view = LayoutInflater.from(mAppCompatActivity).inflate(R.layout.fragment_all_pinglun, container, false);
+        mToolbar = (Toolbar) view.findViewById(R.id.toolbar_allpinglun);
         mAppCompatActivity.setSupportActionBar(mToolbar);
+
         ActionBar actionBar = mAppCompatActivity.getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowTitleEnabled(false);
         }
+
         return view;
     }
 
@@ -43,24 +44,19 @@ public class BanKuaiFragment extends BaseFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-
             case android.R.id.home:
                 mAppCompatActivity.getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragment_container, new ZhuyeFragment())
+                        .replace(R.id.xiangqing_fragment_container, new XiangQing_RMPL_Fragment())
                         .commit();
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_main, menu);
-        super.onCreateOptionsMenu(menu, inflater);
+    public void onClick(View v) {
 
     }
 }

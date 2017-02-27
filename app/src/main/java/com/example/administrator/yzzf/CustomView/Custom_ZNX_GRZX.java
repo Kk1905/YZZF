@@ -41,6 +41,26 @@ public class Custom_ZNX_GRZX extends LinearLayout {
         return mTextView_content;
     }
 
+    public void setImageView(int imageView_src) {
+        mImageView.setImageResource(imageView_src);
+    }
+
+    public void setTextView_username(String textView_username) {
+        mTextView_username.setText(textView_username);
+    }
+
+    public void setTextView_time(String textView_time) {
+        mTextView_time.setText(textView_time);
+    }
+
+    public void setTextView_num(String textView_num) {
+        mTextView_num.setText(textView_num);
+    }
+
+    public void setTextView_content(String textView_content) {
+        mTextView_content.setText(textView_content);
+    }
+
     public Custom_ZNX_GRZX(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.custom_zhanneixin_duihua, this, true);
@@ -62,4 +82,5 @@ public class Custom_ZNX_GRZX extends LinearLayout {
         mTextView_content.setText(content);
         typedArray.recycle();
     }
+
 }

@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.yzzf.R;
 
@@ -24,6 +26,27 @@ public class Custom_ZuHe_GRZX extends LinearLayout {
     private TextView mTextView02;
     private Button mButton;
     private LinearLayout mLinearLayout;
+
+    public ImageView getImageView() {
+        return mImageView;
+    }
+
+    public TextView getTextView01() {
+        return mTextView01;
+    }
+
+    public TextView getTextView02() {
+        return mTextView02;
+    }
+
+    public Button getButton() {
+        return mButton;
+    }
+
+    public LinearLayout getLinearLayout() {
+        return mLinearLayout;
+    }
+
     public Custom_ZuHe_GRZX(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.custom_zuhe_grzx, this, true);
@@ -48,5 +71,15 @@ public class Custom_ZuHe_GRZX extends LinearLayout {
         int backgroundId = typedArray.getResourceId(R.styleable.Custom_ZuHe_GRZX_my_background, R.color.toolbar_background);
         mLinearLayout.setBackgroundResource(backgroundId);
         typedArray.recycle();
+    }
+    public void setOnClickListener(View view,OnClickListener onClickListener) {
+        switch (view.getId()) {
+            case R.id.custom_grzx_zuhe_image:
+                mImageView.setOnClickListener(onClickListener);
+                break;
+            case R.id.custom_grzx_zuhe_button:
+                mButton.setOnClickListener(onClickListener);
+                break;
+        }
     }
 }

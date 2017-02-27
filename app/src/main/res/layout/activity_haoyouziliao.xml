@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_haoyouziliao"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/main_background"/>
+
+    <com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:my_background="@drawable/grzx_background02"></com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX>
+
+    <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+        android:id="@+id/grez_haoyouziliao_xingming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_jiantou_visible="false"
+        app:text01="@string/xingming"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+    <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+        android:id="@+id/grez_haoyouziliao_nicheng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_jiantou_visible="false"
+        app:text01="@string/nicheng"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+    <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+        android:id="@+id/grez_haoyouziliao_xingbie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_jiantou_visible="false"
+        app:text01="@string/xingbie"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+    <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+        android:id="@+id/grez_haoyouziliao_chushengnianyue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:is_jiantou_visible="false"
+        app:text01="@string/chushengnianyue"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/main_background"/>
+
+    <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
+        android:id="@+id/grez_haoyouziliao_TAtiezi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text01="@string/TAtiezi"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+
+    <ImageView
+        android:id="@+id/grez_haoyouziliao_shanchu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/grzx_shanchuhaoyou"/>
+</LinearLayout>

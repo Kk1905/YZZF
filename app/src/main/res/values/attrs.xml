@@ -16,6 +16,7 @@
         <attr name="text01" format="string"/>
         <attr name="text02" format="string"/>
         <attr name="isvisible" format="boolean"/>
+        <attr name="is_jiantou_visible" format="boolean"/>
 
     </declare-styleable>
     <declare-styleable name="Custom_ZuHe_GRZX">
@@ -43,5 +44,25 @@
         <attr name="yssz_image_src" format="reference"/>
         <attr name="yssz_phone" format="string"/>
         <attr name="yssz_ischecked" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="Custom_RMPL_XiangQing">
+        <attr name="rmpl_userimage_src" format="reference"/>
+        <attr name="rmpl_username" format="string"/>
+        <attr name="rmpl_time01" format="string"/>
+        <attr name="rmpl_time02" format="string"/>
+        <attr name="rmpl_num" format="string"/>
+        <attr name="rmpl_content" format="string"/>
+        <attr name="rmpl_is_ll_visible" format="boolean"/>
+    </declare-styleable>
+    
+    <declare-styleable name="Custom_HTJL_Item">
+        <attr name="htjl_userimage_src" format="reference"/>
+        <attr name="htjl_username" format="string"/>
+        <attr name="htjl_time" format="string"/>
+        <attr name="htjl_title" format="string"/>
+        <attr name="htjl_chakannum" format="string"/>
+        <attr name="htjl_zannum" format="string"/>
+        <attr name="htjl_pinglunnum" format="string"/>
     </declare-styleable>
 </resources>

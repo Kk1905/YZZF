@@ -11,20 +11,20 @@ import android.view.View;
 import com.example.administrator.yzzf.R;
 
 /**
- * Created by Administrator on 2017/2/24 0024.
+ * Created by Administrator on 2017/2/27 0027.
  */
 
-public class WDTZActivity extends AppCompatActivity implements View.OnClickListener {
+public class HaoYouZiLiaoActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wdtz);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_wdtz);
+        setContentView(R.layout.activity_haoyouziliao);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_haoyouziliao);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowTitleEnabled(false);
         }
     }
     @Override

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_allpinglun"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/main_background"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rmpl_content="你好，江南style有木有听过？"
+                app:rmpl_is_ll_visible="true"
+                app:rmpl_num="123"
+                app:rmpl_time01="1楼"
+                app:rmpl_time02="3小时前"
+                app:rmpl_username="张三"></com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing>
+
+            <com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rmpl_content="卧槽，帅得不行。我像他那样走路，在马路上被打了10次。"
+                app:rmpl_is_ll_visible="true"
+                app:rmpl_num="1236"
+                app:rmpl_time01="2楼"
+                app:rmpl_time02="3小时前"
+                app:rmpl_username="王二"></com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing>
+
+            <com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rmpl_content="你们这群从河北省来的渣渣，火星哥知道不。我有一次在广场上学他在mv里走路，直接被一群大妈打的连我老婆都不认识我了，好好找个老司机带带吧，年轻人。"
+                app:rmpl_is_ll_visible="true"
+                app:rmpl_num="896"
+                app:rmpl_time01="3楼"
+                app:rmpl_time02="1小时前"
+                app:rmpl_username="大柱"></com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing>
+
+            <com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rmpl_content="666"
+                app:rmpl_is_ll_visible="true"
+                app:rmpl_num="666"
+                app:rmpl_time01="4楼"
+                app:rmpl_time02="25分钟前"
+                app:rmpl_username="李四"></com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

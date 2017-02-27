@@ -52,6 +52,7 @@
         android:layout_height="match_parent">
 
         <com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX
+            android:id="@+id/custom_grzx_zuhe01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             custom:button_isvisible="true"

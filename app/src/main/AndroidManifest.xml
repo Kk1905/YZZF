@@ -45,6 +45,12 @@
         <activity
             android:name=".Activity.XTXXActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.HaoYouZiLiaoActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.ZNXAllActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

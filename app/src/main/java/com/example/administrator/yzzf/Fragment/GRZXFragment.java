@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.administrator.yzzf.Activity.WDHYActivity;
 import com.example.administrator.yzzf.Activity.WDTZActivity;
@@ -85,11 +86,12 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.my_ziliao:
-                Log.d("kk", "-------------->my_ziliao");
+
                 Intent intent = new Intent(mAppCompatActivity, WDZLActivity.class);
                 mAppCompatActivity.startActivity(intent);
                 break;
             case R.id.my_friends:
+//                Toast.makeText(getContext(),"my_friend on clicked",Toast.LENGTH_SHORT).show();
                 Intent intent01 = new Intent(mAppCompatActivity, WDHYActivity.class);
                 mAppCompatActivity.startActivity(intent01);
                 break;

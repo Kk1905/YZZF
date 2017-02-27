@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/main_background"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/main_background"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/xiangqing_pinglun_dialog_quxiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@null"
+            android:text="@string/quxiao"
+            android:textColor="@color/daohang"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/main_background"/>
+
+        <TextView
+            android:id="@+id/xiangqing_pinglun_dialog_fasong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@null"
+            android:text="@string/fasong"
+            android:textColor="@color/yangzi"
+            android:textSize="18dp"/>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/xiangqing_pinglun_dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/xiangqing_pinglun_dialog_shape"
+        android:gravity="top"
+        android:hint="随便写点什么吧"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"/>
+
+    <ImageView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/xiangqing_pinglun_dialog_face"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/xiangqing_face"/>
+</LinearLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp">
+
+    <LinearLayout
+        android:id="@+id/linerlayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/custom_rmpl_useriamge"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/user"/>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/custom_rmpl_username"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="用户名"
+                    android:textColor="@color/yangzi"
+                    android:textSize="18dp"/>
+
+                <TextView
+                    android:id="@+id/custom_rmpl_time01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/custom_rmpl_username"
+                    android:layout_alignRight="@+id/custom_rmpl_username"
+                    android:layout_below="@+id/custom_rmpl_username"
+                    android:layout_marginTop="3dp"
+                    android:text="3小时前"
+                    android:textSize="15dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/custom_rmpl_zanimage"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/rmpl_zan"/>
+
+        <TextView
+            android:id="@+id/custom_rmpl_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="1236"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/custom_rmpl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linerlayout"
+        android:layout_marginLeft="50dp"
+        android:text="早知道会堵，还是走上去了，结果过桥足足花了两个小时，以后再也不赶这个点了。。"
+        android:textSize="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/custom_rmpl_visible_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/custom_rmpl_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            tools:text="3小时前"/>
+
+        <TextView
+            android:id="@+id/custom_rmpl_time02"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_marginRight="5dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/xiangqing_jubao"/>
+
+        <TextView
+            android:id="@+id/custom_rmpl_jubao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:text="@string/jubao"
+            android:textSize="16dp"/>
+    </LinearLayout>
+    <TextView
+        android:layout_below="@+id/custom_rmpl_visible_ll"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/main_background"/>
+</RelativeLayout>

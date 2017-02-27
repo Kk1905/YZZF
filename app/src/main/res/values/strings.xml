@@ -16,7 +16,7 @@
     <string name="xiangqing">详情</string>
     <string name="jubao">举报</string>
     <string name="remenpinglun">热门评论</string>
-    <string name="gengduopinglun">更多评论</string>
+    <string name="gengduopinglun">更多评论>></string>
     <string name="woyaopinglun">我也要评论</string>
     <string name="jinritiezi">今日帖子:</string>
     <string name="tiezizongshu">帖子总数:</string>
@@ -65,7 +65,11 @@
     <string name="weibo">微博</string>
     <string name="shuaxin">刷新</string>
     <string name="fuzhilianjie">复制链接</string>
-
-
+    <string name="fasong">发送</string>
+    <string name="ziliao">资料</string>
+    <string name="TAtiezi">TA的帖子</string>
+    <string name="quanbupinglun">全部评论</string>
+    <string name="gexingqianming">个性签名</string>
+    <string name="bankuaishouye">版块首页</string>
 
 </resources>

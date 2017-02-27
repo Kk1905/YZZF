@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_zhanneixin"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/main_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.administrator.yzzf.CustomView.Custom_ZNX_GRZX
+                android:id="@+id/znx_haoyou_duihua01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:znx_content="这里为何要使用merge标签，自定义组合控件时会继承RelativeLayout、LinearLayout等控件，这样导致布局的层级无形中增加了一层，如下是对比:未使用merge标签"
+                app:znx_num="56"
+                app:znx_time="2017-02-26"
+                app:znx_username="李四"></com.example.administrator.yzzf.CustomView.Custom_ZNX_GRZX>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

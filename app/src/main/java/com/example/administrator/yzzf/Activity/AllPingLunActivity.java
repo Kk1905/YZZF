@@ -11,15 +11,16 @@ import android.view.View;
 import com.example.administrator.yzzf.R;
 
 /**
- * Created by Administrator on 2017/2/24 0024.
+ * Created by Administrator on 2017/2/27 0027.
  */
 
-public class WDTZActivity extends AppCompatActivity implements View.OnClickListener {
+public class AllPingLunActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wdtz);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_wdtz);
+        setContentView(R.layout.fragment_all_pinglun);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_allpinglun);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -27,12 +28,14 @@ public class WDTZActivity extends AppCompatActivity implements View.OnClickListe
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -41,6 +44,8 @@ public class WDTZActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
 
+        }
     }
 }

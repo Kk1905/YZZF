@@ -2,7 +2,7 @@
 <android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/toolbar_gxqm"
+    android:id="@+id/toolbar_allpinglun"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="@color/toolbar_background"
@@ -13,20 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/gexingqianming"
+        android:text="@string/quanbupinglun"
         android:textColor="@color/daohang"
         android:textSize="24dp"
         android:textStyle="bold"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginRight="15dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="@string/wancheng"
-        android:textColor="@color/daohang"
-        android:textSize="20dp"/>
 
 </android.support.v7.widget.Toolbar>

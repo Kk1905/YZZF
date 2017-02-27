@@ -1,12 +1,18 @@
 package com.example.administrator.yzzf.Activity;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,127 +20,87 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing;
+import com.example.administrator.yzzf.Fragment.XiangQing_RMPL_Fragment;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.Show_FenXiang_Dialog;
+import com.example.administrator.yzzf.Util.Show_XiangQing_Write_Pinglun_Dialog;
+
+import static android.R.attr.fragment;
 
 /**
  * Created by Administrator on 2017/2/19 0019.
  */
 
 public class XiangQingActivity extends AppCompatActivity implements View.OnClickListener {
-    ImageView mImageView_fenxiang;
-    Dialog mDialog;
-    AlertDialog alertDialog;
-//    ImageView pengyouquan, weixin, qq, qq_kongjian, weibo, shuaxin, fuzhi_lianjie, jubao;
-//    TextView button_quxiao;
+    Show_FenXiang_Dialog mShow_fenXiang_dialog = null;
+    Show_XiangQing_Write_Pinglun_Dialog mShow_xiangQing_write_pinglun_dialog = null;
+    EditText editText;
+    Fragment fragment;
+    FragmentManager fm;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xiangqing);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_xiangqing);
-        toolbar.showOverflowMenu();
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayShowTitleEnabled(false);
+
+        fm = getSupportFragmentManager();
+        fragment = fm.findFragmentById(R.id.xiangqing_fragment_container);
+
+        initView();
+        editText = (EditText) findViewById(R.id.woyao_edittext);
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    if (mShow_xiangQing_write_pinglun_dialog == null) {
+                        mShow_xiangQing_write_pinglun_dialog =
+                                new Show_XiangQing_Write_Pinglun_Dialog(XiangQingActivity.this);
+                    }
+                    mShow_xiangQing_write_pinglun_dialog.showDialog(R.layout.custom_xiangqing_pinglun_dialog);
+                    editText.clearFocus();
+                }
+            }
+        });
+
+        findViewById(R.id.pinglun_fenxiang).setOnClickListener(this);
+        findViewById(R.id.xiangqing_rootview).setOnClickListener(this);
+
+
+    }
+
+    private void initView() {
+        if (fragment == null) {
+            fragment = new XiangQing_RMPL_Fragment();
+            fm.beginTransaction()
+                    .add(R.id.xiangqing_fragment_container, fragment)
+                    .commit();
         }
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
-        mImageView_fenxiang = (ImageView) findViewById(R.id.pinglun_fenxiang);
-        EditText editText = (EditText) findViewById(R.id.woyao_edittext);
-//        editText.clearFocus();
-        mImageView_fenxiang.setOnClickListener(this);
-
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_dingwei:
-                return true;
-            case R.id.menu_login:
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+//            case R.id.xiangqing_rootview:
+//                InputMethodManager imm = (InputMethodManager)
+//                        getSystemService(Context.INPUT_METHOD_SERVICE);
+//                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+//                break;
             case R.id.pinglun_fenxiang:
-//                Toast.makeText(this, "点击分享按钮", Toast.LENGTH_SHORT).show();
-                showDialog();
-                break;
-            case R.id.xiangqing_dialog_quxiao:
-                Toast.makeText(this, "点击分享按钮", Toast.LENGTH_SHORT).show();
-                dismissDialog();
-                break;
-            case R.id.xiangqing_dialog_weixin_pengyouquan:
-                break;
-            case R.id.xiangqing_dialog_weixin:
-                break;
-            case R.id.xiangqing_dialog_qq:
-                break;
-            case R.id.xiangqing_dialog_qqkongjian:
-                break;
-            case R.id.xiangqing_dialog_weibo:
-                break;
-            case R.id.xiangqing_dialog_shuaxin:
-                break;
-            case R.id.xiangqing_dialog_fuzhilianjie:
-                break;
-            case R.id.xiangqing_dialog_jubao:
+                if (mShow_fenXiang_dialog == null) {
+                    mShow_fenXiang_dialog = new Show_FenXiang_Dialog(XiangQingActivity.this);
+                }
+                mShow_fenXiang_dialog.showDialog(R.layout.custom_xiangqing_fenxiang_dialog);
                 break;
         }
     }
 
-    private void showDialog() {
-
-        if (alertDialog == null) {
-            View view = LayoutInflater.from(XiangQingActivity.this).inflate(R.layout.custom_xiangqing_fenxiang_dialog, null);
-//            mDialog = new Dialog(XiangQingActivity.this, R.style.custom_dialog);
-//            mDialog.setCanceledOnTouchOutside(true);
-            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.custom_dialog);
-
-            alertDialog=builder.setView(R.layout.custom_xiangqing_fenxiang_dialog).setCancelable(true).create();
-            Window window = alertDialog.getWindow();
-            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
-            layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
-
-            window.setAttributes(layoutParams);
-            window.setGravity(Gravity.BOTTOM);
-            alertDialog.setContentView(R.layout.custom_xiangqing_fenxiang_dialog);
-            view.findViewById(R.id.xiangqing_dialog_weixin_pengyouquan).setOnClickListener(this);
-            view.findViewById(R.id.xiangqing_dialog_weixin).setOnClickListener(this);
-            view.findViewById(R.id.xiangqing_dialog_qq).setOnClickListener(this);
-            view.findViewById(R.id.xiangqing_dialog_weixin_pengyouquan).setOnClickListener(this);
-            view.findViewById(R.id.xiangqing_dialog_weibo).setOnClickListener(this);
-            view.findViewById(R.id.xiangqing_dialog_shuaxin).setOnClickListener(this);
-            view.findViewById(R.id.xiangqing_dialog_fuzhilianjie).setOnClickListener(this);
-            view.findViewById(R.id.xiangqing_dialog_jubao).setOnClickListener(this);
-            view.findViewById(R.id.xiangqing_dialog_quxiao).setOnClickListener(this);
-        }
-        alertDialog.show();
-    }
-
-    private void dismissDialog() {
-        Toast.makeText(this, "点击分享按钮", Toast.LENGTH_SHORT).show();
-        if (alertDialog != null && alertDialog.isShowing()) {
-            alertDialog.dismiss();
-        }
-    }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class Custom_WDZL_GRZX extends LinearLayout {
     private TextView mTextView01;
     private TextView mTextView02;
     private TextView mTextView03;
+    private ImageView mImageView_jiantou;
 
     public TextView getTextView02() {
         return mTextView02;
@@ -29,12 +31,21 @@ public class Custom_WDZL_GRZX extends LinearLayout {
         return mTextView01;
     }
 
+    public TextView getTextView03() {
+        return mTextView03;
+    }
+
+    public ImageView getImageView_jiantou() {
+        return mImageView_jiantou;
+    }
+
     public Custom_WDZL_GRZX(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.custom_item_wdzl, this, true);
         mTextView01 = (TextView) findViewById(R.id.custom_wdzl_textview01);
         mTextView02 = (TextView) findViewById(R.id.custom_wdzl_textview02);
         mTextView03 = (TextView) findViewById(R.id.custom_wdzl_textview03);
+        mImageView_jiantou = (ImageView) findViewById(R.id.custom_wdzl_jiantou);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Custom_WDZL_GRZX);
         String text01 = typedArray.getString(R.styleable.Custom_WDZL_GRZX_text01);
         mTextView01.setText(text01);
@@ -45,6 +56,12 @@ public class Custom_WDZL_GRZX extends LinearLayout {
             mTextView03.setVisibility(VISIBLE);
         } else {
             mTextView03.setVisibility(INVISIBLE);
+        }
+        boolean is_jiantou_visible = typedArray.getBoolean(R.styleable.Custom_WDZL_GRZX_is_jiantou_visible, true);
+        if (is_jiantou_visible) {
+            mImageView_jiantou.setVisibility(VISIBLE);
+        } else {
+            mImageView_jiantou.setVisibility(INVISIBLE);
         }
         typedArray.recycle();
     }
