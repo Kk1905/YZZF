@@ -64,5 +64,6 @@
         <attr name="htjl_chakannum" format="string"/>
         <attr name="htjl_zannum" format="string"/>
         <attr name="htjl_pinglunnum" format="string"/>
+        <attr name="htjl_is_bottomTextView_visible" format="boolean"/>
     </declare-styleable>
 </resources>

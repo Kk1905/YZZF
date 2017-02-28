@@ -1,6 +1,5 @@
 package com.example.administrator.yzzf.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -11,11 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
-import com.example.administrator.yzzf.Activity.AllPingLunActivity;
-import com.example.administrator.yzzf.Activity.AllPinglunFragment;
-import com.example.administrator.yzzf.Activity.XiangQingActivity;
 import com.example.administrator.yzzf.R;
 
 /**

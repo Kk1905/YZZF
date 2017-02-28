@@ -1,4 +1,4 @@
-package com.example.administrator.yzzf.Activity;
+package com.example.administrator.yzzf.Fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

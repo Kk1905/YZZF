@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/toolbar_background"
-    android:orientation="vertical"
-    android:padding="15dp">
+    android:orientation="vertical">
 
     <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:id="@+id/custom_item_huatijiaoliu_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,34 +73,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp">
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
 
             <ImageView
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/xinwen01"/>
 
             <ImageView
-                android:layout_marginLeft="15dp"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/xinwen01"/>
 
             <ImageView
-                android:layout_marginLeft="15dp"
-                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/xinwen01"/>
@@ -108,11 +109,15 @@
 
 
     <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/main_background"/>
 
     <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="15dp"
@@ -143,12 +148,12 @@
             android:background="@color/main_background"/>
 
         <ImageView
-            android:clickable="true"
-            android:focusable="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="5dp"
             android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="fitCenter"
             android:src="@drawable/rmpl_zan"/>
 
@@ -217,5 +222,12 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/custom_item_huatijiaoliu_bottom"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/main_background"/>
 
 </LinearLayout>

@@ -19,7 +19,8 @@
     <EditText
         android:id="@+id/znx_xiexin_dialog_content"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
+        android:minHeight="150dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/xiangqing_pinglun_dialog_shape"

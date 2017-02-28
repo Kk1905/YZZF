@@ -71,5 +71,14 @@
     <string name="quanbupinglun">全部评论</string>
     <string name="gexingqianming">个性签名</string>
     <string name="bankuaishouye">版块首页</string>
+    <string name="jinri">今日:</string>
+    <string name="huati">话题:</string>
+    <string name="sousuo">搜索</string>
+    <string name="jinqiredian">近期热点</string>
+    <string name="fatie">发帖</string>
+    <string name="biaoti">标题...</string>
+    <string name="zhengwen">正文...</string>
+    <string name="xuanzebankuai">选择发布版块</string>
+    <string name="fabu">发布</string>
 
 </resources>

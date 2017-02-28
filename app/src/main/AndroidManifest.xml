@@ -51,6 +51,15 @@
         <activity
             android:name=".Activity.ZNXAllActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.BKSYActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.SouSuoActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.FaTieActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

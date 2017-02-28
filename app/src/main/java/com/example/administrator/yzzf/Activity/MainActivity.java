@@ -1,12 +1,14 @@
 package com.example.administrator.yzzf.Activity;
 
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -21,7 +23,7 @@ import com.example.administrator.yzzf.Fragment.ZhuyeFragment;
  * Created by Administrator on 2017/2/15 0015.
  */
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener,View.OnClickListener {
 
     BottomNavigationBar bottomNavigationBar;
     FragmentManager mFragmentManager;
@@ -125,5 +127,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     @Override
     public void onTabReselected(int position) {
 //DO SOMETHING
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+        }
     }
 }

@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
+import com.example.administrator.yzzf.Activity.BKSYActivity;
 import com.example.administrator.yzzf.Activity.MeiRiJingXuanActivity;
 import com.example.administrator.yzzf.Activity.XiangQingActivity;
 import com.example.administrator.yzzf.R;
@@ -74,6 +75,8 @@ public class ZhuyeFragment extends BaseFragment implements View.OnClickListener 
                 new GetDataTask().execute();
             }
         });
+
+        view.findViewById(R.id.htjl_tiaozhuan_imageview).setOnClickListener(this);
         return view;
     }
 
@@ -90,8 +93,8 @@ public class ZhuyeFragment extends BaseFragment implements View.OnClickListener 
                 startActivity(intent02);
                 break;
             case R.id.htjl_tiaozhuan_imageview:
-                Intent intent03 = new Intent(mAppCompatActivity, MeiRiJingXuanActivity.class);
-                startActivity(intent03);
+                Intent intent = new Intent(mAppCompatActivity, BKSYActivity.class);
+                startActivity(intent);
                 break;
             case R.id.xiangqing_tiaozhuan_zhuye:
                 Intent intent04 = new Intent(mAppCompatActivity, XiangQingActivity.class);

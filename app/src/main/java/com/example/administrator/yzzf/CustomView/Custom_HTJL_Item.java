@@ -28,6 +28,7 @@ public class Custom_HTJL_Item extends LinearLayout {
     private LinearLayout mLinearLayout_main;
     private LinearLayout mLinearLayout_fenxiang;
     private ImageView mImageView_pinglun;
+    private TextView mTextView_bottom;
 
     public ImageView getImageView_userimage() {
         return mImageView_userimage;
@@ -110,6 +111,7 @@ public class Custom_HTJL_Item extends LinearLayout {
         mTextView_pinglunnum = (TextView) findViewById(R.id.custom_item_huatijiaoliu_pinglunnum);
         mLinearLayout_main = (LinearLayout) findViewById(R.id.custom_item_huatijiaoliu_main);
         mLinearLayout_fenxiang = (LinearLayout) findViewById(R.id.custom_item_huatijiaoliu_fenxiang);
+        mTextView_bottom = (TextView) findViewById(R.id.custom_item_huatijiaoliu_bottom);
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Custom_HTJL_Item);
         int userimage_src = typedArray.getResourceId(R.styleable.Custom_HTJL_Item_htjl_userimage_src, R.drawable.user);
@@ -126,9 +128,16 @@ public class Custom_HTJL_Item extends LinearLayout {
         mTextView_zannum.setText(zannum);
         String pinglunnum = typedArray.getString(R.styleable.Custom_HTJL_Item_htjl_pinglunnum);
         mTextView_pinglunnum.setText(pinglunnum);
+        boolean isvisilble = typedArray.getBoolean(R.styleable.Custom_HTJL_Item_htjl_is_bottomTextView_visible, true);
+        if (isvisilble) {
+            mTextView_bottom.setVisibility(VISIBLE);
+        } else {
+            mTextView_bottom.setVisibility(GONE);
+        }
         typedArray.recycle();
     }
-    public void setOnClickListener(View view,OnClickListener onClickListener) {
+
+    public void setOnClickListener(View view, OnClickListener onClickListener) {
         switch (view.getId()) {
             case R.id.custom_item_huatijiaoliu_userimage:
                 //可以跳转到好友资料Activity，但目前不确定不是好友能不能查看资料

@@ -1,5 +1,6 @@
 package com.example.administrator.yzzf.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -12,13 +13,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.administrator.yzzf.Activity.BKSYActivity;
+import com.example.administrator.yzzf.Activity.MeiRiJingXuanActivity;
 import com.example.administrator.yzzf.R;
 
 /**
  * Created by Administrator on 2017/2/20 0020.
  */
 
-public class BanKuaiFragment extends BaseFragment {
+public class BanKuaiFragment extends BaseFragment implements View.OnClickListener {
 
     @Nullable
     @Override
@@ -32,6 +35,9 @@ public class BanKuaiFragment extends BaseFragment {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowTitleEnabled(false);
         }
+
+        view.findViewById(R.id.bankuai_htjl).setOnClickListener(this);
+        view.findViewById(R.id.bankuai_meirijingxuan).setOnClickListener(this);
         return view;
     }
 
@@ -43,7 +49,6 @@ public class BanKuaiFragment extends BaseFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-
             case android.R.id.home:
                 mAppCompatActivity.getSupportFragmentManager()
                         .beginTransaction()
@@ -58,9 +63,22 @@ public class BanKuaiFragment extends BaseFragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_main, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.bankuai_htjl:
+                Intent intent01 = new Intent(mAppCompatActivity, BKSYActivity.class);
+                mAppCompatActivity.startActivity(intent01);
+                break;
+            case R.id.bankuai_meirijingxuan:
+                Intent intent02 = new Intent(mAppCompatActivity, MeiRiJingXuanActivity.class);
+                mAppCompatActivity.startActivity(intent02);
+                break;
+            case R.id.bankuai_zulingzhihuan:
+                break;
+            case R.id.bankuai_wuyechangshi:
+                break;
+            case R.id.bankuai_shequgonggao:
+                break;
+        }
     }
 }
