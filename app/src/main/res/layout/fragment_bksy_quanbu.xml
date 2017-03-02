@@ -45,8 +45,7 @@
                     android:lines="1"
                     android:text="必读！本版发帖规则"
                     android:textColor="@color/daohang"
-                    android:textSize="18dp"
-                    android:textStyle="bold"/>
+                    android:textSize="@dimen/zhiding_title"/>
             </LinearLayout>
 
             <TextView
@@ -77,8 +76,7 @@
                     android:lines="1"
                     android:text="南通那个小区物业管理最好？"
                     android:textColor="@color/daohang"
-                    android:textSize="18dp"
-                    android:textStyle="bold"/>
+                    android:textSize="@dimen/zhiding_title"/>
             </LinearLayout>
 
             <TextView
@@ -109,8 +107,7 @@
                     android:lines="1"
                     android:text="他大舅他二舅都是他舅，都是他舅，都是他舅~~"
                     android:textColor="@color/daohang"
-                    android:textSize="18dp"
-                    android:textStyle="bold"/>
+                    android:textSize="@dimen/zhiding_title"/>
             </LinearLayout>
 
             <TextView

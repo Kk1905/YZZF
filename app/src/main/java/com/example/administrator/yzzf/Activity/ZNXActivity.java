@@ -2,13 +2,18 @@ package com.example.administrator.yzzf.Activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckedTextView;
 
 import com.example.administrator.yzzf.CustomView.Custom_ZNX_GRZX;
+import com.example.administrator.yzzf.Fragment.ZNX_YKG_Fragment;
+import com.example.administrator.yzzf.Fragment.ZNX_WKG_Fragment;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Util.Show_ZNX_HUIFU_Dialog;
 
@@ -17,8 +22,9 @@ import com.example.administrator.yzzf.Util.Show_ZNX_HUIFU_Dialog;
  */
 
 public class ZNXActivity extends AppCompatActivity implements View.OnClickListener {
-    private Show_ZNX_HUIFU_Dialog mShowZnx_huifu_dialog = null;
-    private Custom_ZNX_GRZX mCustom_znx_grzx01;
+    Fragment fragment;
+    CheckedTextView mCheckedTextView_ykg;
+    CheckedTextView mCheckedTextView_wkg;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,9 +37,12 @@ public class ZNXActivity extends AppCompatActivity implements View.OnClickListen
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowTitleEnabled(false);
         }
-        mCustom_znx_grzx01 = (Custom_ZNX_GRZX) findViewById(R.id.znx_duihua01);
-        mCustom_znx_grzx01.setOnClickListener(this);
+        initView();
 
+        mCheckedTextView_ykg = (CheckedTextView) findViewById(R.id.znx_ykg);
+        mCheckedTextView_ykg.setOnClickListener(this);
+        mCheckedTextView_wkg = (CheckedTextView) findViewById(R.id.znx_wkg);
+        mCheckedTextView_wkg.setOnClickListener(this);
     }
 
     @Override
@@ -48,45 +57,33 @@ public class ZNXActivity extends AppCompatActivity implements View.OnClickListen
 
     }
 
-//    private void showDialog() {
-//        if (mDialog == null) {
-//            mDialog = new Dialog(ZNXActivity.this, R.style.custom_dialog);
-//            mDialog.setCanceledOnTouchOutside(true);
-////            mDialog = new AlertDialog.Builder(ZNXActivity.this, R.style.custom_dialog)
-////                    .setCancelable(true)
-////                    .create();
-//            //获取对话框窗口，并设置参数
-//            Window window = mDialog.getWindow();
-//            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-//            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
-//            layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
-//
-//            //为对话框窗口设置大小参数
-//            window.setAttributes(layoutParams);
-//            window.setGravity(Gravity.BOTTOM);
-//            //为对话框设置自定义布局
-//            mDialog.setContentView(R.layout.custom_znx_dialog);
-//            //获取对话框布局里面的控件对象,并设置监听事件
-//            mDialog.findViewById(R.id.xnx_dialog_huifu).setOnClickListener(this);
-//            mDialog.findViewById(R.id.xnx_dialog_shanchu).setOnClickListener(this);
-//            mDialog.findViewById(R.id.xnx_dialog_chakan).setOnClickListener(this);
-//            mDialog.findViewById(R.id.xnx_dialog_quxiao).setOnClickListener(this);
-//        }
-//        mDialog.show();
-//    private void dismiss() {
-//        if (mDialog != null && mDialog.isShowing()) {
-//            mDialog.dismiss();
-//        }
-//    }
+    private void initView() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragment = fragmentManager.findFragmentById(R.id.znx_container);
+        if (fragment == null) {
+            fragment = new ZNX_YKG_Fragment();
+            fragmentManager.beginTransaction()
+                    .add(R.id.znx_container, fragment)
+                    .commit();
+        }
+    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.znx_duihua01:
-                if (mShowZnx_huifu_dialog == null) {
-                    mShowZnx_huifu_dialog = new Show_ZNX_HUIFU_Dialog(ZNXActivity.this);
+            case R.id.znx_ykg:
+                if (fragment != null) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.znx_container, new ZNX_YKG_Fragment()).commit();
                 }
-                mShowZnx_huifu_dialog.showDialog(R.layout.custom_znx_dialog);
+                mCheckedTextView_ykg.setChecked(true);
+                mCheckedTextView_wkg.setChecked(false);
+                break;
+            case R.id.znx_wkg:
+                if (fragment != null) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.znx_container, new ZNX_WKG_Fragment()).commit();
+                }
+                mCheckedTextView_ykg.setChecked(false);
+                mCheckedTextView_wkg.setChecked(true);
                 break;
 //            case R.id.xnx_dialog_huifu:
 //                break;

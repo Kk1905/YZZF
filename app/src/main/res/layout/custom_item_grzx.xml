@@ -52,10 +52,11 @@
             android:layout_weight="1"/>
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
             android:layout_gravity="center_vertical"
             android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:src="@drawable/grzx_toright"/>
 
     </LinearLayout>

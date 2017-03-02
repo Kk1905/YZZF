@@ -27,19 +27,28 @@
         android:paddingBottom="5dp"
         android:paddingTop="5dp">
 
-        <Button
+        <CheckedTextView
+            android:id="@+id/znx_ykg"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@drawable/wdhy_button_background"
-            android:text="@string/wodehaoyou"
-            android:textSize="18dp"/>
+            android:checked="true"
+            android:padding="12dp"
+            android:text="@string/yikanguo"
+            android:textAlignment="center"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/checked_textView"/>
 
-        <Button
+        <CheckedTextView
+            android:id="@+id/znx_wkg"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@drawable/wdhy_button_background"
-            android:text="@string/wodeguanzhu"
-            android:textSize="18dp"/>
+            android:padding="12dp"
+            android:text="@string/weikanguo"
+            android:textAlignment="center"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/checked_textView"/>
 
     </LinearLayout>
 
@@ -48,24 +57,16 @@
         android:layout_height="1dp"
         android:background="@color/colorPrimaryDark"/>
 
-    <ScrollView
+    <FrameLayout
+        android:id="@+id/znx_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    </FrameLayout>
 
-            <com.example.administrator.yzzf.CustomView.Custom_ZNX_GRZX
-                android:id="@+id/znx_duihua01"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="true"
-                app:znx_content="这里为何要使用merge标签，自定义组合控件时会继承RelativeLayout、LinearLayout等控件，这样导致布局的层级无形中增加了一层，如下是对比:未使用merge标签"
-                app:znx_num="56"
-                app:znx_time="2017-02-26"
-                app:znx_username="李四"></com.example.administrator.yzzf.CustomView.Custom_ZNX_GRZX>
-        </LinearLayout>
-    </ScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+
 </LinearLayout>

@@ -27,19 +27,26 @@
         android:paddingBottom="5dp"
         android:paddingTop="5dp">
 
-        <Button
+        <CheckedTextView
+            android:id="@+id/wdhy_wdhy"
+            android:checked="true"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@drawable/wdhy_button_background"
+            android:padding="12dp"
             android:text="@string/wodehaoyou"
-            android:textSize="18dp"/>
+            android:textAlignment="center"
+            android:textSize="@dimen/checked_textView"/>
 
-        <Button
+        <CheckedTextView
+            android:id="@+id/wdhy_wdgz"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@drawable/wdhy_button_background"
+            android:padding="12dp"
             android:text="@string/wodeguanzhu"
-            android:textSize="18dp"/>
+            android:textAlignment="center"
+            android:textSize="@dimen/checked_textView"/>
 
     </LinearLayout>
 
@@ -47,21 +54,13 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorPrimaryDark"/>
+
     <FrameLayout
+        android:id="@+id/WDHY_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX
-            android:id="@+id/custom_grzx_zuhe01"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:button_isvisible="true"
-            custom:text1="用户名"
-            custom:text2="1">
-
-        </com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX>
     </FrameLayout>
-
 
 
 </LinearLayout>

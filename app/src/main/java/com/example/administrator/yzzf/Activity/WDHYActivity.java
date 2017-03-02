@@ -3,13 +3,18 @@ package com.example.administrator.yzzf.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckedTextView;
 
 import com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX;
+import com.example.administrator.yzzf.Fragment.WDHY_WDGZ_Fragment;
+import com.example.administrator.yzzf.Fragment.WDHY_WDHY_Fragment;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Util.Show_ZNX_Xiexin_Dialog;
 
@@ -18,11 +23,9 @@ import com.example.administrator.yzzf.Util.Show_ZNX_Xiexin_Dialog;
  */
 
 public class WDHYActivity extends AppCompatActivity implements View.OnClickListener {
-    //    ImageView mImageView;
-//    TextView mTextView01;
-//    TextView mTextView02;
-//    Button mButton;
-    Show_ZNX_Xiexin_Dialog mShow_znx_xiexin_dialog = null;
+    Fragment mFragment;
+    CheckedTextView mCheckedTextView_wdhy;
+    CheckedTextView mCheckedTextView_wdgz;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,9 +38,22 @@ public class WDHYActivity extends AppCompatActivity implements View.OnClickListe
             actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        Custom_ZuHe_GRZX custom_zuHe_grzx01 = (Custom_ZuHe_GRZX) findViewById(R.id.custom_grzx_zuhe01);
-        custom_zuHe_grzx01.setOnClickListener(custom_zuHe_grzx01.getButton(), this);
-        custom_zuHe_grzx01.setOnClickListener(custom_zuHe_grzx01.getImageView(), this);
+        initView();
+        mCheckedTextView_wdhy = (CheckedTextView) findViewById(R.id.wdhy_wdhy);
+        mCheckedTextView_wdhy.setOnClickListener(this);
+        mCheckedTextView_wdgz = (CheckedTextView) findViewById(R.id.wdhy_wdgz);
+        mCheckedTextView_wdgz.setOnClickListener(this);
+    }
+
+    private void initView() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        mFragment = fragmentManager.findFragmentById(R.id.WDHY_fragment_container);
+        if (mFragment == null) {
+            mFragment = new WDHY_WDHY_Fragment();
+            fragmentManager.beginTransaction()
+                    .add(R.id.WDHY_fragment_container, mFragment)
+                    .commit();
+        }
     }
 
     @Override
@@ -55,17 +71,19 @@ public class WDHYActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.custom_grzx_zuhe_image:
-                Intent intent01 = new Intent(WDHYActivity.this, HaoYouZiLiaoActivity.class);
-                startActivity(intent01);
-                break;
-            case R.id.custom_grzx_zuhe_button:
-//                Intent intent02 = new Intent(WDHYActivity.this, ZNXAllActivity.class);
-//                startActivity(intent02);
-                if (mShow_znx_xiexin_dialog == null) {
-                    mShow_znx_xiexin_dialog = new Show_ZNX_Xiexin_Dialog(WDHYActivity.this);
+            case R.id.wdhy_wdhy:
+                if (mFragment != null) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.WDHY_fragment_container, new WDHY_WDHY_Fragment()).commit();
                 }
-                mShow_znx_xiexin_dialog.showDialog(R.layout.custom_znx_xiexin_dialog);
+                mCheckedTextView_wdhy.setChecked(true);
+                mCheckedTextView_wdgz.setChecked(false);
+                break;
+            case R.id.wdhy_wdgz:
+                if (mFragment != null) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.WDHY_fragment_container, new WDHY_WDGZ_Fragment()).commit();
+                }
+                mCheckedTextView_wdhy.setChecked(false);
+                mCheckedTextView_wdgz.setChecked(true);
                 break;
         }
     }

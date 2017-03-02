@@ -92,7 +92,7 @@ public class BKSYActivity extends AppCompatActivity implements View.OnClickListe
                 textView.setText(mList_title.get(i));
             }
         }
-        mTabLayout.getTabAt(1).select();
+        mTabLayout.getTabAt(0).select();
     }
 
     @Override

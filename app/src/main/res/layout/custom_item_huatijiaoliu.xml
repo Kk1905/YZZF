@@ -61,8 +61,8 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:lines="1"
-            android:textSize="16dp"
-            android:textStyle="bold"
+            android:textSize="@dimen/zhuye_xinwen_title"
+            android:textColor="@color/daohang"
             tools:text="中南世纪花城门口的车已经停得走不动道了~~"/>
 
 
