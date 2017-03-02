@@ -27,7 +27,8 @@
                 <ImageView
                     android:id="@+id/htjl_tiaozhuan_imageview"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:adjustViewBounds="true"
                     android:clickable="true"
@@ -42,11 +43,10 @@
                     android:layout_weight="3.3"
                     android:ellipsize="end"
                     android:lines="2"
-                    android:maxEms="30"
+                    android:maxEms="20"
                     android:text="中南世纪花城门口的车已经停得不好走道了~~ 中南世纪花城门口的车已经停得不好走道了~~"
-                    android:textColor="@drawable/text_selected_drawable"
-                    android:textSize="18dp"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/daohang"
+                    android:textSize="@dimen/zhuye_htjl_title"/>
             </LinearLayout>
 
 
@@ -88,6 +88,7 @@
                 android:src="@drawable/user"/>
 
             <TextView
+                android:textColor="@color/daohang"
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -112,6 +113,7 @@
                 android:src="@drawable/zhuye_eye"/>
 
             <TextView
+                android:textColor="@color/daohang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -135,6 +137,7 @@
                 android:src="@drawable/zhuye_liuyan"/>
 
             <TextView
+                android:textColor="@color/daohang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -163,6 +166,7 @@
                     android:src="@drawable/xiangqing_fenxiang"/>
 
                 <TextView
+                    android:textColor="@color/daohang"
                     android:id="@+id/share_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

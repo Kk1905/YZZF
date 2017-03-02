@@ -5,4 +5,10 @@
     <dimen name="text_size01">16sp</dimen>
     <dimen name="toolbar_text_size">22sp</dimen>
     <dimen name="toolbar_menu">16sp</dimen>
+    <dimen name="zhuye_htjl_title">16sp</dimen>
+    <dimen name="zhuye_xinwen_title">16sp</dimen>
+    <dimen name="moren_size">12sp</dimen>
+    <dimen name="xiangqing_title">18sp</dimen>
+    <dimen name="xiangqing_content">16sp</dimen>
+    <dimen name="rmpl_content">16sp</dimen>
 </resources>

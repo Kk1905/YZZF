@@ -29,34 +29,35 @@
                     android:scaleType="fitCenter"
                     android:src="@drawable/zheye_huatijiaoliu_tiaozhuan"/>
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right"
-                    android:gravity="center_vertical">
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="5dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/zhuye_eye"/>
 
                     <TextView
                         android:id="@+id/xiangqing_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentTop="true"
                         android:gravity="center"
                         android:text="12306"
                         android:textSize="15dp"/>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:layout_toLeftOf="@id/xiangqing_textview"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/zhuye_eye"/>
 
-
-                </RelativeLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -65,17 +66,17 @@
                 android:layout_height="wrap_content"
                 android:background="@color/toolbar_background"
                 android:orientation="vertical"
-                android:paddingBottom="10dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:paddingTop="10dp">
+                android:paddingBottom="5dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingBottom="10dp"
+
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:weightSum="1">
@@ -149,11 +150,10 @@
                         android:id="@+id/textview_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:ellipsize="end"
-                        android:maxEms="30"
+                        android:layout_marginTop="5dp"
                         android:text="苏通大桥迎返程最高峰 春节假期七天约65万辆免费过境"
-                        android:textSize="18dp"
+                        android:textColor="@color/daohang"
+                        android:textSize="@dimen/xiangqing_title"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -162,7 +162,8 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="20dp"
                         android:text="今天是春节长假最后一天，苏通大桥迎来返程高峰。全天车流量预计将超过12万辆"
-                        android:textSize="16dp"/>
+                        android:textColor="@color/daohang"
+                        android:textSize="@dimen/xiangqing_content"/>
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -182,7 +183,8 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:text="@string/jubao"
-                        android:textSize="16dp"/>
+                        android:textColor="@color/daohang"
+                        android:textSize="16sp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -202,15 +204,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/remenpinglun"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
+                    android:textColor="@color/daohang"
+                    android:textSize="20sp"/>
 
                 <com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:rmpl_content="早知道会堵车，就TMD不上去了，现在好了，堵成这样，还不如直接走过去呢，Y啰！"
                     app:rmpl_is_ll_visible="false"
                     app:rmpl_num="568"
-                    app:rmpl_content="早知道会堵车，就TMD不上去了，现在好了，堵成这样，还不如直接走过去呢，Y啰！"
                     app:rmpl_time01="3小时前"
                     app:rmpl_time02="3小时前"
                     app:rmpl_userimage_src="@drawable/user"
@@ -219,9 +221,9 @@
                 <com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:rmpl_content="早知道会堵车，就TMD不上去了，现在好了，堵成这样，还不如直接走过去呢，Y啰！"
                     app:rmpl_is_ll_visible="false"
                     app:rmpl_num="568"
-                    app:rmpl_content="早知道会堵车，就TMD不上去了，现在好了，堵成这样，还不如直接走过去呢，Y啰！"
                     app:rmpl_time01="3小时前"
                     app:rmpl_time02="3小时前"
                     app:rmpl_userimage_src="@drawable/user"
@@ -230,9 +232,9 @@
                 <com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:rmpl_content="早知道会堵车，就TMD不上去了，现在好了，堵成这样，还不如直接走过去呢，Y啰！"
                     app:rmpl_is_ll_visible="false"
                     app:rmpl_num="568"
-                    app:rmpl_content="早知道会堵车，就TMD不上去了，现在好了，堵成这样，还不如直接走过去呢，Y啰！"
                     app:rmpl_time01="3小时前"
                     app:rmpl_time02="3小时前"
                     app:rmpl_userimage_src="@drawable/user"

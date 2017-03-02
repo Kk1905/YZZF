@@ -62,14 +62,14 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginRight="8dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/rmpl_zan"/>
 
         <TextView
+            android:gravity="center"
             android:id="@+id/custom_rmpl_num"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="1236"/>
@@ -82,7 +82,8 @@
         android:layout_below="@+id/linerlayout"
         android:layout_marginLeft="50dp"
         android:text="早知道会堵，还是走上去了，结果过桥足足花了两个小时，以后再也不赶这个点了。。"
-        android:textSize="16dp"/>
+        android:textColor="@color/daohang"
+        android:textSize="@dimen/rmpl_content"/>
 
     <LinearLayout
         android:id="@+id/custom_rmpl_visible_ll"
@@ -107,23 +108,23 @@
             android:layout_weight="1"/>
 
         <ImageView
-            android:layout_marginRight="5dp"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:src="@drawable/xiangqing_jubao"/>
 
         <TextView
+            android:gravity="center"
             android:id="@+id/custom_rmpl_jubao"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="right|center_vertical"
-            android:text="@string/jubao"
-            android:textSize="16dp"/>
+            android:text="@string/jubao"/>
     </LinearLayout>
+
     <TextView
-        android:layout_below="@+id/custom_rmpl_visible_ll"
-        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_below="@+id/custom_rmpl_visible_ll"
+        android:layout_marginTop="15dp"
         android:background="@color/main_background"/>
 </RelativeLayout>
