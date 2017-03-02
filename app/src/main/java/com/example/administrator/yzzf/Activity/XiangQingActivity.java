@@ -30,6 +30,7 @@ import android.widget.Toast;
 import com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing;
 import com.example.administrator.yzzf.Fragment.XiangQing_RMPL_Fragment;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.AndroidBug5497Workaround;
 import com.example.administrator.yzzf.Util.Show_FenXiang_Dialog;
 import com.example.administrator.yzzf.Util.Show_XiangQing_Write_Pinglun_Dialog;
 
@@ -54,6 +55,7 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
         fm = getSupportFragmentManager();
         fragment = fm.findFragmentById(R.id.xiangqing_fragment_container);
 
+//        AndroidBug5497Workaround.assistActivity(this);
         initView();
         editText = (EditText) findViewById(R.id.woyao_edittext);
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {

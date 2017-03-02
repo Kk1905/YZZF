@@ -16,7 +16,7 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
     }
 
     public void showDialog(int layoutId) {
-        super.showDialog(layoutId);
+        super.showDialog(layoutId,1);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_weixin_pengyouquan).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_weixin).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_qq).setOnClickListener(this);

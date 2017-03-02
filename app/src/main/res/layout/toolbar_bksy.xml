@@ -15,8 +15,7 @@
         android:layout_gravity="center"
         android:text="@string/bankuaishouye"
         android:textColor="@color/daohang"
-        android:textSize="24dp"
-        android:textStyle="bold"/>
+        android:textSize="@dimen/toolbar_text_size"/>
 
     <ImageView
         android:id="@+id/toolbar_bksy_sousuo"

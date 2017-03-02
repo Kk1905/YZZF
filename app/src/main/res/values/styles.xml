@@ -14,17 +14,42 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!--自定义对话框主题-->
-    <style name="custom_dialog" parent="android:Theme.Dialog">
-        <item name="android:windowFrame">@null</item>
-        <item name="android:windowIsFloating">false</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@android:color/transparent</item>
+    <!--自定义带输入框对话框主题-->
+    <style name="custom_dialog_editText" parent="android:Theme.Dialog">
+        <!-- 背景颜色及透明程度 -->
         <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 是否没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否背景模糊 -->
         <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:windowFullscreen">false</item>
-        <item name="android:backgroundDimAmount">0.6</item>
+        <!-- 设置背景模糊的透明度-->
+        <item name="android:backgroundDimAmount">0.5</item>
+        <!--设置软键盘的交互模式-->
+        <item name="android:windowSoftInputMode">adjustPan|stateVisible</item>
+        <!-- 动画 -->
+        <item name="android:windowAnimationStyle">@style/bottom_anim_style</item>
+    </style>
+    <!--自定义普通对话框主题-->
+    <style name="custom_dialog_normal" parent="android:Theme.Dialog">
+        <!-- 背景颜色及透明程度 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 是否没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否背景模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 设置背景模糊的透明度-->
+        <item name="android:backgroundDimAmount">0.5</item>
+        <!--设置软键盘的交互模式-->
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <!-- 动画 -->
         <item name="android:windowAnimationStyle">@style/bottom_anim_style</item>
     </style>
 
@@ -33,4 +58,11 @@
         <item name="android:windowExitAnimation">@anim/dialog_out_animation</item>
     </style>
 
+    <!--自定义TabLyout的样式-->
+    <!--<style name="MainTabLayout" parent="Base.Widget.Design.TabLayout">-->
+    <!--<item name="tabIndicatorColor">@color/yangzi</item>-->
+    <!--<item name="tabSelectedTextColor">@color/yangzi</item>-->
+    <!--<item name="tabBackground">@color/toolbar_background</item>-->
+    <!--&lt;!&ndash;<item name="tabTextColor">@color/colorAccent</item>&ndash;&gt;-->
+    <!--</style>-->
 </resources>

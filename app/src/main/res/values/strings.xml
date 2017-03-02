@@ -80,5 +80,9 @@
     <string name="zhengwen">正文...</string>
     <string name="xuanzebankuai">选择发布版块</string>
     <string name="fabu">发布</string>
+    <string name="zuixin">最新</string>
+    <string name="quanbu">全部</string>
+    <string name="remen">热门</string>
+
 
 </resources>

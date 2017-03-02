@@ -1,45 +1,40 @@
 package com.example.administrator.yzzf;
 
 import android.app.Activity;
-import android.support.v7.app.AlertDialog;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
+import com.example.administrator.yzzf.Util.Custom_Dialog;
 
 /**
  * Created by Administrator on 2017/2/27 0027.
  */
 
 public class BaseShowDialog {
-    protected AlertDialog mAlertDialog;
+    protected Custom_Dialog mAlertDialog;
     protected Activity mActivity;
+    private static final int EDIT_TEXT_DIALOG = 0;
+    private static final int NORMAL_TEXT_DIALOG = 1;
 
     public BaseShowDialog(Activity activity) {
         mActivity = activity;
     }
 
-    public void showDialog(int layoutId) {
-
+    public void showDialog(int layoutId, int witchDialog) {
+        View view = LayoutInflater.from(mActivity).inflate(layoutId, null);
         if (mAlertDialog == null) {
-            View view = LayoutInflater.from(mActivity).inflate(layoutId, null);
-            AlertDialog.Builder builder = new AlertDialog.Builder(mActivity, R.style.custom_dialog);
-            mAlertDialog = builder.setView(view).setCancelable(true).create();
-            //获取对话框窗口，并设置参数
-            Window window = mAlertDialog.getWindow();
-            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-            layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
-            layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
-
-            //为对话框窗口设置大小参数
-            window.setAttributes(layoutParams);
-            window.setGravity(Gravity.BOTTOM);
-            //为对话框设置自定义布局
-            mAlertDialog.setContentView(view);
+            switch (witchDialog) {
+                case EDIT_TEXT_DIALOG:
+                    mAlertDialog = new Custom_Dialog(mActivity, R.style.custom_dialog_editText);
+                    mAlertDialog.setCanceledOnTouchOutside(true);
+                    mAlertDialog.setContentView(view);
+                    break;
+                case NORMAL_TEXT_DIALOG:
+                    mAlertDialog = new Custom_Dialog(mActivity, R.style.custom_dialog_normal);
+                    mAlertDialog.setCanceledOnTouchOutside(true);
+                    mAlertDialog.setContentView(view);
+            }
         }
         mAlertDialog.show();
-        //获取对话框布局里面的控件对象,并设置监听事件
     }
 
     public void dismiss() {

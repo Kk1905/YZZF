@@ -15,8 +15,8 @@
         android:layout_gravity="center"
         android:text="@string/fatie"
         android:textColor="@color/daohang"
-        android:textSize="24dp"
-        android:textStyle="bold"/>
+        android:textSize="@dimen/toolbar_text_size"
+        />
 
     <TextView
         android:id="@+id/toolbar_fatie_fabu"

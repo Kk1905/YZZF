@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/main_background"/>
+
+            <LinearLayout
+                android:id="@+id/bksy_zhiding_01"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bksy_zhiding"/>
+
+                <TextView
+                    android:id="@+id/bksy_zhiding_title01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="必读！本版发帖规则"
+                    android:textColor="@color/daohang"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/main_background"/>
+
+            <LinearLayout
+                android:id="@+id/bksy_zhiding_02"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bksy_zhiding"/>
+
+                <TextView
+                    android:id="@+id/bksy_zhiding_title02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="南通那个小区物业管理最好？"
+                    android:textColor="@color/daohang"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/main_background"/>
+
+            <LinearLayout
+                android:id="@+id/bksy_zhiding_03"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bksy_zhiding"/>
+
+                <TextView
+                    android:id="@+id/bksy_zhiding_title03"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="他大舅他二舅都是他舅，都是他舅，都是他舅~~"
+                    android:textColor="@color/daohang"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/main_background"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/main_background"/>
+            <com.example.administrator.yzzf.CustomView.Custom_HTJL_Item
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:htjl_chakannum="1233"
+                app:htjl_pinglunnum="56"
+                app:htjl_time="3小时前"
+                app:htjl_title="中南世纪花城前的车停得走不动道了~~"
+                app:htjl_username="张三"
+                app:htjl_zannum="123">
+
+            </com.example.administrator.yzzf.CustomView.Custom_HTJL_Item>
+
+            <com.example.administrator.yzzf.CustomView.Custom_HTJL_Item
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:htjl_chakannum="1233"
+                app:htjl_pinglunnum="56"
+                app:htjl_time="3小时前"
+                app:htjl_title="中南世纪花城前的车停得走不动道了~~"
+                app:htjl_username="李四"
+                app:htjl_zannum="123">
+
+            </com.example.administrator.yzzf.CustomView.Custom_HTJL_Item>
+
+            <com.example.administrator.yzzf.CustomView.Custom_HTJL_Item
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:htjl_chakannum="1233"
+                app:htjl_is_bottomTextView_visible="false"
+                app:htjl_pinglunnum="56"
+                app:htjl_time="3小时前"
+                app:htjl_title="中南世纪花城前的车停得走不动道了~~"
+                app:htjl_username="王五"
+                app:htjl_zannum="123">
+
+            </com.example.administrator.yzzf.CustomView.Custom_HTJL_Item>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

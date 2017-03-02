@@ -2,6 +2,7 @@ package com.example.administrator.yzzf.Util;
 
 import android.app.Activity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.example.administrator.yzzf.Activity.XiangQingActivity;
@@ -21,7 +22,7 @@ public class Show_XiangQing_Write_Pinglun_Dialog extends BaseShowDialog implemen
     }
 
     public void showDialog(int layoutId) {
-        super.showDialog(layoutId);
+        super.showDialog(layoutId,0);
         mAlertDialog.findViewById(R.id.xiangqing_pinglun_dialog_quxiao).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_pinglun_dialog_fasong).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_pinglun_dialog_content).setOnClickListener(this);

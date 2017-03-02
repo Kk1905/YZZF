@@ -19,7 +19,7 @@ public class Show_ZNX_HUIFU_Dialog extends BaseShowDialog implements View.OnClic
 
     public void showDialog(int layoutId) {
 
-        super.showDialog(layoutId);
+        super.showDialog(layoutId,1);
         mAlertDialog.findViewById(R.id.xnx_dialog_huifu).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xnx_dialog_shanchu).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xnx_dialog_chakan).setOnClickListener(this);

@@ -16,7 +16,7 @@ public class Show_ZNX_Xiexin_Dialog extends BaseShowDialog implements View.OnCli
         super(activity);
     }
     public void showDialog(int layoutId) {
-        super.showDialog(layoutId);
+        super.showDialog(layoutId,0);
         mAlertDialog.findViewById(R.id.znx_xiexin_dialog_content).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.znx_xiexin_dialog_quxiao).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.znx_xiexin_dialog_fasong).setOnClickListener(this);

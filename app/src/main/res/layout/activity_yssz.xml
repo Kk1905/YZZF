@@ -76,7 +76,7 @@
             <com.example.administrator.yzzf.CustomView.Custom_YSSZ_GRZX
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:yssz_ischecked="false"
+                app:yssz_ischecked="true"
                 app:yssz_phone="151****4397"></com.example.administrator.yzzf.CustomView.Custom_YSSZ_GRZX>
 
             <com.example.administrator.yzzf.CustomView.Custom_YSSZ_GRZX
