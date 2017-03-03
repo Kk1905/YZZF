@@ -32,6 +32,7 @@
         <attr name="time" format="string"/>
         <attr name="num" format="string"/>
         <attr name="content" format="string"/>
+        <attr name="is_shanchu_visible" format="boolean"/>
     </declare-styleable>
     <declare-styleable name="Custom_ZNX_GRZX">
         <attr name="znx_user_src" format="reference"/>

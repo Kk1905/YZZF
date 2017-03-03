@@ -83,6 +83,8 @@
     <string name="zuixin">最新</string>
     <string name="quanbu">全部</string>
     <string name="remen">热门</string>
+    <string name="shanchu_tiezi">你确定要删除所选帖子？</string>
+    <string name="queding">确定</string>
 
 
 </resources>

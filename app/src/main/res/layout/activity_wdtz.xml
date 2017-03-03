@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@color/second_background"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,68 +27,41 @@
         android:paddingBottom="5dp"
         android:paddingTop="5dp">
 
-        <Button
+        <CheckedTextView
+            android:id="@+id/wdtz_wdtz"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@drawable/wdhy_button_background"
+            android:checked="true"
+            android:padding="10dp"
             android:text="@string/wodetiezi"
-            android:textSize="18dp"/>
+            android:textAlignment="center"
+            android:textSize="@dimen/checked_textView"/>
 
-        <Button
+        <CheckedTextView
+            android:id="@+id/wdtz_wdhf"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@drawable/wdhy_button_background"
+            android:padding="10dp"
             android:text="@string/wodehuifu"
-            android:textSize="18dp"/>
+            android:textAlignment="center"
+            android:textSize="@dimen/checked_textView"/>
 
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@color/second_background"/>
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/wdtz_fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:content="苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境 苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境"
-            custom:num="12306"
-            custom:time="2017-02-17"
-            custom:user_name="张三">
-        </com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX>
 
-        <com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:content="苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境 苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境"
-            custom:num="12306"
-            custom:time="2017-02-17"
-            custom:user_name="张三">
-        </com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX>
-
-        <com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:content="苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境 苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境"
-            custom:num="12306"
-            custom:time="2017-02-17"
-            custom:user_name="张三">
-        </com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX>
-
-        <com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:content="苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境 苏通大桥迎返程高峰 春节假期七天约65万辆车免费过境"
-            custom:num="12306"
-            custom:time="2017-02-17"
-            custom:user_name="张三">
-        </com.example.administrator.yzzf.CustomView.Custom_WDTZ_GRZX>
-    </LinearLayout>
+    </FrameLayout>
 
 
 </LinearLayout>
