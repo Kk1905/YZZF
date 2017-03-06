@@ -111,7 +111,7 @@
                     android:src="@drawable/fatie_htjl"/>
 
                 <ImageView
-                    android:id="@+id/fatie_htjl"
+                    android:id="@+id/fatie_zlzh"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
@@ -120,7 +120,7 @@
                     android:src="@drawable/fatie_zlzh"/>
 
                 <ImageView
-                    android:id="@+id/fatie_htjl"
+                    android:id="@+id/fatie_wycs"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"

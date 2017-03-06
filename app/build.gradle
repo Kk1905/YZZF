@@ -1,10 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        likeke {
+            keyAlias 'yzzf'
+            keyPassword '853496784'
+            storeFile file('E:/yzzf.jks')
+            storePassword '853496784'
+        }
+    }
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
-
-
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.example.administrator.yzzf"
         minSdkVersion 15
@@ -17,6 +23,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.likeke
         }
     }
 }
@@ -33,4 +42,5 @@ dependencies {
     compile 'com.github.userswlwork:pull-to-refresh:1.0.0'
     compile 'com.android.support:design:25.2.0'
     compile files('libs/weiboSDKCore_3.1.4.jar')
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.0.2'
 }

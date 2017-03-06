@@ -30,9 +30,14 @@ import android.widget.Toast;
 import com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing;
 import com.example.administrator.yzzf.Fragment.XiangQing_RMPL_Fragment;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Tencent.BaseIUIListener;
+import com.example.administrator.yzzf.Tencent.TencentShareManager;
 import com.example.administrator.yzzf.Util.AndroidBug5497Workaround;
 import com.example.administrator.yzzf.Util.Show_FenXiang_Dialog;
 import com.example.administrator.yzzf.Util.Show_XiangQing_Write_Pinglun_Dialog;
+import com.tencent.connect.common.Constants;
+import com.tencent.connect.share.QQShare;
+import com.tencent.tauth.Tencent;
 
 import static android.R.attr.fragment;
 
@@ -41,6 +46,7 @@ import static android.R.attr.fragment;
  */
 
 public class XiangQingActivity extends AppCompatActivity implements View.OnClickListener {
+    private BaseIUIListener mBaseIUIListener;
     Show_FenXiang_Dialog mShow_fenXiang_dialog = null;
     Show_XiangQing_Write_Pinglun_Dialog mShow_xiangQing_write_pinglun_dialog = null;
     EditText editText;
@@ -55,7 +61,6 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
         fm = getSupportFragmentManager();
         fragment = fm.findFragmentById(R.id.xiangqing_fragment_container);
 
-//        AndroidBug5497Workaround.assistActivity(this);
         initView();
         editText = (EditText) findViewById(R.id.woyao_edittext);
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -72,10 +77,11 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
             }
         });
 
+
         findViewById(R.id.pinglun_fenxiang).setOnClickListener(this);
         findViewById(R.id.xiangqing_rootview).setOnClickListener(this);
 
-
+        mBaseIUIListener = TencentShareManager.getTencentShareManager(this).getBaseIUIListener();
     }
 
     private void initView() {
@@ -102,6 +108,16 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
                 }
                 mShow_fenXiang_dialog.showDialog(R.layout.custom_xiangqing_fenxiang_dialog);
                 break;
+
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Tencent.onActivityResultData(requestCode, requestCode, data, mBaseIUIListener);
+        if (requestCode == Constants.REQUEST_API) {
+
         }
     }
 

@@ -1,7 +1,6 @@
 package com.example.administrator.yzzf.Activity;
 
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -33,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     private static final int YANGZI_ZHIFU = 2;
     private static final int GE_XING = 3;
     private static final int WO_DE = 4;
+//    private static final String APP_ID = "wx4b24627995e61442";
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         } else {
             initBottomNavigationBar(ZHU_YE);
         }
+
 
     }
 

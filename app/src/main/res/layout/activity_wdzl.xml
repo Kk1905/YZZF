@@ -96,7 +96,7 @@
             custom:text02="1382****439"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
 
         <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
-            android:id="@+id/custom_wdzl_nicheng"
+            android:id="@+id/custom_wdzl_mimafuwu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             custom:text01="@string/mimafuwu"
