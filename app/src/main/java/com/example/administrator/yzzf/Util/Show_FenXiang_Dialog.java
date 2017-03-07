@@ -13,6 +13,7 @@ import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Tencent.BaseIUIListener;
 import com.example.administrator.yzzf.Tencent.TencentShareManager;
 import com.example.administrator.yzzf.WeChat.WeChatShareManager;
+import com.example.administrator.yzzf.WeiBo.WeiBoShareManager;
 import com.tencent.connect.share.QQShare;
 import com.tencent.connect.share.QzonePublish;
 import com.tencent.connect.share.QzoneShare;
@@ -22,7 +23,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.administrator.yzzf.R.string.fabu;
 import static com.example.administrator.yzzf.R.string.qq;
+import static com.sina.weibo.sdk.openapi.legacy.AccountAPI.CAPITAL.A;
+import static com.sina.weibo.sdk.openapi.legacy.AccountAPI.CAPITAL.B;
+import static com.sina.weibo.sdk.openapi.legacy.AccountAPI.CAPITAL.W;
 
 /**
  * Created by Administrator on 2017/2/27 0027.
@@ -32,12 +37,13 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
     private static final String SDCARD_ROOT = Environment.getExternalStorageDirectory().getAbsolutePath();//内存卡的绝对路径
     private WeChatShareManager mWeChatShareManager;
     private TencentShareManager mTencentShareManager;
+    private WeiBoShareManager mWeiBoShareManager;
     private Tencent mTencent;
     private BaseIUIListener mBaseIUIListener;
 
     public Show_FenXiang_Dialog(Activity activity) {
         super(activity);
-
+        mWeiBoShareManager = WeiBoShareManager.getWeiBoShareManager(mActivity);
         mWeChatShareManager = WeChatShareManager.getInstance(mActivity);
         //获取Tencent实例，Tencent是QQ分享SDK中的一个重要类，开发者可通过Tencent类访问腾讯开放的OpenAPI。
         mTencentShareManager = TencentShareManager.getTencentShareManager(mActivity);
@@ -77,24 +83,20 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
                 dismiss();
                 break;
             case R.id.xiangqing_dialog_weixin_pengyouquan:
-//                if (!isWeChatAvaliable()) {
-//                    Toast.makeText(mActivity, "请先安装微信", Toast.LENGTH_SHORT).show();
-//                    break;
-//                } else {
-//                    WeChatShareManager.ShareContentVideo shareContentVideo = mWeChatShareManager.getShareContentVideo(
-//                            "http://baidu.hz.letv.com/kan/agSlT?fr=v.baidu.com/");
-//                    mWeChatShareManager.shareByWeChat(shareContentVideo, WeChatShareManager.WECHAT_SHARE_TYPE_FRIENDS);
-//                    Toast.makeText(mActivity, "请先安装微信", Toast.LENGTH_SHORT).show();
-//                    break;
-//                }
+                if (!isWeChatAvaliable()) {
+                    Toast.makeText(mActivity, R.string.wxapp_not_installed, Toast.LENGTH_SHORT).show();
+                }
                 WeChatShareManager.ShareContentText shareContentText = mWeChatShareManager.getShareContentText("这是来自扬子社区头条的微信SDK测试信息");
                 mWeChatShareManager.shareByWeChat(shareContentText, WeChatShareManager.WECHAT_SHARE_TYPE_FRIENDS);
-                Toast.makeText(mActivity, "分享文字成功", Toast.LENGTH_SHORT).show();
+                dismiss();
                 break;
             case R.id.xiangqing_dialog_weixin:
-                if (isWeChatAvaliable()) {
-                    Toast.makeText(mActivity, "请先安装微信", Toast.LENGTH_SHORT).show();
+                if (!isWeChatAvaliable()) {
+                    Toast.makeText(mActivity, R.string.wxapp_not_installed, Toast.LENGTH_SHORT).show();
                 }
+                WeChatShareManager.ShareContentVideo shareContentVideo = mWeChatShareManager.getShareContentVideo(SDCARD_ROOT + "/kk.mp4");
+                mWeChatShareManager.shareByWeChat(shareContentVideo,WeChatShareManager.WECHAT_SHARE_TYPE_TALK);
+                dismiss();
                 break;
             case R.id.xiangqing_dialog_qq:
                 //分享到qq好友,模拟发送一次音乐
@@ -110,6 +112,7 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
                 qqBundle.putString(TencentShareManager.APP_NAME, "扬子智服头条");
                 mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QQ,
                         QQShare.SHARE_TO_QQ_TYPE_AUDIO, qqBundle);
+                dismiss();
                 break;
             case R.id.xiangqing_dialog_qqkongjian:
                 //发表一个说说到空间测试一下
@@ -126,34 +129,18 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
                 mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QZONE,
                         QzonePublish.PUBLISH_TO_QZONE_TYPE_PUBLISHMOOD, qzoneBundle);
                 Toast.makeText(mActivity, "qqkongjian--------->", Toast.LENGTH_SHORT).show();
-
+                dismiss();
                 break;
             case R.id.xiangqing_dialog_weibo:
-                //发表一个说说到空间测试一下
-//                Bundle qzoneBundle = new Bundle();
-//                qzoneBundle.putString(TencentShareManager.TITLE, "扬子智服社区头条测试");
-//                qzoneBundle.putString(TencentShareManager.SUMMARY, "扬子智服社区头条测试,请别赞我，我会骄傲的");
-//                String url01 = SDCARD_ROOT + "/logo.png";
-//                String url02 = SDCARD_ROOT + "/logo01.png";
-//                List<String> imageUrls = new ArrayList<>();
-//                imageUrls.add(url01);
-//                imageUrls.add(url02);
-//                qzoneBundle.putStringArrayList(TencentShareManager.IMAGE_URL_LIST, (ArrayList<String>) imageUrls);
-//                mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QZONE,
-//                        QzonePublish.PUBLISH_TO_QZONE_TYPE_PUBLISHMOOD, qzoneBundle);
-                Bundle qzoneBundle01 = new Bundle();
-                qzoneBundle01.putString(TencentShareManager.TITLE, "QQ图文分享");
-                qzoneBundle01.putString(TencentShareManager.TARGET_URL, "http://m.haiwainet.cn/ttc/3542657/2017/0306/content_30775194_1.html?tt_group_id=6394321712565174529");
-                qzoneBundle01.putString(TencentShareManager.SUMMARY, "概要");
-                ArrayList<String> imageUrlss = new ArrayList<>();
-                String url001 = SDCARD_ROOT + "/logo.png";
-                String url002 = SDCARD_ROOT + "/logo01.png";
-                imageUrlss.add(url001);
-                imageUrlss.add(url002);
-                qzoneBundle01.putStringArrayList(TencentShareManager.IMAGE_URL_LIST, imageUrlss);
-                mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QZONE,
-                        QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT, qzoneBundle01);
-                Toast.makeText(mActivity, "qqkongjian--------->", Toast.LENGTH_SHORT).show();
+                //分享一个文本到微博试一下
+                Bundle weiBoBundle = new Bundle();
+                weiBoBundle.putString(WeiBoShareManager.TITLE, "微博分享");
+                weiBoBundle.putString(WeiBoShareManager.TEXT, "这是正文");
+                String image_path = SDCARD_ROOT + "/logo.png";
+                weiBoBundle.putString(WeiBoShareManager.IMAGE_PATH, image_path);
+                mWeiBoShareManager.sendMessage(weiBoBundle, true, true, false, false, false, false);
+                Toast.makeText(mActivity, "weibo--------->", Toast.LENGTH_SHORT).show();
+                dismiss();
                 break;
             case R.id.xiangqing_dialog_shuaxin:
                 break;

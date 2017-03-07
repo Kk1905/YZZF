@@ -89,5 +89,21 @@
     <!--微博-->
     <string name="weibosdk_not_support_api_hint">微博客户端不支持 SDK 分享或微博客户端未安装或微博客户端是非官方版本。</string>
     <string name="weiboapp_not_installed">您还未安装微博客户端</string>
+    <string name="weibosdk_toast_share_success">分享成功</string>
+    <string name="weibosdk_toast_share_canceled">分享取消</string>
+    <string name="weibosdk_toast_share_failed">分享失败</string>
+
+
+    <!--微信-->
+    <string name="wxsdk_toast_share_success">分享成功</string>
+    <string name="wxsdk_toast_share_canceled">分享取消</string>
+    <string name="wxsdk_toast_share_failed">分享失败</string>
+    <string name="wxapp_not_installed">请先安装微信客户端</string>
+
+
+    <!--QQ-->
+    <string name="qqsdk_toast_share_success">分享成功</string>
+    <string name="qqsdk_toast_share_canceled">分享取消</string>
+    <string name="qqsdk_toast_share_failed">分享失败</string>
 
 </resources>

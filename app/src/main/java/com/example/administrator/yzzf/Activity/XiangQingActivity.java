@@ -55,16 +55,16 @@ import static android.R.attr.fragment;
  * Created by Administrator on 2017/2/19 0019.
  */
 
-public class XiangQingActivity extends AppCompatActivity implements View.OnClickListener,
-        IWXAPIEventHandler, IWeiboHandler.Response {
+public class XiangQingActivity extends AppCompatActivity implements View.OnClickListener, IWeiboHandler.Response {
+
     private BaseIUIListener mBaseIUIListener;
-    Show_FenXiang_Dialog mShow_fenXiang_dialog = null;
-    Show_XiangQing_Write_Pinglun_Dialog mShow_xiangQing_write_pinglun_dialog = null;
-    EditText editText;
-    Fragment fragment;
-    FragmentManager fm;
-    IWXAPI mIWXAPI;
-    IWeiboShareAPI mIWeiboShareAPI;
+    private Show_FenXiang_Dialog mShow_fenXiang_dialog = null;
+    private Show_XiangQing_Write_Pinglun_Dialog mShow_xiangQing_write_pinglun_dialog = null;
+    private EditText editText;
+    private Fragment fragment;
+    private FragmentManager fm;
+    private IWXAPI mIWXAPI;
+    private IWeiboShareAPI mIWeiboShareAPI;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -92,9 +92,7 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
         mIWXAPI = WeChatShareManager.getInstance(this).getIWXAPI();
         mIWeiboShareAPI = WeiBoShareManager.getWeiBoShareManager(this).getIWeiboShareAPI();
         if (savedInstanceState != null) {
-            //如果activity重启，保存微信返回的数据，如果操作成功，返回true，会回调onResp方法
-            mIWXAPI.handleIntent(getIntent(), this);
-            //一样的思路，保存微博返回的数据，如果操作成功，返回true，会回调onResponse方法
+            //保存微博返回的数据，如果操作成功，返回true，会回调onResponse方法
             mIWeiboShareAPI.handleWeiboResponse(getIntent(), this);
         }
         findViewById(R.id.pinglun_fenxiang).setOnClickListener(this);
@@ -134,11 +132,14 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        //QQ分享的返回响应处理,下面两种实现方法差不多
         Tencent.onActivityResultData(requestCode, requestCode, data, mBaseIUIListener);
-        if (resultCode == Constants.REQUEST_QQ_SHARE || resultCode == Constants.REQUEST_QZONE_SHARE ||
-                resultCode == Constants.REQUEST_OLD_SHARE) {
-            Tencent.handleResultData(data, mBaseIUIListener);
-        }
+//        if (resultCode == Constants.REQUEST_QQ_SHARE || resultCode == Constants.REQUEST_QZONE_SHARE ||
+//                resultCode == Constants.REQUEST_OLD_SHARE) {
+//            Tencent.handleResultData(data, mBaseIUIListener);
+//        }
+
+
     }
 
     @Override
@@ -146,32 +147,22 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
         super.onNewIntent(intent);
 
         setIntent(intent);
-        mIWXAPI.handleIntent(intent, this);//触发微信的请求与响应的回调
         mIWeiboShareAPI.handleWeiboResponse(intent, this);//触发微博的响应的回调
     }
 
-    @Override
-    public void onReq(BaseReq baseReq) {
-        //向微信发送请求会回调
-    }
-
-    @Override
-    public void onResp(BaseResp baseResp) {
-        //返回微信的响应
-    }
 
     @Override
     public void onResponse(BaseResponse baseResponse) {
         //返回微博的响应
         switch (baseResponse.errCode) {
             case WBConstants.ErrorCode.ERR_OK:
-
+                Toast.makeText(this, R.string.weibosdk_toast_share_success, Toast.LENGTH_LONG).show();
                 break;
             case WBConstants.ErrorCode.ERR_CANCEL:
-
+                Toast.makeText(this, R.string.weibosdk_toast_share_canceled, Toast.LENGTH_LONG).show();
                 break;
             case WBConstants.ErrorCode.ERR_FAIL:
-
+                Toast.makeText(this, getString(R.string.weibosdk_toast_share_failed) + " failMessage:" + baseResponse.errMsg, Toast.LENGTH_LONG).show();
                 break;
         }
     }

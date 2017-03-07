@@ -22,7 +22,7 @@ public class TencentShareManager {
 
     private static final String APP_ID = "1105945257";
 
-    public Tencent mTencent;
+    private Tencent mTencent;
     private Activity mActivity;
     private static final int SHARE_TO_QQ_TEXT = QQShare.SHARE_TO_QQ_TYPE_DEFAULT;//qq图文分享
     private static final int SHARE_TO_QQ_IMAGE = QQShare.SHARE_TO_QQ_TYPE_IMAGE;//qq纯图片分享

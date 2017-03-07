@@ -169,8 +169,8 @@ public class WeiBoShareManager {
      *
      * @see {@link #sendMultiMessage} 或者 {@link #sendSingleMessage}
      */
-    private void sendMessage(Bundle bundle, boolean hasText, boolean hasImage,
-                             boolean hasWebpage, boolean hasMusic, boolean hasVideo, boolean hasVoice) {
+    public void sendMessage(Bundle bundle, boolean hasText, boolean hasImage,
+                            boolean hasWebpage, boolean hasMusic, boolean hasVideo, boolean hasVoice) {
 
         if (mIWeiboShareAPI.isWeiboAppSupportAPI()) {
             int supportApi = mIWeiboShareAPI.getWeiboAppSupportAPI();
@@ -180,7 +180,7 @@ public class WeiBoShareManager {
                 sendSingleMessage(bundle, hasText, hasImage, hasWebpage, hasMusic, hasVideo/*, hasVoice*/);
             }
         } else {
-            Toast.makeText(mContext, R.string.weibosdk_demo_not_support_api_hint, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, R.string.weiboapp_not_installed, Toast.LENGTH_SHORT).show();
         }
     }
 
