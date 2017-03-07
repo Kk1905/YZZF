@@ -35,8 +35,18 @@ import com.example.administrator.yzzf.Tencent.TencentShareManager;
 import com.example.administrator.yzzf.Util.AndroidBug5497Workaround;
 import com.example.administrator.yzzf.Util.Show_FenXiang_Dialog;
 import com.example.administrator.yzzf.Util.Show_XiangQing_Write_Pinglun_Dialog;
+import com.example.administrator.yzzf.WeChat.WeChatShareManager;
+import com.example.administrator.yzzf.WeiBo.WeiBoShareManager;
+import com.sina.weibo.sdk.api.share.BaseResponse;
+import com.sina.weibo.sdk.api.share.IWeiboHandler;
+import com.sina.weibo.sdk.api.share.IWeiboShareAPI;
+import com.sina.weibo.sdk.constant.WBConstants;
 import com.tencent.connect.common.Constants;
 import com.tencent.connect.share.QQShare;
+import com.tencent.mm.opensdk.modelbase.BaseReq;
+import com.tencent.mm.opensdk.modelbase.BaseResp;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.tauth.Tencent;
 
 import static android.R.attr.fragment;
@@ -45,13 +55,16 @@ import static android.R.attr.fragment;
  * Created by Administrator on 2017/2/19 0019.
  */
 
-public class XiangQingActivity extends AppCompatActivity implements View.OnClickListener {
+public class XiangQingActivity extends AppCompatActivity implements View.OnClickListener,
+        IWXAPIEventHandler, IWeiboHandler.Response {
     private BaseIUIListener mBaseIUIListener;
     Show_FenXiang_Dialog mShow_fenXiang_dialog = null;
     Show_XiangQing_Write_Pinglun_Dialog mShow_xiangQing_write_pinglun_dialog = null;
     EditText editText;
     Fragment fragment;
     FragmentManager fm;
+    IWXAPI mIWXAPI;
+    IWeiboShareAPI mIWeiboShareAPI;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -76,8 +89,14 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
                 }
             }
         });
-
-
+        mIWXAPI = WeChatShareManager.getInstance(this).getIWXAPI();
+        mIWeiboShareAPI = WeiBoShareManager.getWeiBoShareManager(this).getIWeiboShareAPI();
+        if (savedInstanceState != null) {
+            //如果activity重启，保存微信返回的数据，如果操作成功，返回true，会回调onResp方法
+            mIWXAPI.handleIntent(getIntent(), this);
+            //一样的思路，保存微博返回的数据，如果操作成功，返回true，会回调onResponse方法
+            mIWeiboShareAPI.handleWeiboResponse(getIntent(), this);
+        }
         findViewById(R.id.pinglun_fenxiang).setOnClickListener(this);
         findViewById(R.id.xiangqing_rootview).setOnClickListener(this);
 
@@ -115,11 +134,45 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        Tencent.onActivityResultData(requestCode, requestCode, data, mBaseIUIListener);
+        Tencent.onActivityResultData(requestCode, requestCode, data, mBaseIUIListener);
         if (resultCode == Constants.REQUEST_QQ_SHARE || resultCode == Constants.REQUEST_QZONE_SHARE ||
                 resultCode == Constants.REQUEST_OLD_SHARE) {
             Tencent.handleResultData(data, mBaseIUIListener);
         }
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        setIntent(intent);
+        mIWXAPI.handleIntent(intent, this);//触发微信的请求与响应的回调
+        mIWeiboShareAPI.handleWeiboResponse(intent, this);//触发微博的响应的回调
+    }
+
+    @Override
+    public void onReq(BaseReq baseReq) {
+        //向微信发送请求会回调
+    }
+
+    @Override
+    public void onResp(BaseResp baseResp) {
+        //返回微信的响应
+    }
+
+    @Override
+    public void onResponse(BaseResponse baseResponse) {
+        //返回微博的响应
+        switch (baseResponse.errCode) {
+            case WBConstants.ErrorCode.ERR_OK:
+
+                break;
+            case WBConstants.ErrorCode.ERR_CANCEL:
+
+                break;
+            case WBConstants.ErrorCode.ERR_FAIL:
+
+                break;
+        }
+    }
 }

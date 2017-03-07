@@ -86,5 +86,8 @@
     <string name="shanchu_tiezi">你确定要删除所选帖子？</string>
     <string name="queding">确定</string>
 
+    <!--微博-->
+    <string name="weibosdk_not_support_api_hint">微博客户端不支持 SDK 分享或微博客户端未安装或微博客户端是非官方版本。</string>
+    <string name="weiboapp_not_installed">您还未安装微博客户端</string>
 
 </resources>

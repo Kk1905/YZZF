@@ -248,6 +248,10 @@ public class WeChatShareManager {
         mIWXAPI.registerApp(APP_ID);//完成注册
     }
 
+    public IWXAPI getIWXAPI() {
+        return mIWXAPI;
+    }
+
     //主方法，通过微信分享,传入分享内容和分享类型两个参数
     public void shareByWeChat(ShareContent shareContent, int shareType) {
         switch (shareContent.getShareWay()) {
@@ -298,7 +302,7 @@ public class WeChatShareManager {
         Bitmap thumbBitmap = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);//将原位图进行缩放成新的位图
         bitmap.recycle();//手动回收原位图
 
-        wxMediaMessage.thumbData = Util.bmpToByteArray(thumbBitmap,true);//设置缩略图
+        wxMediaMessage.thumbData = Util.bmpToByteArray(thumbBitmap, true);//设置缩略图
 
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = buildTransaction("pictureShare");
@@ -320,7 +324,7 @@ public class WeChatShareManager {
         if (bitmap == null) {
             Toast.makeText(mContext, "图片不能为空", Toast.LENGTH_SHORT).show();
         } else {
-            wxMediaMessage.thumbData = Util.bmpToByteArray(bitmap,true);
+            wxMediaMessage.thumbData = Util.bmpToByteArray(bitmap, true);
         }
 
         SendMessageToWX.Req req = new SendMessageToWX.Req();
@@ -344,14 +348,14 @@ public class WeChatShareManager {
          * 测试过程中会出现这种情况，会有个别手机会出现调不起微信客户端的情况。造成这种情况的原因是微信对缩略图的大小、title、description等参数的大小做了限制，所以有可能是大小超过了默认的范围。
          * 一般情况下缩略图超出比较常见。Title、description都是文本，一般不会超过。
          */
-        Bitmap thumbBitmap =  Bitmap.createScaledBitmap(thumb, THUMB_SIZE, THUMB_SIZE, true);
+        Bitmap thumbBitmap = Bitmap.createScaledBitmap(thumb, THUMB_SIZE, THUMB_SIZE, true);
         thumb.recycle();
-        wxMediaMessage.thumbData = Util.bmpToByteArray(thumbBitmap,true);
+        wxMediaMessage.thumbData = Util.bmpToByteArray(thumbBitmap, true);
 
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = buildTransaction("video");
         req.message = wxMediaMessage;
-        req.scene =  shareType;
+        req.scene = shareType;
         mIWXAPI.sendReq(req);
     }
 

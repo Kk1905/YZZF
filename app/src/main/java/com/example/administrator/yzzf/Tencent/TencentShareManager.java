@@ -59,7 +59,9 @@ public class TencentShareManager {
     }
 
     public Tencent getTencent() {
-        mTencent = Tencent.createInstance(APP_ID, mActivity);
+        if (mTencent == null) {
+            mTencent = Tencent.createInstance(APP_ID, mActivity);
+        }
         return mTencent;
     }
 
