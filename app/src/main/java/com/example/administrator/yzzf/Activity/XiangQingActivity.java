@@ -115,9 +115,10 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Tencent.onActivityResultData(requestCode, requestCode, data, mBaseIUIListener);
-        if (requestCode == Constants.REQUEST_API) {
-
+//        Tencent.onActivityResultData(requestCode, requestCode, data, mBaseIUIListener);
+        if (resultCode == Constants.REQUEST_QQ_SHARE || resultCode == Constants.REQUEST_QZONE_SHARE ||
+                resultCode == Constants.REQUEST_OLD_SHARE) {
+            Tencent.handleResultData(data, mBaseIUIListener);
         }
     }
 

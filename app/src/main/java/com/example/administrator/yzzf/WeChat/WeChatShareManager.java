@@ -22,7 +22,7 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 public class WeChatShareManager {
     private static final int THUMB_SIZE = 150;
-    private static final String APP_ID = "wx4b24627995e61442";
+    private static final String APP_ID = "wxa9114b008700020e";
 
     public static final int WECHAT_SHARE_WAY_TEXT = 0;//文字
     public static final int WECHAT_SHARE_WAY_PICTURE = 1;//图片

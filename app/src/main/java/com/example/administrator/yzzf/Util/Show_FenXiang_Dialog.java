@@ -3,6 +3,7 @@ package com.example.administrator.yzzf.Util;
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,13 +14,22 @@ import com.example.administrator.yzzf.Tencent.BaseIUIListener;
 import com.example.administrator.yzzf.Tencent.TencentShareManager;
 import com.example.administrator.yzzf.WeChat.WeChatShareManager;
 import com.tencent.connect.share.QQShare;
+import com.tencent.connect.share.QzonePublish;
+import com.tencent.connect.share.QzoneShare;
 import com.tencent.tauth.Tencent;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.example.administrator.yzzf.R.string.qq;
 
 /**
  * Created by Administrator on 2017/2/27 0027.
  */
 
 public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClickListener {
+    private static final String SDCARD_ROOT = Environment.getExternalStorageDirectory().getAbsolutePath();//内存卡的绝对路径
     private WeChatShareManager mWeChatShareManager;
     private TencentShareManager mTencentShareManager;
     private Tencent mTencent;
@@ -40,6 +50,7 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
         mAlertDialog.findViewById(R.id.xiangqing_dialog_weixin_pengyouquan).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_weixin).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_qq).setOnClickListener(this);
+        mAlertDialog.findViewById(R.id.xiangqing_dialog_qqkongjian).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_weixin_pengyouquan).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_weibo).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_shuaxin).setOnClickListener(this);
@@ -83,25 +94,66 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
             case R.id.xiangqing_dialog_weixin:
                 if (isWeChatAvaliable()) {
                     Toast.makeText(mActivity, "请先安装微信", Toast.LENGTH_SHORT).show();
-                }break;
+                }
+                break;
             case R.id.xiangqing_dialog_qq:
                 //分享到qq好友,模拟发送一次音乐
                 Bundle qqBundle = new Bundle();
                 //标题
-                qqBundle.putString(TencentShareManager.TITLE, "666");
+                qqBundle.putString(TencentShareManager.TITLE, "Title:666");
                 //music_url
                 qqBundle.putString(TencentShareManager.AUDIO_URL, "http://staff2.ustc.edu.cn/~wdw/softdown/index.asp/0042515_05.ANDY.mp3");
                 //target_url
                 qqBundle.putString(TencentShareManager.TARGET_URL, "http://staff2.ustc.edu.cn/~wdw/softdown/index.asp/0042515_05.ANDY.mp3");
                 //概要
-                qqBundle.putString(TencentShareManager.SUMMARY, "这么长写毛啊");
+                qqBundle.putString(TencentShareManager.SUMMARY, "summary:这么长写毛啊");
                 qqBundle.putString(TencentShareManager.APP_NAME, "扬子智服头条");
                 mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QQ,
                         QQShare.SHARE_TO_QQ_TYPE_AUDIO, qqBundle);
                 break;
             case R.id.xiangqing_dialog_qqkongjian:
+                //发表一个说说到空间测试一下
+                Bundle qzoneBundle = new Bundle();
+                qzoneBundle.putString(TencentShareManager.TITLE, "扬子智服社区头条测试");
+                qzoneBundle.putString(TencentShareManager.SUMMARY, "扬子智服社区头条测试,请别赞我，我会骄傲的");
+                String url01 = SDCARD_ROOT + "/logo.png";
+                String url02 = SDCARD_ROOT + "/kk.mp4";
+//                qzoneBundle.putString(TencentShareManager.VIDEO_PATH, url02);
+                ArrayList<String> imageUrls = new ArrayList<>();
+                imageUrls.add(url01);
+                qzoneBundle.putStringArrayList(TencentShareManager.IMAGE_URL_LIST, imageUrls);
+//                qzoneBundle.putString(TencentShareManager.TARGET_URL, "http://blog.csdn.net/pdskyzcc1/article/details/51881693");
+                mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QZONE,
+                        QzonePublish.PUBLISH_TO_QZONE_TYPE_PUBLISHMOOD, qzoneBundle);
+                Toast.makeText(mActivity, "qqkongjian--------->", Toast.LENGTH_SHORT).show();
+
                 break;
             case R.id.xiangqing_dialog_weibo:
+                //发表一个说说到空间测试一下
+//                Bundle qzoneBundle = new Bundle();
+//                qzoneBundle.putString(TencentShareManager.TITLE, "扬子智服社区头条测试");
+//                qzoneBundle.putString(TencentShareManager.SUMMARY, "扬子智服社区头条测试,请别赞我，我会骄傲的");
+//                String url01 = SDCARD_ROOT + "/logo.png";
+//                String url02 = SDCARD_ROOT + "/logo01.png";
+//                List<String> imageUrls = new ArrayList<>();
+//                imageUrls.add(url01);
+//                imageUrls.add(url02);
+//                qzoneBundle.putStringArrayList(TencentShareManager.IMAGE_URL_LIST, (ArrayList<String>) imageUrls);
+//                mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QZONE,
+//                        QzonePublish.PUBLISH_TO_QZONE_TYPE_PUBLISHMOOD, qzoneBundle);
+                Bundle qzoneBundle01 = new Bundle();
+                qzoneBundle01.putString(TencentShareManager.TITLE, "QQ图文分享");
+                qzoneBundle01.putString(TencentShareManager.TARGET_URL, "http://m.haiwainet.cn/ttc/3542657/2017/0306/content_30775194_1.html?tt_group_id=6394321712565174529");
+                qzoneBundle01.putString(TencentShareManager.SUMMARY, "概要");
+                ArrayList<String> imageUrlss = new ArrayList<>();
+                String url001 = SDCARD_ROOT + "/logo.png";
+                String url002 = SDCARD_ROOT + "/logo01.png";
+                imageUrlss.add(url001);
+                imageUrlss.add(url002);
+                qzoneBundle01.putStringArrayList(TencentShareManager.IMAGE_URL_LIST, imageUrlss);
+                mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QZONE,
+                        QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT, qzoneBundle01);
+                Toast.makeText(mActivity, "qqkongjian--------->", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.xiangqing_dialog_shuaxin:
                 break;

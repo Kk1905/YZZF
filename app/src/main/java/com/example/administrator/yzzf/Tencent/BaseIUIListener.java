@@ -1,5 +1,8 @@
 package com.example.administrator.yzzf.Tencent;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.UiError;
 
@@ -8,10 +11,17 @@ import com.tencent.tauth.UiError;
  */
 
 public class BaseIUIListener implements IUiListener {
+    Context mContext;
+
+    public BaseIUIListener(Context context) {
+        super();
+        mContext = context;
+    }
+
     @Override
     public void onComplete(Object o) {
         //操作成功
-
+        Toast.makeText(mContext, "分享完成", Toast.LENGTH_LONG).show();
     }
 
     @Override
