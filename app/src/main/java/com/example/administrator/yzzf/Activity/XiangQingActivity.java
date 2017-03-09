@@ -1,55 +1,29 @@
 package com.example.administrator.yzzf.Activity;
 
-import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
-import android.view.Display;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.administrator.yzzf.CustomView.Custom_RMPL_XiangQing;
 import com.example.administrator.yzzf.Fragment.XiangQing_RMPL_Fragment;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Tencent.BaseIUIListener;
 import com.example.administrator.yzzf.Tencent.TencentShareManager;
-import com.example.administrator.yzzf.Util.AndroidBug5497Workaround;
-import com.example.administrator.yzzf.Util.Show_FenXiang_Dialog;
-import com.example.administrator.yzzf.Util.Show_XiangQing_Write_Pinglun_Dialog;
+import com.example.administrator.yzzf.ShowDialog.Show_FenXiang_Dialog;
+import com.example.administrator.yzzf.ShowDialog.Show_XiangQing_Write_Pinglun_Dialog;
 import com.example.administrator.yzzf.WeChat.WeChatShareManager;
 import com.example.administrator.yzzf.WeiBo.WeiBoShareManager;
 import com.sina.weibo.sdk.api.share.BaseResponse;
 import com.sina.weibo.sdk.api.share.IWeiboHandler;
 import com.sina.weibo.sdk.api.share.IWeiboShareAPI;
 import com.sina.weibo.sdk.constant.WBConstants;
-import com.tencent.connect.common.Constants;
-import com.tencent.connect.share.QQShare;
-import com.tencent.mm.opensdk.modelbase.BaseReq;
-import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
-import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.tauth.Tencent;
-
-import static android.R.attr.fragment;
 
 /**
  * Created by Administrator on 2017/2/19 0019.

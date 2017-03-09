@@ -14,10 +14,4 @@
         android:textColor="@color/tablayout_text_selector"
         android:textSize="18dp"/>
 
-    <!--<TextView-->
-        <!--android:id="@+id/custom_item_tablayout_fengexian"-->
-        <!--android:layout_width="1dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:layout_gravity="right|center_vertical"-->
-        <!--android:background="@color/main_background"/>-->
 </LinearLayout>

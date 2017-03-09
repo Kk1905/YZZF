@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.example.administrator.yzzf.Activity.HaoYouZiLiaoActivity;
 import com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX;
 import com.example.administrator.yzzf.R;
-import com.example.administrator.yzzf.Util.Show_ZNX_Xiexin_Dialog;
+import com.example.administrator.yzzf.ShowDialog.Show_ZNX_Xiexin_Dialog;
 
 /**
  * Created by Administrator on 2017/3/2 0002.

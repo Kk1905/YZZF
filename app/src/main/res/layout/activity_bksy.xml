@@ -80,8 +80,7 @@
         android:id="@+id/bksy_tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabBackground="@color/toolbar_background"
-        app:tabIndicatorColor="@color/yangzi"/>
+        style="@style/MainTabLayout"/>
 
     <com.example.administrator.yzzf.CustomView.NoScrollViewPager
         android:id="@+id/bksy_fragment_container"

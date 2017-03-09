@@ -59,10 +59,8 @@
     </style>
 
     <!--自定义TabLyout的样式-->
-    <!--<style name="MainTabLayout" parent="Base.Widget.Design.TabLayout">-->
-    <!--<item name="tabIndicatorColor">@color/yangzi</item>-->
-    <!--<item name="tabSelectedTextColor">@color/yangzi</item>-->
-    <!--<item name="tabBackground">@color/toolbar_background</item>-->
-    <!--&lt;!&ndash;<item name="tabTextColor">@color/colorAccent</item>&ndash;&gt;-->
-    <!--</style>-->
+    <style name="MainTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/yangzi</item>
+
+    </style>
 </resources>

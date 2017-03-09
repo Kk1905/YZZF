@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<merge>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/toolbar_background"
@@ -88,7 +87,6 @@
                 android:src="@drawable/user"/>
 
             <TextView
-                android:textColor="@color/daohang"
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -96,7 +94,8 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:gravity="left|center_vertical"
-                android:text="用户名"/>
+                android:text="用户名"
+                android:textColor="@color/daohang"/>
 
             <TextView
                 android:layout_width="1dp"
@@ -113,11 +112,11 @@
                 android:src="@drawable/zhuye_eye"/>
 
             <TextView
-                android:textColor="@color/daohang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1233"/>
+                android:text="1233"
+                android:textColor="@color/daohang"/>
 
             <TextView
                 android:layout_width="1dp"
@@ -137,12 +136,12 @@
                 android:src="@drawable/zhuye_liuyan"/>
 
             <TextView
-                android:textColor="@color/daohang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                android:text="20"/>
+                android:text="20"
+                android:textColor="@color/daohang"/>
 
             <TextView
                 android:layout_width="1dp"
@@ -166,13 +165,13 @@
                     android:src="@drawable/xiangqing_fenxiang"/>
 
                 <TextView
-                    android:textColor="@color/daohang"
                     android:id="@+id/share_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center_vertical"
-                    android:text="@string/share"/>
+                    android:text="@string/share"
+                    android:textColor="@color/daohang"/>
             </LinearLayout>
 
         </LinearLayout>

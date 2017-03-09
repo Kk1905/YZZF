@@ -28,6 +28,9 @@ android {
             signingConfig signingConfigs.likeke
         }
     }
+    lintOptions {
+        disable 'MissingTranslation'
+    }
 }
 
 dependencies {
@@ -45,4 +48,8 @@ dependencies {
     compile project(':weiboSDK')
     compile files('libs/mta-sdk-1.6.2.jar')
     compile files('libs/open_sdk_r5781_lite.jar')
+    compile project(':viewPagerIndicatorLibrary')
+    compile project(':gestureimageview')
+    compile project(':imageloadlibrary')
+    compile project(':XListView')
 }

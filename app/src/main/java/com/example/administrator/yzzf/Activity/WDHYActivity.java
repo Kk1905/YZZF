@@ -1,6 +1,5 @@
 package com.example.administrator.yzzf.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,11 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckedTextView;
 
-import com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX;
 import com.example.administrator.yzzf.Fragment.WDHY_WDGZ_Fragment;
 import com.example.administrator.yzzf.Fragment.WDHY_WDHY_Fragment;
 import com.example.administrator.yzzf.R;
-import com.example.administrator.yzzf.Util.Show_ZNX_Xiexin_Dialog;
 
 /**
  * Created by Administrator on 2017/2/24 0024.

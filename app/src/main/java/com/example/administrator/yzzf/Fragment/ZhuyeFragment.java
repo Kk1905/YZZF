@@ -1,30 +1,37 @@
 package com.example.administrator.yzzf.Fragment;
 
-import android.app.Activity;
+
 import android.content.Intent;
-import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ScrollView;
+
 
 import com.example.administrator.yzzf.Activity.BKSYActivity;
 import com.example.administrator.yzzf.Activity.MeiRiJingXuanActivity;
 import com.example.administrator.yzzf.Activity.XiangQingActivity;
+import com.example.administrator.yzzf.Adapter.NewsItemAdapter;
+import com.example.administrator.yzzf.Bean.NewsItemBean;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.Json2NewsUtil;
+import com.example.administrator.yzzf.Util.ListViewHeightUtil;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+import java.util.ArrayList;
+
+
+import me.maxwin.view.XListView;
+
 
 /**
  * Created by Administrator on 2017/2/19 0019.
@@ -33,10 +40,12 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 public class ZhuyeFragment extends BaseFragment implements View.OnClickListener {
 
     PullToRefreshScrollView mPullToRefreshScrollView;
-    View xinwenView;
     View meirijingxuanView;
     ImageView huatiTiaoZhuanImageView;
     View tiaozhuanXiangQingView;
+    ListView newsItemListView;
+    NewsItemAdapter mAdapter;
+    ArrayList<NewsItemBean> mDatas;
 
     @Nullable
     @Override
@@ -45,13 +54,22 @@ public class ZhuyeFragment extends BaseFragment implements View.OnClickListener 
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_zhuye, container, false);
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_zhuye);
 
+        mDatas = Json2NewsUtil.test(mAppCompatActivity);
+
+        mAdapter = new NewsItemAdapter(mAppCompatActivity, mDatas);
         //在这里统一获取view对象
-        xinwenView = view.findViewById(R.id.item_recyclerview);
+
         meirijingxuanView = view.findViewById(R.id.meiri_jingxuan_imageview);
         huatiTiaoZhuanImageView = (ImageView) view.findViewById(R.id.htjl_tiaozhuan_imageview);
         tiaozhuanXiangQingView = view.findViewById(R.id.xiangqing_tiaozhuan_zhuye);
+        newsItemListView = (ListView) view.findViewById(R.id.newsItem_listView);
+        newsItemListView.setAdapter(mAdapter);
+        //手动为listView设置高度，因为和ScrollView嵌套，导致了一些问题，listView无法准确计算高度
+        ListViewHeightUtil.setListViewHeightBasedOnChildren(newsItemListView);
+
+
         //在这里统一对view对象设置监听事件
-        xinwenView.setOnClickListener(this);
+//        xinwenView.setOnClickListener(this);
         meirijingxuanView.setOnClickListener(this);
         huatiTiaoZhuanImageView.setOnClickListener(this);
         tiaozhuanXiangQingView.setOnClickListener(this);
