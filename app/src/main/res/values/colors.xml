@@ -12,4 +12,7 @@
     <color name="qianlan">#c4e7ef</color>
     <color name="b01">#f9f5f5</color>
     <color name="second_background">#d7cece</color>
+    <color name="login01">#ece4e4</color>
+    <color name="login02">#d1c9c9</color>
+    <color name="tiaokuan">#f1aa53</color>
 </resources>

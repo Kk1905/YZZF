@@ -48,13 +48,13 @@
                 android:paddingTop="10dp">
 
                 <include
-                    layout="@layout/item_news"/>
+                    layout="@layout/item_zhuye_news"/>
 
                 <include
-                    layout="@layout/item_news"/>
+                    layout="@layout/item_zhuye_news"/>
 
                 <include
-                    layout="@layout/item_news"/>
+                    layout="@layout/item_zhuye_news"/>
             </LinearLayout>
 
             <LinearLayout
@@ -93,13 +93,13 @@
                 android:paddingTop="10dp">
 
                 <include
-                    layout="@layout/item_news"/>
+                    layout="@layout/item_zhuye_news"/>
 
                 <include
-                    layout="@layout/item_news"/>
+                    layout="@layout/item_zhuye_news"/>
 
                 <include
-                    layout="@layout/item_news"/>
+                    layout="@layout/item_zhuye_news"/>
             </LinearLayout>
 
             <LinearLayout
@@ -138,13 +138,13 @@
                 android:paddingTop="10dp">
 
                 <include
-                    layout="@layout/item_news"/>
+                    layout="@layout/item_zhuye_news"/>
 
                 <include
-                    layout="@layout/item_news"/>
+                    layout="@layout/item_zhuye_news"/>
 
                 <include
-                    layout="@layout/item_news"/>
+                    layout="@layout/item_zhuye_news"/>
             </LinearLayout>
         </LinearLayout>
 

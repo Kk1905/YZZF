@@ -1,6 +1,5 @@
 package com.example.administrator.yzzf.Bean;
 
-import static android.R.attr.type;
 
 /**
  * Created by Administrator on 2017/3/9 0009.
@@ -14,9 +13,10 @@ public class NewsItemBean {
     private String date;
     private String num;
     private String title;
+    private String type;
 
-    public void setId(int id) {
-        this.id = id;
+    public void setType(String from) {
+        this.type = type;
     }
 
     public void setNewsType(int newsType) {
@@ -69,6 +69,10 @@ public class NewsItemBean {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public String toString() {

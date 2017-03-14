@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">社区头条</string>
 
+    <string name="zhanghao">账号</string>
+    <string name="mima">密码</string>
+    <string name="zhuce">注册新的账号</string>
+    <string name="zhuce_toolbar">注册</string>
+    <string name="zhaohuimima">忘记密码？</string>
+    <string name="zhaohui">找回密码</string>
+    <string name="shouji">手机号</string>
+    <string name="yanzhengma">验证码</string>
+    <string name="chongshemima">重设密码</string>
+    <string name="xinmima">新密码</string>
+    <string name="tongyi">注册即表示您同意</string>
+    <string name="tiaokuan">《用户使用条款》</string>
     <string name="dingwei">定位</string>
     <string name="login">登录</string>
     <string name="xingtong">系统发布</string>

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_zhuye_foot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_background"
+    android:orientation="vertical"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:paddingTop="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -181,5 +190,5 @@
             android:layout_height="1dp"
             android:background="@color/main_background"/>
     </LinearLayout>
-</merge>
+</LinearLayout>
 

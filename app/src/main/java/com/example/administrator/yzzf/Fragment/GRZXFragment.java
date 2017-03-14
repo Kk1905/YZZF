@@ -1,5 +1,6 @@
 package com.example.administrator.yzzf.Fragment;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,10 +17,13 @@ import com.example.administrator.yzzf.Activity.WDHYActivity;
 import com.example.administrator.yzzf.Activity.WDTZActivity;
 import com.example.administrator.yzzf.Activity.WDZLActivity;
 import com.example.administrator.yzzf.Activity.XTXXActivity;
+import com.example.administrator.yzzf.Activity.XiangQingActivity;
 import com.example.administrator.yzzf.Activity.YSSZActivity;
 import com.example.administrator.yzzf.Activity.ZNXActivity;
 import com.example.administrator.yzzf.CustomView.CustomGRZXItem;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.Constant;
+import com.example.administrator.yzzf.Util.FragmentFactory;
 
 /**
  * Created by Administrator on 2017/2/23 0023.
@@ -36,11 +40,13 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_grzx);
         mAppCompatActivity.setSupportActionBar(mToolbar);
 
+
         ActionBar actionBar = mAppCompatActivity.getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
+
             actionBar.setDisplayShowTitleEnabled(false);
         }
+
         //统一找view对象
         wdzl = (CustomGRZXItem) view.findViewById(R.id.my_ziliao);
         wdhy = (CustomGRZXItem) view.findViewById(R.id.my_friends);
@@ -65,19 +71,7 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-
-            case android.R.id.home:
-                Log.d("BanKuaiFragment", "------------------>home selected");
-                mAppCompatActivity.getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, new ZhuyeFragment())
-                        .commit();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        return super.onOptionsItemSelected(item);
 
     }
 
@@ -85,13 +79,14 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
 
         switch (v.getId()) {
+
             case R.id.my_ziliao:
 
                 Intent intent = new Intent(mAppCompatActivity, WDZLActivity.class);
                 mAppCompatActivity.startActivity(intent);
                 break;
             case R.id.my_friends:
-//                Toast.makeText(getContext(),"my_friend on clicked",Toast.LENGTH_SHORT).show();
+
                 Intent intent01 = new Intent(mAppCompatActivity, WDHYActivity.class);
                 mAppCompatActivity.startActivity(intent01);
                 break;
@@ -111,6 +106,7 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
                 Intent intent05 = new Intent(mAppCompatActivity, XTXXActivity.class);
                 mAppCompatActivity.startActivity(intent05);
                 break;
+
         }
     }
 }

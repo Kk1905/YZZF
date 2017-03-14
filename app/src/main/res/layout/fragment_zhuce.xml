@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_login"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/login02"/>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login01"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="20dp">
+
+
+        <EditText
+            android:id="@+id/edit_text_shoujihao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_shape"
+            android:hint="@string/shouji"
+            android:padding="18dp"
+            android:textSize="@dimen/login"/>
+
+        <EditText
+            android:id="@+id/edit_text_yanzhengma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/login_shape"
+            android:hint="@string/yanzhengma"
+            android:padding="18dp"
+            android:textSize="@dimen/login"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tongyi"
+                android:textSize="@dimen/toolbar_fanhui_size"/>
+
+            <TextView
+                android:id="@+id/text_view_tiaokuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/tiaokuan"
+                android:textColor="@color/tiaokuan"
+                android:textSize="@dimen/toolbar_fanhui_size"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image_view_tijiao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tijiao"/>
+    </LinearLayout>
+</LinearLayout>
+
+
