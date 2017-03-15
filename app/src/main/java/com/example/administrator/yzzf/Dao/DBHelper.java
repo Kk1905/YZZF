@@ -41,6 +41,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "userName text," +
                 "viewNum text," +
                 "pinglunNum text)";
+
         Toast.makeText(mContext, "db_create", Toast.LENGTH_SHORT).show();
         db.execSQL(sql);
 

@@ -9,4 +9,5 @@ public interface Constant {
     String YZZF_APP = "yzzf_app";
     String ZY_FRAGMENT_TYPE = "zhueye_fragment_type";
     String PREVIOUS_FRAGMENT_FLAG = "previous_fragment_flag";
+
 }

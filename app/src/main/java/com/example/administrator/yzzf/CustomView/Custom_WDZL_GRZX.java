@@ -44,7 +44,7 @@ public class Custom_WDZL_GRZX extends LinearLayout{
     }
 
     public void setMessage(String message) {
-        mTextView03.setText(message);
+        mTextView02.setText(message);
     }
 
     public Custom_WDZL_GRZX(Context context, AttributeSet attrs) {
@@ -74,8 +74,8 @@ public class Custom_WDZL_GRZX extends LinearLayout{
         }
         typedArray.recycle();
     }
-    public void setOnClickListener(OnClickListener listener) {
-        mLinearLayout.setOnClickListener(listener);
-    }
+//    public void setOnClickListener(OnClickListener listener) {
+//        mLinearLayout.setOnClickListener(listener);
+//    }
 
 }

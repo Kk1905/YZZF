@@ -98,7 +98,6 @@
             android:id="@+id/custom_wdzl_mimafuwu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            custom:text01="@string/mimafuwu"
-            custom:text02="****"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
+            custom:text01="@string/mimafuwu"></com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX>
     </LinearLayout>
 </LinearLayout>

@@ -26,7 +26,6 @@ public class StreamUtil {
                 bos.flush();
             }
             result = new String(bos.toByteArray(), "utf-8");
-            result = bos.toString();
             bos.close();
         } catch (IOException e) {
             e.printStackTrace();

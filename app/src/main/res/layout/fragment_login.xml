@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/login_shape"
             android:hint="@string/zhanghao"
+            android:maxLines="1"
             android:padding="18dp"
             android:textSize="@dimen/login"/>
 
@@ -42,6 +43,7 @@
             android:background="@drawable/login_shape"
             android:hint="@string/mima"
             android:inputType="textPassword"
+            android:maxLines="1"
             android:padding="18dp"
             android:textSize="@dimen/login"/>
 

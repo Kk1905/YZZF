@@ -37,7 +37,7 @@ public class UserMessageBean {
         return birthday;
     }
 
-    public int getDistrictId() {
+    public double getDistrictId() {
         return districtId;
     }
 

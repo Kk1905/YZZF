@@ -15,7 +15,11 @@
     <dimen name="checked_textView">16sp</dimen>
     <dimen name="zhiding_title">16sp</dimen>
     <dimen name="fatie">16sp</dimen>
+
+    <!--登陆界面-->
     <dimen name="login">18sp</dimen>
+    <dimen name="huoqu">14sp</dimen>
+
     <!--我的资料item-->
     <dimen name="wdzl01">17sp</dimen>
     <dimen name="wdzl02">16dp</dimen>

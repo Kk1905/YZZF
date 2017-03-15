@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         bottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.zhuye, R.string.zheye))
                 .addItem(new BottomNavigationItem(R.drawable.zhuye_bankuai, R.string.bankuai))
-                .addItem(new BottomNavigationItem(R.mipmap.yangzi_daohang, R.string.yangzi_daohang).setInActiveColorResource(R.color.yangzi))
                 .addItem(new BottomNavigationItem(R.drawable.gexing, R.string.gexing))
                 .addItem(new BottomNavigationItem(R.drawable.wode, R.string.wode))
                 .setActiveColor(R.color.colorAccent)
@@ -85,9 +84,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     //初始化viewPager
     private void initViewPager() {
         mViewPager = (NoScrollViewPager) findViewById(R.id.main_viewPager);
-        mViewPager.setNoScroll(true);
         mFragments.add(new ZhuyeFragment());
-        mFragments.add(new BanKuaiFragment());
         mFragments.add(new BanKuaiFragment());
         mFragments.add(new GXQMFragment());
         mFragments.add(new GRZXFragment());

@@ -31,18 +31,40 @@
             android:layout_height="wrap_content"
             android:background="@drawable/login_shape"
             android:hint="@string/shouji"
+            android:maxLength="11"
+            android:maxLines="1"
             android:padding="18dp"
             android:textSize="@dimen/login"/>
 
-        <EditText
-            android:id="@+id/edit_text_yanzhengma"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/login_shape"
-            android:hint="@string/yanzhengma"
-            android:padding="18dp"
-            android:textSize="@dimen/login"/>
+            android:padding="18dp">
+
+            <EditText
+                android:id="@+id/edit_text_yanzhengma"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/yanzhengma"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:textSize="@dimen/login"/>
+
+            <TextView
+                android:id="@+id/zhaohui_get_yanzhengma"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="bottom"
+                android:text="@string/huoquyanzhengma"
+                android:textColor="@color/tiaokuan"
+                android:textSize="@dimen/huoqu"/>
+        </LinearLayout>
 
 
         <ImageView

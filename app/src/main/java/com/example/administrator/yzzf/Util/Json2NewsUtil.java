@@ -22,7 +22,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
+
+import static com.sina.weibo.sdk.openapi.legacy.AccountAPI.CAPITAL.J;
 
 /**
  * 利用StreamUtil从网上获取json数据，然后解析json数据的工具类
@@ -119,7 +122,7 @@ public class Json2NewsUtil {
     }
 
     //获取用户信息
-    public static ArrayList<UserMessageBean> getUserMessage(Context context, final String urlString) throws Exception {
+    public static ArrayList<UserMessageBean> getUserMessages(Context context, final String urlString) {
         final ArrayList<UserMessageBean> userMessages = new ArrayList<>();
         //用FutureTask来完成网络请求的异步，HttpUrlConnection完成具体的网络请求
         FutureTask<ArrayList<UserMessageBean>> futureTask = new FutureTask<>(new Callable<ArrayList<UserMessageBean>>() {
@@ -146,12 +149,8 @@ public class Json2NewsUtil {
                         userMessage.setMobile(users_json.getString("mobile"));
                         userMessage.setDistrictId(users_json.getInt("districtid"));
                         userMessage.setLoginPWD(users_json.getString("loginpwd"));
-
                         userMessages.add(userMessage);
                     }
-                    //获取到了新的数据，就删除手机上旧的数据
-                    //TODO
-
                     is.close();//关闭输入流
                     connection.disconnect();
                     return userMessages;
@@ -160,44 +159,12 @@ public class Json2NewsUtil {
             }
         });
         new Thread(futureTask).start();//开启子线程执行futureTask，FutureTask本质是一个Runnable
-        return futureTask.get();
-    }
-    public static ArrayList<UserMessageBean> test02(Context context) {
-        String url = Environment.getExternalStorageDirectory().getAbsolutePath() + "/user.json";
-        File file = new File(url);
-        String datas = "";
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                datas = datas + line;
-            }
-            bufferedReader.close();
-        } catch (FileNotFoundException e) {
+            return futureTask.get();
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            return null;
         }
-        ArrayList<UserMessageBean> userMessages = new ArrayList<>();
-        try {
-            JSONArray jsonArray = new JSONArray(datas);
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject users_json = jsonArray.getJSONObject(i);
-                UserMessageBean userMessage = new UserMessageBean();
-                userMessage.setRealName(users_json.getString("realname"));
-                userMessage.setNickName((users_json.getString("nickname")));
-                userMessage.setSex(users_json.getString("sex"));
-                userMessage.setDiplayBirthday(users_json.getString("displayBirthday"));
-                userMessage.setAddress(users_json.getString("address"));
-                userMessage.setMobile(users_json.getString("mobile"));
-                userMessage.setDistrictId(users_json.getInt("districtid"));
-                userMessage.setLoginPWD(users_json.getString("loginpwd"));
+    }
 
-                userMessages.add(userMessage);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return userMessages;
-    }
 }
