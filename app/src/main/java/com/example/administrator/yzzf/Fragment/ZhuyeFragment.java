@@ -156,7 +156,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
 
             switch (integer) {
                 case NON_NETWORK:
-                    Toast.makeText(mAppCompatActivity, "没有网络链接", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mAppCompatActivity, "没有网络连接", Toast.LENGTH_SHORT).show();
                     mAdapter.setDatas(mDatas);
                     mAdapter.notifyDataSetChanged();
                     break;
@@ -176,7 +176,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
 
     //下拉刷新数据
     private Integer refreshData() {
-        if (NetUtil.checkNet(mAppCompatActivity)) {
+//        if (NetUtil.checkNet(mAppCompatActivity)) {
             hasNetWork = true;//有网络
 
             isDataFromNet = true;//此时设置数据来自网络
@@ -204,15 +204,16 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
                 //返回服务器错误的flag
                 return ERROR_SERVICE;
             }
-        } else {
-            //没有网络的情况下
-            hasNetWork = false;
-            isDataFromNet = false;
-            //TODO 从数据库加载数据显示
-            mDatas = mNewsItemDao.list();
-            //返回没有网络的flag
-            return NON_NETWORK;
-        }
+//        }
+//        else {
+//            //没有网络的情况下
+//            hasNetWork = false;
+//            isDataFromNet = false;
+//            //TODO 从数据库加载数据显示
+//            mDatas = mNewsItemDao.list();
+//            //返回没有网络的flag
+//            return NON_NETWORK;
+//        }
         return -1;
     }
 

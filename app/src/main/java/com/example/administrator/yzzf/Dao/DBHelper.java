@@ -3,6 +3,7 @@ package com.example.administrator.yzzf.Dao;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -15,7 +16,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
 
-        super(context, DB_NAME, null, 3);
+        super(context, DB_NAME, null, 8);
         mContext = context;
     }
 
@@ -42,15 +43,33 @@ public class DBHelper extends SQLiteOpenHelper {
                 "viewNum text," +
                 "pinglunNum text)";
 
-        Toast.makeText(mContext, "db_create", Toast.LENGTH_SHORT).show();
+        //创建用户信息的表
+        String sql2 = "create table tb_UserMessage(" +
+                "_id integer primary key autoincrement," +
+                "address text," +
+                "flag integer," +
+                "loginpwd text," +
+                "realname text," +
+                "levels integer," +
+                "displayBirthday text," +
+                "displayAdddate text," +
+                "nickname text," +
+                "money real," +
+                "sex text," +
+                "score real," +
+                "mobile text," +
+                "districtid integer)";
         db.execSQL(sql);
-
+        db.execSQL(sql2);
+        Log.e("kkkboy", "创建数据库");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //TODO 数据库的升级工作
+
         db.execSQL("drop table if exist tb_NewsItem");
+        db.execSQL("drop table if exist tb_UserMessage");
         onCreate(db);
+        Log.e("kkkboy", "更新数据库");
     }
 }

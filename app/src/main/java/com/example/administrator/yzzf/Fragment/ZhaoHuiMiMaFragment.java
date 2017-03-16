@@ -49,7 +49,7 @@ public class ZhaoHuiMiMaFragment extends BaseFragment implements View.OnClickLis
         TextView title = (TextView) view.findViewById(R.id.login_toolbar_title);
         title.setText(R.string.zhaohui);
         view.findViewById(R.id.toolbar_up).setOnClickListener(this);
-        mTimer = new CountDownTimer(1000 * 5, 1000 * 1) {
+        mTimer = new CountDownTimer(1000 * 60, 1000 * 1) {
             @Override
             public void onTick(long millisUntilFinished) {
                 huoqu_Textview.setClickable(false);

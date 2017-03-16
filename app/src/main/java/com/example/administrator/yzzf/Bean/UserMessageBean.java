@@ -9,13 +9,15 @@ public class UserMessageBean {
     private double score;
     private String nickName;
     private String realName;
-    private String birthday;
     private int districtId;
     private String mobile;
-    private String money;
+    private double money;
     private String sex;
     private String loginPWD;
-    private String diplayBirthday;
+    private String displayBirthday;
+    private String flag;
+    private String displayAdddate;
+    private int levels;
 
     public String getAddress() {
         return address;
@@ -33,8 +35,17 @@ public class UserMessageBean {
         return realName;
     }
 
-    public String getBirthday() {
-        return birthday;
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public String getDisplayAdddate() {
+        return displayAdddate;
+    }
+
+    public int getLevels() {
+        return levels;
     }
 
     public double getDistrictId() {
@@ -45,7 +56,7 @@ public class UserMessageBean {
         return mobile;
     }
 
-    public String getMoney() {
+    public double getMoney() {
         return money;
     }
 
@@ -57,8 +68,8 @@ public class UserMessageBean {
         return loginPWD;
     }
 
-    public String getDiplayBirthday() {
-        return diplayBirthday;
+    public String getDisplayBirthday() {
+        return displayBirthday;
     }
 
     public void setAddress(String address) {
@@ -77,9 +88,6 @@ public class UserMessageBean {
         this.realName = realName;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
 
     public void setDistrictId(int districtId) {
         this.districtId = districtId;
@@ -89,7 +97,7 @@ public class UserMessageBean {
         this.mobile = mobile;
     }
 
-    public void setMoney(String money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
@@ -101,12 +109,25 @@ public class UserMessageBean {
         this.loginPWD = loginPWD;
     }
 
-    public void setDiplayBirthday(String diplayBirthday) {
-        this.diplayBirthday = diplayBirthday;
+    public void setDisplayBirthday(String diplayBirthday) {
+        this.displayBirthday = diplayBirthday;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
+
+
+    public void setDisplayAdddate(String displayAdddate) {
+        this.displayAdddate = displayAdddate;
+    }
+
+    public void setLevels(int levels) {
+        this.levels = levels;
     }
 
     @Override
     public String toString() {
-        return "姓名"+realName+" 昵称"+nickName+" 性别"+sex+" 生日"+birthday+" 所在城市"+districtId+" 住址"+address+" 手机"+mobile+" 密码"+loginPWD;
+        return address + flag + loginPWD + realName + levels + displayBirthday + displayAdddate + nickName + money + sex + score + mobile + districtId;
     }
 }

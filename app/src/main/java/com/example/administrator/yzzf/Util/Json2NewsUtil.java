@@ -122,7 +122,7 @@ public class Json2NewsUtil {
     }
 
     //获取用户信息
-    public static ArrayList<UserMessageBean> getUserMessages(Context context, final String urlString) {
+    public static ArrayList<UserMessageBean> getUserMessages(Context context, final String urlString) throws Exception {
         final ArrayList<UserMessageBean> userMessages = new ArrayList<>();
         //用FutureTask来完成网络请求的异步，HttpUrlConnection完成具体的网络请求
         FutureTask<ArrayList<UserMessageBean>> futureTask = new FutureTask<>(new Callable<ArrayList<UserMessageBean>>() {
@@ -138,17 +138,22 @@ public class Json2NewsUtil {
                     InputStream is = connection.getInputStream();
                     String result = StreamUtil.convertStream(is);//获取请求结果，json字符串
                     JSONArray jsonArray = new JSONArray(result);
-                    for (int i = 0; i < jsonArray.length(); i++) {
+                    for (int i = 0; i < 1; i++) {
                         JSONObject users_json = jsonArray.getJSONObject(i);
                         UserMessageBean userMessage = new UserMessageBean();
                         userMessage.setRealName(users_json.getString("realname"));
                         userMessage.setNickName((users_json.getString("nickname")));
                         userMessage.setSex(users_json.getString("sex"));
-                        userMessage.setDiplayBirthday(users_json.getString("displayBirthday"));
+                        userMessage.setDisplayBirthday(users_json.getString("displayBirthday"));
                         userMessage.setAddress(users_json.getString("address"));
                         userMessage.setMobile(users_json.getString("mobile"));
                         userMessage.setDistrictId(users_json.getInt("districtid"));
                         userMessage.setLoginPWD(users_json.getString("loginpwd"));
+                        userMessage.setFlag(users_json.getString("flag"));
+                        userMessage.setLevels(users_json.getInt("levels"));
+                        userMessage.setScore(users_json.getDouble("score"));
+                        userMessage.setDisplayAdddate(users_json.getString("displayAdddate"));
+                        userMessage.setMoney(users_json.getDouble("money"));
                         userMessages.add(userMessage);
                     }
                     is.close();//关闭输入流
@@ -159,12 +164,8 @@ public class Json2NewsUtil {
             }
         });
         new Thread(futureTask).start();//开启子线程执行futureTask，FutureTask本质是一个Runnable
-        try {
-            return futureTask.get();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        return futureTask.get();
+
     }
 
 }
