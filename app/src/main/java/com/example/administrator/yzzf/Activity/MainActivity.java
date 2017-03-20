@@ -15,6 +15,7 @@ import com.example.administrator.yzzf.CustomView.NoScrollViewPager;
 import com.example.administrator.yzzf.Fragment.BanKuaiFragment;
 import com.example.administrator.yzzf.Fragment.BaseFragment;
 import com.example.administrator.yzzf.Fragment.GRZXFragment;
+import com.example.administrator.yzzf.Fragment.GRZXFragment02;
 import com.example.administrator.yzzf.Fragment.GXQMFragment;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Fragment.ZhuyeFragment;
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         mFragments.add(new ZhuyeFragment());
         mFragments.add(new BanKuaiFragment());
         mFragments.add(new GXQMFragment());
-        mFragments.add(new GRZXFragment());
+        mFragments.add(new GRZXFragment02());
         mMainAdapter = new MainAdapter(getSupportFragmentManager(), mFragments);
         mViewPager.setAdapter(mMainAdapter);
         mViewPager.addOnPageChangeListener(this);

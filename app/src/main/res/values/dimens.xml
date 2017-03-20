@@ -23,4 +23,13 @@
     <!--我的资料item-->
     <dimen name="wdzl01">17sp</dimen>
     <dimen name="wdzl02">16dp</dimen>
+
+    <!--个人中心-->
+    <dimen name="jifenduihuan">16sp</dimen>
+    <dimen name="wodedingdan">18sp</dimen>
+    <dimen name="chakanquanbu">16sp</dimen>
+
+    <!--徽章-->
+    <dimen name="textsize">14sp</dimen>
+
 </resources>

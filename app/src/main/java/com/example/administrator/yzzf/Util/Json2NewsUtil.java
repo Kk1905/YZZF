@@ -1,6 +1,9 @@
 package com.example.administrator.yzzf.Util;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.icu.text.SimpleDateFormat;
+import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
 
@@ -21,6 +24,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
@@ -41,39 +45,41 @@ public class Json2NewsUtil {
         final ArrayList<NewsItemBean> newsItems = new ArrayList<>();
         //用FutureTask来完成网络请求的异步，HttpUrlConnection完成具体的网络请求
         FutureTask<ArrayList<NewsItemBean>> futureTask = new FutureTask<ArrayList<NewsItemBean>>(new Callable<ArrayList<NewsItemBean>>() {
+            @TargetApi(Build.VERSION_CODES.N)
             @Override
             public ArrayList<NewsItemBean> call() throws Exception {
                 URL url = new URL(urlString);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
-                connection.setConnectTimeout(10 * 1000);
+                connection.setConnectTimeout(2 * 1000);
                 int requestCode = connection.getResponseCode();
                 if (requestCode == 200) {
                     //请求数据成功
                     InputStream is = connection.getInputStream();
                     String result = StreamUtil.convertStream(is);//获取请求结果，json字符串
                     Log.i("JSON", result);
-                    JSONObject jsonObject = new JSONObject(result);
-                    JSONArray jsonArray = jsonObject.getJSONArray("newsItem");
+                    JSONArray jsonArray = new JSONArray(result);
+                    Log.e("kkkboy", String.valueOf(jsonArray.length()));
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject news_json = jsonArray.getJSONObject(i);
                         NewsItemBean newsItemBean = new NewsItemBean();
-                        newsItemBean.setNewsType(news_json.getInt("newsType"));
-                        newsItemBean.setDate(news_json.getString("date"));
-                        newsItemBean.setImageUrl(news_json.getString("imageUrl"));
-                        newsItemBean.setStringUrl(news_json.getString("stringUrl"));
                         newsItemBean.setTitle(news_json.getString("title"));
-                        newsItemBean.setNum(news_json.getString("num"));
-                        newsItemBean.setType(news_json.getString("type"));
-
-                        Log.i("NewsItemBean", newsItemBean.toString());
+                        newsItemBean.setTypeid(news_json.getInt("typeid"));
+                        newsItemBean.setId(news_json.getInt("id"));
+                        newsItemBean.setDisplayAdddate(news_json.getString("displayAdddate"));
+                        newsItemBean.setForumId(news_json.getInt("forumid"));
+                        newsItemBean.setHits(news_json.getInt("hits"));
+                        newsItemBean.setIsindex(news_json.getString("isindex"));
+                        newsItemBean.setPicture(news_json.getString("picture"));
+                        newsItemBean.setReprint(news_json.getInt("reprint"));
+                        newsItemBean.setStates(news_json.getInt("states"));
+                        newsItemBean.setUsersId(news_json.getInt("usersid"));
+                        Log.e("kkkboy", String.valueOf(i));
                         newsItems.add(newsItemBean);
                     }
-                    //获取到了新的数据，就删除手机上旧的数据
-                    //TODO
-
                     is.close();//关闭输入流
                     connection.disconnect();
+                    Log.e("kkkboy", "newsItems--------------->"+String.valueOf(newsItems.size()));
                     return newsItems;
                 }
                 return null;
@@ -106,12 +112,7 @@ public class Json2NewsUtil {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject newsItem = jsonArray.getJSONObject(i);
                 NewsItemBean bean = new NewsItemBean();
-                bean.setNewsType(newsItem.getInt("newsType"));
-                bean.setTitle(newsItem.getString("title"));
-                bean.setNum(newsItem.getString("num"));
-                bean.setStringUrl(newsItem.getString("stringUrl"));
-                bean.setImageUrl(newsItem.getString("imageUrl"));
-                bean.setDate(newsItem.getString("date"));
+
 
                 testArray.add(bean);
             }
@@ -131,7 +132,7 @@ public class Json2NewsUtil {
                 URL url = new URL(urlString);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
-                connection.setConnectTimeout(10 * 1000);
+                connection.setConnectTimeout(2 * 1000);
                 int requestCode = connection.getResponseCode();
                 if (requestCode == 200) {
                     //请求数据成功

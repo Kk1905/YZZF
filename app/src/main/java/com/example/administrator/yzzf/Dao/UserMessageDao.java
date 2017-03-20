@@ -71,13 +71,12 @@ public class UserMessageDao {
                 userMessage.setScore(cursor.getDouble(cursor.getColumnIndex("score")));
                 userMessage.setMobile(cursor.getString(cursor.getColumnIndex("mobile")));
                 userMessage.setDistrictId(cursor.getInt(cursor.getColumnIndex("districtid")));
-
+                Log.e("kkkboy", "查询用户信息成功");
                 return userMessage;
-
             }
             cursor.close();
             mDatabase.close();
-            Log.e("kkkboy", "查询用户信息成功");
+
         } catch (Exception e) {
             e.printStackTrace();
         }

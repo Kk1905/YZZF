@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_grzx"/>
+
+
+    <com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:my_background="@drawable/grzx_background02"
+        custom:text1="151****4397"
+        custom:text2="1"></com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wodedingdan"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/wodedingdan"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/grzx_chakanquanbu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/chakanquanbudingdan"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/chakanquanbu"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/main_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <cn.bingoogolapple.badgeview.BGABadgeImageView
+            android:id="@+id/grzx_daifukuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/grzx_daifukuan"
+            custom:badge_bgColor="@color/toolbar_background"
+            custom:badge_borderColor="@color/grzx_red"
+            custom:badge_borderWidth="1dp"
+            custom:badge_dragable="true"
+            custom:badge_gravity="rightTop"
+            custom:badge_padding="5dp"
+            custom:badge_textColor="@color/grzx_red"
+            custom:badge_textSize="@dimen/textsize"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <cn.bingoogolapple.badgeview.BGABadgeImageView
+            android:id="@+id/grzx_daifahuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/grzx_daifahuo"
+            custom:badge_bgColor="@color/toolbar_background"
+            custom:badge_borderColor="@color/grzx_red"
+            custom:badge_borderWidth="1dp"
+            custom:badge_dragable="true"
+            custom:badge_gravity="rightTop"
+            custom:badge_padding="5dp"
+            custom:badge_textColor="@color/grzx_red"
+            custom:badge_textSize="@dimen/textsize"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <cn.bingoogolapple.badgeview.BGABadgeImageView
+            android:id="@+id/grzx_daishouhuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/grzx_daishouhuo"
+            custom:badge_bgColor="@color/toolbar_background"
+            custom:badge_borderColor="@color/grzx_red"
+            custom:badge_borderWidth="1dp"
+            custom:badge_dragable="true"
+            custom:badge_gravity="rightTop"
+            custom:badge_padding="5dp"
+            custom:badge_textColor="@color/grzx_red"
+            custom:badge_textSize="@dimen/textsize"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <cn.bingoogolapple.badgeview.BGABadgeImageView
+            android:id="@+id/grzx_tuikuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/grzx_shouhoutuikuan"
+            custom:badge_bgColor="@color/toolbar_background"
+            custom:badge_borderColor="@color/grzx_red"
+            custom:badge_borderWidth="1dp"
+            custom:badge_dragable="true"
+            custom:badge_gravity="rightTop"
+            custom:badge_padding="5dp"
+            custom:badge_textColor="@color/grzx_red"
+            custom:badge_textSize="@dimen/textsize"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/main_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:id="@+id/my_ziliao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            custom:imageView_src="@drawable/grzx_wodeziliao"
+            custom:textView_text="@string/wodeziliao">
+
+        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
+
+        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:id="@+id/my_tiezi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:imageView_src="@drawable/grzx_wodetiezi"
+            custom:textView_text="@string/wodetiezi">
+
+        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:background="@color/b01"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_background"/>
+
+        <LinearLayout
+            android:id="@+id/grzx_jifen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:id="@+id/grzx_jifen_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:adjustViewBounds="true"
+                android:minHeight="40dp"
+                android:minWidth="40dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/grzx_jifen"/>
+
+            <TextView
+                android:id="@+id/grzx_jifen_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:text="@string/gerenjifen"
+                android:textColor="@color/daohang02"
+                android:textSize="20dp"/>
+
+
+            <TextView
+                android:id="@+id/grzx_jifen_textview_duihuan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/jifenduihuan"
+                android:textColor="@color/tiaokuan"
+                android:textSize="@dimen/jifenduihuan"/>
+
+            <!--<ImageView-->
+            <!--android:layout_width="10dp"-->
+            <!--android:layout_height="10dp"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:adjustViewBounds="true"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/grzx_toright"/>-->
+
+        </LinearLayout
+            >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_background"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:background="@color/b01"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/main_background"/>
+
+        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
+            android:id="@+id/xitong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:imageView_src="@drawable/grzx_xitongxinxi"
+            custom:textView_text="@string/xitongxinxi">
+
+        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
+
+    </LinearLayout>
+
+</LinearLayout>

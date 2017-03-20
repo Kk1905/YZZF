@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ import com.example.administrator.yzzf.Util.RefreshTimeUtil;
 
 import java.util.ArrayList;
 
+import cn.bingoogolapple.badgeview.BGABadgeImageView;
 import me.maxwin.view.IXListViewRefreshListener;
 import me.maxwin.view.XListView;
 
@@ -49,6 +51,8 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
     XListView newsItemListView;
     NewsItemAdapter mAdapter;
     NewsItemDao mNewsItemDao;
+
+
     ArrayList<NewsItemBean> mDatas = new ArrayList<>();
 
     @Nullable
@@ -57,8 +61,8 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
         super.onCreateView(inflater, container, savedInstanceState);
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_zhuye, container, false);
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_zhuye);
-
         view.findViewById(R.id.toolbar_zhuye_login).setOnClickListener(this);
+
         return view;
     }
 
@@ -157,8 +161,6 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
             switch (integer) {
                 case NON_NETWORK:
                     Toast.makeText(mAppCompatActivity, "没有网络连接", Toast.LENGTH_SHORT).show();
-                    mAdapter.setDatas(mDatas);
-                    mAdapter.notifyDataSetChanged();
                     break;
                 case ERROR_SERVICE:
                     Toast.makeText(mAppCompatActivity, "服务器异常，请稍后再试", Toast.LENGTH_SHORT).show();
@@ -167,6 +169,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
                     break;
             }
             mAdapter.setDatas(mDatas);
+            mAdapter.notifyDataSetChanged();
             //更新刷新的时间
             newsItemListView.setRefreshTime(RefreshTimeUtil.getRefreshTime(mAppCompatActivity, Constant.ZY_FRAGMENT_TYPE));
 
@@ -176,26 +179,19 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
 
     //下拉刷新数据
     private Integer refreshData() {
-//        if (NetUtil.checkNet(mAppCompatActivity)) {
+        if (NetUtil.checkNet(mAppCompatActivity)) {
             hasNetWork = true;//有网络
-
             isDataFromNet = true;//此时设置数据来自网络
+            if (isFirstIn == false) {
 
-            //设置刷新时间
-            RefreshTimeUtil.setRefreshTime(mAppCompatActivity, Constant.ZY_FRAGMENT_TYPE);
+                //设置刷新时间
+                RefreshTimeUtil.setRefreshTime(mAppCompatActivity, Constant.ZY_FRAGMENT_TYPE);
+            }
 
             try {
                 //获取最新的数据
-//                String url = "";
-//                ArrayList<NewsItemBean> datas = Json2NewsUtil.getNewsItem(mAppCompatActivity, url);
-
-//                mAdapter.setDatas(Json2NewsUtil.test(mAppCompatActivity));
-                mDatas = Json2NewsUtil.test(mAppCompatActivity);
-                //此时清除手机SQLite数据库里的旧数据
-                mNewsItemDao.removeAll("zhuye_fragment");
-                //将新的数据保存，在没有网络的时候用
-                mNewsItemDao.add(mDatas);
-                //TODO 还有一个表也要操作
+                String url = "http://192.168.0.21:8080/Spring/ace/test";
+                mDatas = Json2NewsUtil.getNewsItem(mAppCompatActivity, url);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -204,16 +200,21 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
                 //返回服务器错误的flag
                 return ERROR_SERVICE;
             }
-//        }
-//        else {
-//            //没有网络的情况下
-//            hasNetWork = false;
-//            isDataFromNet = false;
-//            //TODO 从数据库加载数据显示
-//            mDatas = mNewsItemDao.list();
-//            //返回没有网络的flag
-//            return NON_NETWORK;
-//        }
+            //此时清除手机SQLite数据库里的旧数据,isindex=1
+            mNewsItemDao.removeAll("0");
+            //将新的数据保存，在没有网络的时候用
+            mNewsItemDao.add(mDatas);
+            //TODO 还有一个表也要操作
+            Log.e("kkkboy", "mDatas----------------->" + String.valueOf(mDatas.size()));
+        } else {
+            //没有网络的情况下
+            hasNetWork = false;
+            isDataFromNet = false;
+            //TODO 从数据库加载数据显示
+            mDatas = mNewsItemDao.list("0");
+            //返回没有网络的flag
+            return NON_NETWORK;
+        }
         return -1;
     }
 

@@ -1,12 +1,14 @@
 package com.example.administrator.yzzf.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.example.administrator.yzzf.Bean.NewsItemBean;
 import com.example.administrator.yzzf.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -14,6 +16,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
+
 import java.util.List;
 
 /**
@@ -29,7 +32,7 @@ public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener
     private ImageLoader mImageLoader = ImageLoader.getInstance();
     private DisplayImageOptions mOptions;
 
-    public NewsItemAdapter(Context context, List<NewsItemBean> mDatas,CallBack callBack) {
+    public NewsItemAdapter(Context context, List<NewsItemBean> mDatas, CallBack callBack) {
         mCallBack = callBack;
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
@@ -94,20 +97,20 @@ public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener
             convertView = mLayoutInflater.inflate(R.layout.item_zhuye_news, null);
             viewHolder.imageView = (ImageView) convertView.findViewById(R.id.newsItem_imageview);
             viewHolder.title_textView = (TextView) convertView.findViewById(R.id.newsItem_title);
+            viewHolder.num_textView = (TextView) convertView.findViewById(R.id.newsItem_hits);
             viewHolder.time_textView = (TextView) convertView.findViewById(R.id.newsItem_time);
-            viewHolder.num_textView = (TextView) convertView.findViewById(R.id.newsItem_num);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         NewsItemBean itemBean = mDatas.get(position - 1);
+        viewHolder.num_textView.setText(String.valueOf(itemBean.getHits()));
         viewHolder.title_textView.setText(itemBean.getTitle());
-        viewHolder.time_textView.setText(itemBean.getDate());
-        viewHolder.num_textView.setText(itemBean.getNum());
+        viewHolder.time_textView.setText(itemBean.getHourAgo());
         //判断是否有图片，如果有，就用imageLoader加载图片在imageView上
-        if (itemBean.getImageUrl() != null) {
+        if (itemBean.getPicture() != null) {
             viewHolder.imageView.setVisibility(View.VISIBLE);
-            mImageLoader.displayImage(itemBean.getImageUrl(), viewHolder.imageView, mOptions);
+            mImageLoader.displayImage(itemBean.getPicture(), viewHolder.imageView, mOptions);
         } else {
             viewHolder.imageView.setVisibility(View.GONE);
         }

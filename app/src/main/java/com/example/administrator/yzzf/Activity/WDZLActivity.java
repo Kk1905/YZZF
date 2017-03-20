@@ -109,10 +109,10 @@ public class WDZLActivity extends AppCompatActivity implements View.OnClickListe
             hasNetwork = false;
             isDateFromNetwork = false;
             UserMessageBean userMessage = mUserMessageDao.getUserMessage("真实姓名1");
-            Toast.makeText(this, "没有网络连接", Toast.LENGTH_SHORT).show();
             if (userMessage != null) {
                 initView(userMessage);
-                Toast.makeText(this, "没有网络连接,不能及时更新最新数据", Toast.LENGTH_SHORT).show();
+                districtId.setMessage("没有网络的城市");
+                Toast.makeText(this, "没有网络连接,可能不是最新数据", Toast.LENGTH_SHORT).show();
             } else {
                 try {
                     throw new Exception("您是首次登陆，必须要连接至网络");

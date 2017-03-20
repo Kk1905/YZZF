@@ -81,7 +81,6 @@ public class GRZXFragment extends BaseFragment implements View.OnClickListener {
         switch (v.getId()) {
 
             case R.id.my_ziliao:
-
                 Intent intent = new Intent(mAppCompatActivity, WDZLActivity.class);
                 mAppCompatActivity.startActivity(intent);
                 break;

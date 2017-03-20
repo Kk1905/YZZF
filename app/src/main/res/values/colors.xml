@@ -6,9 +6,11 @@
     <color name="toolbar_background">#fff</color>
     <color name="main_background">#ece6e6</color>
     <color name="daohang">#212020</color>
+    <color name="daohang02">#282727</color>
     <color name="yangzi">#038605</color>
     <color name="lan">#079fe6</color>
     <color name="red">#bf1616</color>
+    <color name="grzx_red">#fa0303</color>
     <color name="qianlan">#c4e7ef</color>
     <color name="b01">#f9f5f5</color>
     <color name="second_background">#d7cece</color>

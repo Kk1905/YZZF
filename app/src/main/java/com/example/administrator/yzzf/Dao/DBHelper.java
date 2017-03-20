@@ -16,7 +16,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
 
-        super(context, DB_NAME, null, 8);
+        super(context, DB_NAME, null, 13);
         mContext = context;
     }
 
@@ -25,13 +25,17 @@ public class DBHelper extends SQLiteOpenHelper {
         //创建新闻条目表
         String sql = "create table tb_NewsItem(" +
                 "_id integer primary key autoincrement," +
+                "typeid integer," +
+                "picture text," +
+                "displayAdddate text," +
+                "states integer," +
+                "isindex text," +
+                "hits integer," +
                 "title text," +
-                "newsType integer," +
-                "imageUrl text," +
-                "stringUrl text," +
-                "num text," +
-                "date text," +
-                "type text)";
+                "forumid integer," +
+                "reprint integer," +
+                "usersid integer," +
+                "id integer)";
         //创建新闻交互表
         String sql1 = "create table tb_NewsView(" +
                 "_id integer primary key autoincrement," +
@@ -67,8 +71,8 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        db.execSQL("drop table if exist tb_NewsItem");
-        db.execSQL("drop table if exist tb_UserMessage");
+        db.execSQL("drop table if exists tb_NewsItem");
+        db.execSQL("drop table if exists tb_UserMessage");
         onCreate(db);
         Log.e("kkkboy", "更新数据库");
     }

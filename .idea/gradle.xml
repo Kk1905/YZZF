@@ -8,9 +8,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/XListView" />
+            <option value="$PROJECT_DIR$/XListViewLibrary" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/gestureimageview" />
+            <option value="$PROJECT_DIR$/badgeViewLibrary" />
+            <option value="$PROJECT_DIR$/gestureimageviewLibrary" />
             <option value="$PROJECT_DIR$/imageloadlibrary" />
             <option value="$PROJECT_DIR$/viewPagerIndicatorLibrary" />
             <option value="$PROJECT_DIR$/weiboSDK" />
