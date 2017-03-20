@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:paddingBottom="10dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:paddingTop="10dp">
 
         <TextView
@@ -58,8 +58,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="66dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp">
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp">
 
         <cn.bingoogolapple.badgeview.BGABadgeImageView
             android:id="@+id/grzx_daifukuan"

@@ -32,4 +32,10 @@
     <!--徽章-->
     <dimen name="textsize">14sp</dimen>
 
+    <!--我的订单-->
+    <dimen name="title">14sp</dimen>
+    <dimen name="danjia">14sp</dimen>
+    <dimen name="shuliang">12sp</dimen>
+    <dimen name="heji">14sp</dimen>
+    <dimen name="quxiao">14sp</dimen>
 </resources>

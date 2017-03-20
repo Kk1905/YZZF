@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.example.administrator.yzzf.Activity.WDDDActivity;
 import com.example.administrator.yzzf.Activity.WDTZActivity;
 import com.example.administrator.yzzf.Activity.WDZLActivity;
 import com.example.administrator.yzzf.Activity.XTXXActivity;
@@ -23,7 +24,8 @@ import cn.bingoogolapple.badgeview.BGABadgeImageView;
 
 public class GRZXFragment02 extends BaseFragment implements BottomNavigationBar.OnTabSelectedListener, View.OnClickListener {
 
-    private BGABadgeImageView mBGABadgeImageView01,mBGABadgeImageView02,mBGABadgeImageView03,mBGABadgeImageView04;
+    private BGABadgeImageView mBGABadgeImageView01, mBGABadgeImageView02, mBGABadgeImageView03, mBGABadgeImageView04;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,7 @@ public class GRZXFragment02 extends BaseFragment implements BottomNavigationBar.
         view.findViewById(R.id.my_tiezi).setOnClickListener(this);
         view.findViewById(R.id.xitong).setOnClickListener(this);
         view.findViewById(R.id.grzx_jifen_textview_duihuan).setOnClickListener(this);
+        view.findViewById(R.id.grzx_chakanquanbu).setOnClickListener(this);
 
         mBGABadgeImageView01 = (BGABadgeImageView) view.findViewById(R.id.grzx_daifukuan);
         mBGABadgeImageView02 = (BGABadgeImageView) view.findViewById(R.id.grzx_daishouhuo);
@@ -92,7 +95,9 @@ public class GRZXFragment02 extends BaseFragment implements BottomNavigationBar.
                 mAppCompatActivity.startActivity(intent05);
                 break;
             case R.id.grzx_chakanquanbu:
-
+                Intent intent03 = new Intent(mAppCompatActivity, WDDDActivity.class);
+                mAppCompatActivity.startActivity(intent03);
+                break;
         }
     }
 }

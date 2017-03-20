@@ -63,4 +63,21 @@
         <item name="tabIndicatorColor">@color/yangzi</item>
 
     </style>
+
+    <!--TabPageIndicator自定义样式-->
+    <style name="CustomTabIndicator" parent="Widget.TabPageIndicator">
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@drawable/tab_page_indicator_text_selector</item>
+        <item name="android:dividerPadding">8dp</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:fadingEdgeLength">8dp</item>
+    </style>
+    <!--自定义TabPageIndicator的Text的样式-->
+    <style name="CustomTabPageIndicator.Text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@drawable/tab_page_indicator_text_selector</item>
+    </style>
 </resources>

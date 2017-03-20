@@ -111,6 +111,9 @@
             android:name=".Activity.LoginActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".Activity.TestActivity"/>
+        <activity
+            android:name=".Activity.WDDDActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

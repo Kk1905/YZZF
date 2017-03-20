@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/main_background"
+              android:orientation="vertical"
+              android:paddingTop="6dp">
+
+
+    <me.maxwin.view.XListView
+        android:id="@+id/wddd_fragment_xlistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:scrollbars="none">
+
+    </me.maxwin.view.XListView>
+
+    <TextView
+        android:id="@+id/wddd_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="20sp"/>
+</LinearLayout>
