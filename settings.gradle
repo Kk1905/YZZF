@@ -1,5 +1,5 @@
 include ':app', 'badgeViewLibrary', ':XListView'
 include ':weiboSDK'
-include ':gestureimageviewLibrary'
-include ':imageloadlibrary'
 include ':library'
+include ':imageloadlibrary'
+include ':gestureimageview'

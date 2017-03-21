@@ -29,7 +29,6 @@ import com.example.administrator.yzzf.Util.RefreshTimeUtil;
 
 import java.util.ArrayList;
 
-import cn.bingoogolapple.badgeview.BGABadgeImageView;
 import me.maxwin.view.IXListViewRefreshListener;
 import me.maxwin.view.XListView;
 
@@ -182,11 +181,9 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
         if (NetUtil.checkNet(mAppCompatActivity)) {
             hasNetWork = true;//有网络
             isDataFromNet = true;//此时设置数据来自网络
-            if (isFirstIn == false) {
 
-                //设置刷新时间
-                RefreshTimeUtil.setRefreshTime(mAppCompatActivity, Constant.ZY_FRAGMENT_TYPE);
-            }
+            //设置刷新时间
+            RefreshTimeUtil.setRefreshTime(mAppCompatActivity, Constant.ZY_FRAGMENT_TYPE);
 
             try {
                 //获取最新的数据
