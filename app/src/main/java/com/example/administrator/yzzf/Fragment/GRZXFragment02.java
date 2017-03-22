@@ -59,7 +59,10 @@ public class GRZXFragment02 extends BaseFragment implements BottomNavigationBar.
         mBGABadgeImageView02.showTextBadge("5");
         mBGABadgeImageView03.showTextBadge("4");
         mBGABadgeImageView04.showTextBadge("1");
-
+        mBGABadgeImageView01.setOnClickListener(this);
+        mBGABadgeImageView02.setOnClickListener(this);
+        mBGABadgeImageView03.setOnClickListener(this);
+        mBGABadgeImageView04.setOnClickListener(this);
         return view;
     }
 
@@ -97,6 +100,11 @@ public class GRZXFragment02 extends BaseFragment implements BottomNavigationBar.
             case R.id.grzx_chakanquanbu:
                 Intent intent03 = new Intent(mAppCompatActivity, WDDDActivity.class);
                 mAppCompatActivity.startActivity(intent03);
+                break;
+            case R.id.grzx_daifukuan:
+                Intent intent1 = new Intent(mAppCompatActivity, WDDDActivity.class);
+
+                mAppCompatActivity.startActivity(intent1);
                 break;
         }
     }

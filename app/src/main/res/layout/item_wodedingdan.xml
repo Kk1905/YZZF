@@ -1,90 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/item_wodedingdan"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:orientation="horizontal"
-              android:paddingBottom="15dp"
-              android:paddingLeft="8dp"
-              android:paddingRight="8dp"
-              android:paddingTop="8dp"
-              android:id="@+id/item_wodedingdan">
-
-    <ImageView
-        android:id="@+id/item_wodedingdan_image_view"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scaleType="fitCenter"
-        android:src="@drawable/wddd_tubiao"/>
+              android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="8dp"
-        android:layout_weight="1.5"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/item_wodedingdan_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lines="2"
-            android:text="天然木地板天然木地板天然木地板天然木地板"
-            android:textColor="@color/daohang02"
-            android:textSize="@dimen/title"/>
-
-        <TextView
-            android:id="@+id/item_wodedingdan_danjia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="¥200"
-            android:textColor="@color/grzx_red"
-            android:textSize="@dimen/danjia"/>
-
-        <TextView
-            android:id="@+id/shuliang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="订单数量:20"
-            android:textSize="@dimen/shuliang"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.8"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/item_wodedingdan_heji"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="合计:4000"
-            android:textColor="@color/grzx_red"
-            android:textSize="@dimen/heji"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp">
 
         <ImageView
-            android:id="@+id/item_wodedingdan_image_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/wddd_qufukuan"/>
-
-        <TextView
-            android:id="@+id/item_wodedingdan_quxiao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/item_wodedingdan_image_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:gravity="bottom"
-            android:text="取消订单"
-            android:textSize="@dimen/quxiao"/>
+            android:scaleType="fitCenter"
+            android:src="@drawable/wddd_tubiao"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_wodedingdan_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:text="天然木地板天然木地板天然木地板天然木地板"
+                android:textColor="@color/daohang02"
+                android:textSize="@dimen/title"/>
+
+            <TextView
+                android:id="@+id/item_wodedingdan_danjia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="¥200"
+                android:textColor="@color/grzx_red"
+                android:textSize="@dimen/danjia"/>
+
+            <TextView
+                android:id="@+id/item_wodedingdan_shuliang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="订单数量:20"
+                android:textSize="@dimen/shuliang"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_wodedingdan_heji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="合计:4000"
+                android:textColor="@color/grzx_red"
+                android:textSize="@dimen/heji"/>
+
+            <ImageView
+                android:id="@+id/item_wodedingdan_image_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/wddd_qufukuan"/>
+
+            <TextView
+                android:id="@+id/item_wodedingdan_quxiao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="bottom"
+                android:text="取消订单"
+                android:textSize="@dimen/quxiao"/>
+        </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/main_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@color/second_background"/>
+
 
 </LinearLayout>

@@ -2,10 +2,72 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/main_background"
+              android:background="@color/toolbar_background"
               android:orientation="vertical"
               android:paddingTop="6dp">
 
+    <FrameLayout
+        android:id="@+id/wddd_fragment_framenlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/wifi"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="@string/jiazaishibai"
+                android:textColor="@color/daohang02"
+                android:textSize="@dimen/wodedingdan"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/keyi"
+                android:textSize="@dimen/chakanquanbu"/>
+
+            <Button
+                android:id="@+id/wddd_fragment_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/no_wifi_button"
+                android:text="@string/chongxinjiazai"
+                android:textSize="@dimen/textsize"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/wddd_fragment_framenlayout02"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/fuwuqicuowu"
+            android:textSize="@dimen/chakanquanbu"/>
+    </FrameLayout>
 
     <me.maxwin.view.XListView
         android:id="@+id/wddd_fragment_xlistview"
@@ -18,11 +80,4 @@
 
     </me.maxwin.view.XListView>
 
-    <TextView
-        android:id="@+id/wddd_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:textSize="20sp"/>
 </LinearLayout>

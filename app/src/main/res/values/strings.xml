@@ -112,6 +112,12 @@
     <string name="daifahuo">待发货</string>
     <string name="daishouhuo">待收货</string>
     <string name="shouhoutuikuan">售后退款</string>
+    <string name="quxiaodingdan">取消订单</string>
+    <string name="shenqingtuikuan">申请退款</string>
+    <string name="jiazaishibai">加载失败，请检查您当前的网络环境！</string>
+    <string name="keyi">您可以点击按钮重新加载</string>
+    <string name="chongxinjiazai">重新加载</string>
+    <string name="fuwuqicuowu">服务器错误，请稍后重试</string>
 
     <!--微博-->
     <string name="weibosdk_not_support_api_hint">微博客户端不支持 SDK 分享或微博客户端未安装或微博客户端是非官方版本。</string>

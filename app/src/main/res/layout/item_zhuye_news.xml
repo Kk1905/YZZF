@@ -52,11 +52,14 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/item_zhuye_news_image_fabu"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/xitongfabu"/>
+                    android:src="@drawable/zhuye_guanggao"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/xitong_fabu"

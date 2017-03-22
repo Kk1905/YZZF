@@ -44,16 +44,23 @@ public class WDDDActivity extends AppCompatActivity implements ViewPager.OnPageC
         findViewById(R.id.toolbar_up).setOnClickListener(this);
         mViewPager = (ViewPager) findViewById(R.id.qbdd_view_pager);
         mTabPageIndicator = (TabPageIndicator) findViewById(R.id.tab_page_indicator);
+        initView();
+
+    }
+
+    private void initView() {
         titles = new ArrayList<>();
         String[] temp_titles = getResources().getStringArray(R.array.tab_wddd);
         for (String title : temp_titles) {
             titles.add(title);
         }
         mFragments = new ArrayList<>();
+
+        String[] urls = new String[]{"", "", "", "", ""};
         for (int i = 0; i < titles.size(); i++) {
             Fragment fragment = new WDDDFragment();
             Bundle bundle = new Bundle();
-            bundle.putString("text", "" + (i + 1));
+            bundle.putString("url", urls[i]);
             fragment.setArguments(bundle);
             mFragments.add(fragment);
         }
@@ -61,8 +68,8 @@ public class WDDDActivity extends AppCompatActivity implements ViewPager.OnPageC
         mViewPager.setAdapter(mAdapter);
         mTabPageIndicator.setViewPager(mViewPager);
         mTabPageIndicator.setOnPageChangeListener(this);
+        mTabPageIndicator.setCurrentItem(0);
     }
-
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

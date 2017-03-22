@@ -41,8 +41,8 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
 
     private static final int LOAD_MORE = 0;
     private static final int REFRESH = 1;
-    private static final int NON_NETWORK = 2;
-    private static final int ERROR_SERVICE = 3;
+    private static final int NON_NETWORK = 0X112;
+    private static final int ERROR_SERVICE = 0X113;
 
     private boolean isFirstIn = true;//是否是首次显示
     private boolean hasNetWork = false;//是否有网络
@@ -148,8 +148,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
         protected Integer doInBackground(Integer... params) {
             switch (params[0]) {
                 case REFRESH:
-                    refreshData();
-                    break;
+                    return refreshData();
             }
             return -1;
         }

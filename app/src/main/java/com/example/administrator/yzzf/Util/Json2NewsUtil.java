@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.example.administrator.yzzf.Bean.NewsItemBean;
 import com.example.administrator.yzzf.Bean.UserMessageBean;
+import com.example.administrator.yzzf.Bean.WdddItemBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,7 +80,7 @@ public class Json2NewsUtil {
                     }
                     is.close();//关闭输入流
                     connection.disconnect();
-                    Log.e("kkkboy", "newsItems--------------->"+String.valueOf(newsItems.size()));
+                    Log.e("kkkboy", "newsItems--------------->" + String.valueOf(newsItems.size()));
                     return newsItems;
                 }
                 return null;
@@ -169,4 +170,43 @@ public class Json2NewsUtil {
 
     }
 
+    //获取商品信息
+    public static ArrayList<WdddItemBean> getWdddMessages(Context context, final String urlString) throws Exception {
+        final ArrayList<WdddItemBean> wdddMessages = new ArrayList<>();
+        //用FutureTask来完成网络请求的异步，HttpUrlConnection完成具体的网络请求
+        FutureTask<ArrayList<WdddItemBean>> futureTask = new FutureTask<>(new Callable<ArrayList<WdddItemBean>>() {
+            @Override
+            public ArrayList<WdddItemBean> call() throws Exception {
+                URL url = new URL(urlString);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+                connection.setConnectTimeout(2 * 1000);
+                int requestCode = connection.getResponseCode();
+                if (requestCode == 200) {
+                    //请求数据成功
+                    InputStream is = connection.getInputStream();
+                    String result = StreamUtil.convertStream(is);//获取请求结果，json字符串
+                    JSONArray jsonArray = new JSONArray(result);
+                    for (int i = 0; i < 1; i++) {
+                        JSONObject wddds_json = jsonArray.getJSONObject(i);
+                        WdddItemBean wdddMessage = new WdddItemBean();
+                        wdddMessage.setPicture(wddds_json.getString("picture"));
+                        wdddMessage.setTitle(wddds_json.getString("title"));
+                        wdddMessage.setDanjia(wddds_json.getDouble("danjia"));
+                        wdddMessage.setShuliang(wddds_json.getInt("shuangliang"));
+                        wdddMessage.setFukuanState(wddds_json.getString("fukuanstate"));
+
+                        wdddMessages.add(wdddMessage);
+                    }
+                    is.close();//关闭输入流
+                    connection.disconnect();
+                    return wdddMessages;
+                }
+                return null;
+            }
+        });
+        new Thread(futureTask).start();//开启子线程执行futureTask，FutureTask本质是一个Runnable
+        return futureTask.get();
+
+    }
 }
