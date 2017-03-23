@@ -75,7 +75,9 @@ public class WDDDFragment extends BaseFragment implements IXListViewLoadMore, Vi
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mDatas = new ArrayList<>();
-        url = getArguments().getString("url");
+//        if (getArguments().getString("url") != null) {
+//            url = getArguments().getString("url");
+//        }
     }
 
     @Override

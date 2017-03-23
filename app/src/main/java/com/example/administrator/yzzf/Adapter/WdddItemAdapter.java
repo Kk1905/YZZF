@@ -40,7 +40,8 @@ public class WdddItemAdapter extends BaseAdapter implements View.OnClickListener
         mOnViewChangeListener = onViewChangeListener;
         inflater = LayoutInflater.from(mContext);
         mImageLoader = ImageLoader.getInstance();
-        mOptions = new DisplayImageOptions.Builder().cacheInMemory()
+        mOptions = new DisplayImageOptions.Builder().showStubImage(R.drawable.zhuye_kongbai)
+                .showImageForEmptyUri(R.drawable.zhuye_kongbai).showImageOnFail(R.drawable.zhuye_kongbai).cacheInMemory()
                 .cacheOnDisc().displayer(new RoundedBitmapDisplayer(20)).displayer(new FadeInBitmapDisplayer(300))
                 .build();
     }

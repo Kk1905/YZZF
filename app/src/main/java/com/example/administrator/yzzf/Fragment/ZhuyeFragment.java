@@ -13,11 +13,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
-import com.example.administrator.yzzf.Activity.BKSYActivity;
 import com.example.administrator.yzzf.Activity.LoginActivity;
-import com.example.administrator.yzzf.Activity.MeiRiJingXuanActivity;
 import com.example.administrator.yzzf.Activity.TestActivity;
-import com.example.administrator.yzzf.Activity.XiangQingActivity;
 import com.example.administrator.yzzf.Adapter.NewsItemAdapter;
 import com.example.administrator.yzzf.Bean.NewsItemBean;
 import com.example.administrator.yzzf.Dao.NewsItemDao;
@@ -29,6 +26,7 @@ import com.example.administrator.yzzf.Util.RefreshTimeUtil;
 
 import java.util.ArrayList;
 
+import me.maxwin.view.IXListViewLoadMore;
 import me.maxwin.view.IXListViewRefreshListener;
 import me.maxwin.view.XListView;
 
@@ -37,7 +35,7 @@ import me.maxwin.view.XListView;
  * Created by Administrator on 2017/2/19 0019.
  */
 
-public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshListener, View.OnClickListener {
+public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshListener, IXListViewLoadMore, View.OnClickListener {
 
     private static final int LOAD_MORE = 0;
     private static final int REFRESH = 1;
@@ -47,6 +45,10 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
     private boolean isFirstIn = true;//是否是首次显示
     private boolean hasNetWork = false;//是否有网络
     private boolean isDataFromNet;//数据是否来自网络
+
+    private ArrayList<String> lunboPictureUrls = new ArrayList<>();
+    private ArrayList<String> lunboUrls = new ArrayList<>();
+    private ArrayList<String> lunboTitles = new ArrayList<>();
     XListView newsItemListView;
     NewsItemAdapter mAdapter;
     NewsItemDao mNewsItemDao;
@@ -69,31 +71,27 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mNewsItemDao = new NewsItemDao(mAppCompatActivity);
-        mAdapter = new NewsItemAdapter(mAppCompatActivity, mDatas, new NewsItemAdapter.CallBack() {
+        mAdapter = new NewsItemAdapter(mAppCompatActivity, mDatas, lunboPictureUrls, lunboUrls, lunboTitles, new NewsItemAdapter.CallBack() {
             @Override
             public void xListViewItemClick(View v) {
                 switch (v.getId()) {
-                    case R.id.meiri_jingxuan_imageView:
-                        Intent intent02 = new Intent(mAppCompatActivity, MeiRiJingXuanActivity.class);
-                        mAppCompatActivity.startActivity(intent02);
+                    case R.id.item_zhuye_head_tuijian:
+
                         break;
-                    case R.id.shequ_gonggao_imageView:
+                    case R.id.item_zhuye_head_remen:
+
                         break;
-                    case R.id.huatijiaoliu_imageView:
-                        Intent intent04 = new Intent(mAppCompatActivity, BKSYActivity.class);
-                        mAppCompatActivity.startActivity(intent04);
+                    case R.id.item_zhuye_head_junshi:
+
                         break;
-                    case R.id.yezhuchangshi_imageView:
+                    case R.id.item_zhuye_head_caijing:
+
                         break;
-                    case R.id.zulinzhihuan_imageView:
+                    case R.id.item_zhuye_head_wenti:
+
                         break;
-                    case R.id.htjl_tiaozhuan_imageview:
-                        Intent intent = new Intent(mAppCompatActivity, BKSYActivity.class);
-                        mAppCompatActivity.startActivity(intent);
-                        break;
-                    case R.id.xiangqing_tiaozhuan_zhuye:
-                        Intent intent01 = new Intent(mAppCompatActivity, XiangQingActivity.class);
-                        mAppCompatActivity.startActivity(intent01);
+                    case R.id.item_zhuye_head_gengduo:
+
                         break;
                 }
             }
@@ -129,6 +127,12 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
     public void onRefresh() {
         //XListView的下拉刷新
         new LoadDataTask().execute(REFRESH);
+    }
+
+    @Override
+    public void onLoadMore() {
+        //XListView的上拉加载
+
     }
 
     @Override
@@ -214,4 +218,8 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
         return -1;
     }
 
+    //下拉加载数据
+    private void loadMore() {
+
+    }
 }
