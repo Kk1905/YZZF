@@ -15,6 +15,14 @@ import com.example.administrator.yzzf.R;
  */
 
 public class TiJiaoDingDanActivity extends AppCompatActivity implements View.OnClickListener {
+    private int num;
+    private int danjia;
+    private int yunfei;
+    private TextView mTextView_danjia;
+    private TextView mTextView_num;
+    private TextView mTextView_yunfei;
+    private TextView mTextView_heji;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +37,19 @@ public class TiJiaoDingDanActivity extends AppCompatActivity implements View.OnC
         title.setText(R.string.tijiaodingdan);
         findViewById(R.id.toolbar_up).setOnClickListener(this);
         findViewById(R.id.tijiaodingdan_tijiao).setOnClickListener(this);
+        mTextView_danjia = (TextView) findViewById(R.id.tijiaodingdan_danjia);
+        mTextView_num = (TextView) findViewById(R.id.tijiaodingdan_num);
+        mTextView_yunfei = (TextView) findViewById(R.id.tijiaodingdan_yunfei);
+        mTextView_heji = (TextView) findViewById(R.id.tijiaodingdan_heji);
+        Bundle bundle = getIntent().getBundleExtra("info");
+        num = bundle.getInt("num");
+        danjia = bundle.getInt("danjia");
+        yunfei = bundle.getInt("yunfei");
+
+        mTextView_danjia.setText("¥" + danjia);
+        mTextView_num.setText(num + "");
+        mTextView_yunfei.setText(yunfei + "");
+        mTextView_heji.setText("¥" + (danjia * num + yunfei) * 1.0);
     }
 
     @Override

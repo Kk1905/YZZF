@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.yzzf.CustomView.ImageCycleView;
 import com.example.administrator.yzzf.R;
@@ -49,6 +50,7 @@ public class ShangPinActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.shangpin_image_jia).setOnClickListener(this);
         findViewById(R.id.shangpin_image_jian).setOnClickListener(this);
         findViewById(R.id.shangpin_lijigoumai).setOnClickListener(this);
+        num = Integer.parseInt(mEditText.getText().toString());
     }
 
     @Override
@@ -56,15 +58,27 @@ public class ShangPinActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.shangpin_lijigoumai:
                 Intent intent = new Intent(this, TiJiaoDingDanActivity.class);
-                Bundle bundle = new Bundle();
-                intent.putExtra("info", bundle);
-                startActivity(intent);
+                if (!mEditText.getText().toString().equals("")&& num > 0) {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("num", num);
+                    bundle.putInt("danjia", 199);
+                    bundle.putInt("yunfei",5);
+                    intent.putExtra("info", bundle);
+                    startActivity(intent);
+                } else
+                    Toast.makeText(ShangPinActivity.this, "请先确认购买数量", Toast.LENGTH_SHORT).show();
+
                 break;
             case R.id.toolbar_up:
                 finish();
                 break;
             case R.id.shangpin_image_jia:
-                num = Integer.parseInt(mEditText.getText().toString());
+                if (mEditText.getText().toString().equals("")) {
+                    num = 0;
+                } else {
+                    num = Integer.parseInt(mEditText.getText().toString());
+                }
+                mEditText.clearFocus();
                 mEditText.setText(++num + "");
                 break;
             case R.id.shangpin_image_jian:
@@ -74,6 +88,7 @@ public class ShangPinActivity extends AppCompatActivity implements View.OnClickL
                 } else {
                     mEditText.setText(0 + "");
                 }
+                mEditText.clearFocus();
         }
     }
 }
