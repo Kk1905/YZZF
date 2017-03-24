@@ -39,6 +39,7 @@ public class LunboFragment extends BaseFragment implements View.OnClickListener 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mImageLoader = ImageLoader.getInstance();
+
         mOptions = new DisplayImageOptions.Builder().showStubImage(R.drawable.zhuye_kongbai)
                 .showImageForEmptyUri(R.drawable.zhuye_kongbai).showImageOnFail(R.drawable.zhuye_kongbai).cacheInMemory()
                 .cacheOnDisc().displayer(new RoundedBitmapDisplayer(20)).displayer(new FadeInBitmapDisplayer(300))

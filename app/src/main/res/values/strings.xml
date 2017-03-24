@@ -119,6 +119,20 @@
     <string name="chongxinjiazai">重新加载</string>
     <string name="fuwuqicuowu">服务器错误，请稍后重试</string>
 
+    <!--商品详情-->
+    <string name="goumaishuliang">购买数量：</string>
+    <string name="leijixiaoshou">累计销售：</string>
+    <string name="shangpinxiangqing">商品详情</string>
+    <string name="shouhuoren">收货人</string>
+    <string name="lianxidianhua">联系电话</string>
+    <string name="sheng">省</string>
+    <string name="shi">市</string>
+    <string name="qu">区</string>
+    <string name="xiangxidizhi">详细地址</string>
+    <string name="yunfei">运费：</string>
+    <string name="heji">合计：</string>
+    <string name="tijiaodingdan">提交订单</string>
+
     <!--微博-->
     <string name="weibosdk_not_support_api_hint">微博客户端不支持 SDK 分享或微博客户端未安装或微博客户端是非官方版本。</string>
     <string name="weiboapp_not_installed">您还未安装微博客户端</string>

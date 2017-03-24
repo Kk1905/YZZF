@@ -3,9 +3,6 @@ package com.example.administrator.yzzf.Adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
-import com.example.administrator.yzzf.Fragment.LunboFragment;
-
 import java.util.List;
 
 /**

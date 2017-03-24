@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar_meirijingxuan"/>
+    <include
+        layout="@layout/toolbar_login"/>
 
     <TextView
         android:layout_width="match_parent"

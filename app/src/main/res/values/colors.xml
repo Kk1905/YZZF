@@ -7,7 +7,7 @@
     <color name="main_background">#ece6e6</color>
     <color name="daohang">#212020</color>
     <color name="daohang02">#282727</color>
-    <color name="yangzi">#038605</color>
+    <color name="yangzi">#059907</color>
     <color name="lan">#079fe6</color>
     <color name="red">#bf1616</color>
     <color name="grzx_red">#fa0303</color>
@@ -17,5 +17,6 @@
     <color name="login01">#ece4e4</color>
     <color name="login02">#d1c9c9</color>
     <color name="tiaokuan">#f1aa53</color>
-    <color name="lunbo">#b4000000</color>
+    <color name="lunbo">#9a000000</color>
+
 </resources>

@@ -1,6 +1,7 @@
 package com.example.administrator.yzzf.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.administrator.yzzf.Activity.TestActivity;
+import com.example.administrator.yzzf.Bean.LunboBean;
 import com.example.administrator.yzzf.Bean.NewsItemBean;
+import com.example.administrator.yzzf.CustomView.ImageCycleView;
 import com.example.administrator.yzzf.Fragment.LunboFragment;
 import com.example.administrator.yzzf.Fragment.WDDDFragment;
 import com.example.administrator.yzzf.R;
@@ -37,39 +41,18 @@ public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener
     private List<NewsItemBean> mDatas;
     private CallBack mCallBack;
 
-    private ImageLoader mImageLoader = ImageLoader.getInstance();
-    private DisplayImageOptions mOptions;
-    private List<Fragment> mLunboFragments;
-    private ArrayList<String> lunboImageUrls;
-    private ArrayList<String> lunboUrls;
-    private ArrayList<String> lunboTitles;
-    private LunboFragmentAdapter mLunboFragmentAdapter;
+    private ArrayList<LunboBean> mlunboDatas;
 
     private static final int ZUO_YOU = 0;
     private static final int SHANG_XIA = 1;
     private static final int GUANG_GAO = 2;
 
-    public NewsItemAdapter(Context context, List<NewsItemBean> mDatas, ArrayList<String> pictureUrl, ArrayList<String> urls, ArrayList<String> titles, CallBack callBack) {
+    public NewsItemAdapter(Context context, List<NewsItemBean> mDatas, ArrayList<LunboBean> lunboDatas, CallBack callBack) {
         mCallBack = callBack;
         mContext = context;
-        lunboImageUrls = pictureUrl;
-        lunboUrls = urls;
-        lunboTitles = titles;
+        mlunboDatas = lunboDatas;
         mLayoutInflater = LayoutInflater.from(context);
-        mImageLoader.init(ImageLoaderConfiguration.createDefault(context));
         this.mDatas = mDatas;
-        mOptions = new DisplayImageOptions.Builder().showStubImage(R.drawable.zhuye_kongbai)
-                .showImageForEmptyUri(R.drawable.zhuye_kongbai).showImageOnFail(R.drawable.zhuye_kongbai).cacheInMemory()
-                .cacheOnDisc().displayer(new RoundedBitmapDisplayer(20)).displayer(new FadeInBitmapDisplayer(300))
-                .build();
-
-        mLunboFragments = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-//            mLunboFragments.add(LunboFragment.newInstance(lunboUrls.get(i), lunboImageUrls.get(i)));
-            mLunboFragments.add(new WDDDFragment());
-        }
-        mLunboFragmentAdapter = new LunboFragmentAdapter(((AppCompatActivity) context).getSupportFragmentManager(), mLunboFragments);
-
     }
 
     //不将原数据删除，添加新的数据
@@ -124,14 +107,8 @@ public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener
     public View getView(int position, View convertView, ViewGroup parent) {
         //如果是列表第一行
         if (position == 0) {
-            convertView = mLayoutInflater.inflate(R.layout.item_zhuye_head02, null);
-
-            ViewPager viewPager = (ViewPager) convertView.findViewById(R.id.item_zhuye_head_viewpager);
-            CirclePageIndicator indicator = (CirclePageIndicator) convertView.findViewById(R.id.item_zhuye_head_indicator);
-            TextView title = (TextView) convertView.findViewById(R.id.item_zhuye_head_title);
-            if (lunboTitles.size() > 0) {
-                title.setText(lunboTitles.get(position));
-            }
+            convertView = mLayoutInflater.inflate(R.layout.item_zhuye_head03, null);
+            ImageCycleView imageCycleView = (ImageCycleView) convertView.findViewById(R.id.image_cycle_view);
 
             convertView.findViewById(R.id.item_zhuye_head_tuijian).setOnClickListener(this);
             convertView.findViewById(R.id.item_zhuye_head_remen).setOnClickListener(this);
@@ -140,35 +117,11 @@ public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener
             convertView.findViewById(R.id.item_zhuye_head_wenti).setOnClickListener(this);
             convertView.findViewById(R.id.item_zhuye_head_gengduo).setOnClickListener(this);
 
-            viewPager.setAdapter(mLunboFragmentAdapter);
-            indicator.setViewPager(viewPager);
-            indicator.setCurrentItem(0);
-            indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-                @Override
-                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-                }
-
-                @Override
-                public void onPageSelected(int position) {
-
-                }
-
-                @Override
-                public void onPageScrollStateChanged(int state) {
-
-                }
-            });
-
+            imageCycleView.setImageResources(mlunboDatas);
+            mCallBack.getImageCycleView(imageCycleView);
             return convertView;
         }
-//        //最后一行
-//        else if (position == getCount() - 1) {
-//            convertView = mLayoutInflater.inflate(R.layout.item_zhuye_foot, null);
-//            convertView.findViewById(R.id.htjl_tiaozhuan_imageview).setOnClickListener(this);
-//            convertView.findViewById(R.id.xiangqing_tiaozhuan_zhuye).setOnClickListener(this);
-//            return convertView;
-//        }
+
         //普通列表项,排版方式根据获取到的新闻typeId的不同而不同
 //        ViewHolder viewHolder = new ViewHolder();
 //        NewsItemBean itemBean = mDatas.get(position - 1);
@@ -251,8 +204,7 @@ public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener
 //        return convertView;
         if (position % 2 == 0) {
             return mLayoutInflater.inflate(R.layout.item_zhuye_news02, null);
-        }
-        else return mLayoutInflater.inflate(R.layout.item_zhuye_news, null);
+        } else return mLayoutInflater.inflate(R.layout.item_zhuye_news, null);
     }
 
     @Override
@@ -272,5 +224,7 @@ public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener
 
     public interface CallBack {
         void xListViewItemClick(View v);
+
+        void getImageCycleView(ImageCycleView imageCycleView);
     }
 }

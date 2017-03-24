@@ -16,7 +16,9 @@ import android.widget.Toast;
 import com.example.administrator.yzzf.Activity.LoginActivity;
 import com.example.administrator.yzzf.Activity.TestActivity;
 import com.example.administrator.yzzf.Adapter.NewsItemAdapter;
+import com.example.administrator.yzzf.Bean.LunboBean;
 import com.example.administrator.yzzf.Bean.NewsItemBean;
+import com.example.administrator.yzzf.CustomView.ImageCycleView;
 import com.example.administrator.yzzf.Dao.NewsItemDao;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Util.Constant;
@@ -46,22 +48,44 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
     private boolean hasNetWork = false;//是否有网络
     private boolean isDataFromNet;//数据是否来自网络
 
-    private ArrayList<String> lunboPictureUrls = new ArrayList<>();
-    private ArrayList<String> lunboUrls = new ArrayList<>();
-    private ArrayList<String> lunboTitles = new ArrayList<>();
+    private ArrayList<LunboBean> lunboDatas = new ArrayList<>();
     XListView newsItemListView;
     NewsItemAdapter mAdapter;
     NewsItemDao mNewsItemDao;
-
+    private ImageCycleView mImageCycleView;
 
     ArrayList<NewsItemBean> mDatas = new ArrayList<>();
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        LunboBean lunboBean01 = new LunboBean();
+        lunboBean01.setPictureUrl("http://img.taodiantong.cn/v55183/infoimg/2013-07/130720115322ky.jpg");
+        lunboBean01.setTitle("0110101101110100101");
+        lunboBean01.setUrl("http://news.sina.com.cn/china/xlxw/2017-03-23/doc-ifycstww0684406.shtml");
+        lunboDatas.add(lunboBean01);
+
+        LunboBean lunboBean02 = new LunboBean();
+        lunboBean02.setPictureUrl("http://pic30.nipic.com/20130626/8174275_085522448172_2.jpg");
+        lunboBean02.setTitle("020202020202020202");
+        lunboBean02.setUrl("http://news.sina.com.cn/c/nd/2017-03-23/doc-ifycstww0746052.shtml");
+        lunboDatas.add(lunboBean02);
+
+        LunboBean lunboBean03 = new LunboBean();
+        lunboBean03.setPictureUrl("");
+        lunboBean03.setTitle("03030303030303030303030303030303030303");
+        lunboBean03.setUrl("http://news.sina.com.cn/o/2017-03-23/doc-ifycsukm3308612.shtml");
+        lunboDatas.add(lunboBean03);
+
+    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_zhuye, container, false);
-        mToolbar = (Toolbar) view.findViewById(R.id.toolbar_zhuye);
+        mToolbar = (Toolbar) view.findViewById(R.id.toolbar_zhuye02);
         view.findViewById(R.id.toolbar_zhuye_login).setOnClickListener(this);
 
         return view;
@@ -71,7 +95,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mNewsItemDao = new NewsItemDao(mAppCompatActivity);
-        mAdapter = new NewsItemAdapter(mAppCompatActivity, mDatas, lunboPictureUrls, lunboUrls, lunboTitles, new NewsItemAdapter.CallBack() {
+        mAdapter = new NewsItemAdapter(mAppCompatActivity, mDatas, lunboDatas, new NewsItemAdapter.CallBack() {
             @Override
             public void xListViewItemClick(View v) {
                 switch (v.getId()) {
@@ -95,13 +119,18 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
                         break;
                 }
             }
+
+            @Override
+            public void getImageCycleView(ImageCycleView imageCycleView) {
+                mImageCycleView = imageCycleView;
+            }
         });
 
 
         newsItemListView = (XListView) getView().findViewById(R.id.item_scrollView);
         newsItemListView.setAdapter(mAdapter);
-//        newsItemListView.setPullLoadEnable(this); 在这个Fragment不需要上拉加载更多
-        newsItemListView.setPullRefreshEnable(this);
+        newsItemListView.setPullLoadEnable(this);//设置上拉加载
+        newsItemListView.setPullRefreshEnable(this);//设置下拉刷新
         newsItemListView.setRefreshTime(RefreshTimeUtil.getRefreshTime(mAppCompatActivity, Constant.ZY_FRAGMENT_TYPE));
 
         newsItemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -121,6 +150,26 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
         } else {
             newsItemListView.NotRefreshAtBegin();
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mImageCycleView.pushImageCycle();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mImageCycleView.pushImageCycle();
+        Log.e("kkkboy", "onStop");
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mImageCycleView.pushImageCycle();
+        Log.e("kkkboy", "onDestroyView");
     }
 
     @Override

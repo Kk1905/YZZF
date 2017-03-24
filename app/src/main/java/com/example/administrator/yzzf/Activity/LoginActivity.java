@@ -7,11 +7,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.example.administrator.yzzf.Fragment.BaseFragment;
 import com.example.administrator.yzzf.Fragment.LoginFragment;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.FragmentFactory;
 
 
 /**
@@ -37,10 +39,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void initView() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.login_container);
         if (fragment == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .addToBackStack(null)
-                    .add(R.id.login_container, new LoginFragment())
-                    .commit();
+//            getSupportFragmentManager().beginTransaction()
+//                    .addToBackStack(null)
+//                    .add(R.id.login_container, new LoginFragment())
+//                    .commit();
+            FragmentFactory.addFragment(LoginActivity.this, new LoginFragment(), R.id.login_container);
         }
     }
 
@@ -55,5 +58,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onActivityFinish() {
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Log.e("kkkboy", getSupportFragmentManager().getBackStackEntryCount() + "---------");
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+            finish();
+        }
     }
 }

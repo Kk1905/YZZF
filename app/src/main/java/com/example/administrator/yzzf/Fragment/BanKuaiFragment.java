@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.example.administrator.yzzf.Activity.BKSYActivity;
 import com.example.administrator.yzzf.Activity.MeiRiJingXuanActivity;
+import com.example.administrator.yzzf.Activity.ShangPinActivity;
 import com.example.administrator.yzzf.R;
 
 
@@ -35,6 +38,7 @@ public class BanKuaiFragment extends BaseFragment implements View.OnClickListene
         }
         view.findViewById(R.id.bankuai_htjl).setOnClickListener(this);
         view.findViewById(R.id.bankuai_meirijingxuan).setOnClickListener(this);
+        view.findViewById(R.id.bankuai_shequgonggao).setOnClickListener(this);
         return view;
     }
 
@@ -60,6 +64,7 @@ public class BanKuaiFragment extends BaseFragment implements View.OnClickListene
                 mAppCompatActivity.startActivity(intent01);
                 break;
             case R.id.bankuai_meirijingxuan:
+                Log.e("kkkboy", "meirijingxuan");
                 Intent intent02 = new Intent(mAppCompatActivity, MeiRiJingXuanActivity.class);
                 mAppCompatActivity.startActivity(intent02);
                 break;
@@ -68,6 +73,9 @@ public class BanKuaiFragment extends BaseFragment implements View.OnClickListene
             case R.id.bankuai_wuyechangshi:
                 break;
             case R.id.bankuai_shequgonggao:
+                Log.e("kkkboy", "shequgonggao");
+                Intent intent = new Intent(mAppCompatActivity, ShangPinActivity.class);
+                mAppCompatActivity.startActivity(intent);
                 break;
         }
     }

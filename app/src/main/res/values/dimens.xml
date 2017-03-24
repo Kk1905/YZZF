@@ -38,4 +38,11 @@
     <dimen name="shuliang">12sp</dimen>
     <dimen name="heji">14sp</dimen>
     <dimen name="quxiao">14sp</dimen>
+    
+    <!--商品详情-->
+    <dimen name="shangpin_title">16sp</dimen>
+    <dimen name="shangpin_zongshu">12sp</dimen>
+    <dimen name="shangpin_danjia">16sp</dimen>
+    <dimen name="shangpin_num">16sp</dimen>
+    <dimen name="shouhuoren">16sp</dimen>
 </resources>

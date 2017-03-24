@@ -7,16 +7,19 @@
     android:orientation="vertical">
 
     <include
+        android:id="@+id/toolbar_zhuye02"
+        layout="@layout/toolbar_zhuye02"/>
 
-        layout="@layout/toolbar_zhuye"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:background="@color/toolbar_background"/>
 
     <FrameLayout
 
         android:id="@+id/xlistView_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation_bar"
-        android:layout_below="@+id/toolbar_zhuye">
+        android:layout_height="match_parent">
 
         <me.maxwin.view.XListView
             android:id="@+id/item_scrollView"

@@ -26,4 +26,10 @@ public class FragmentFactory {
                 .replace(container, fragment)
                 .commit();
     }
+    public static void addFragment(AppCompatActivity activity, Fragment fragment, int container) {
+        activity.getSupportFragmentManager().beginTransaction()
+                .addToBackStack(null)
+                .add(container, fragment)
+                .commit();
+    }
 }
