@@ -14,11 +14,11 @@ import java.util.List;
  * Created by Administrator on 2017/2/28 0028.
  */
 
-public class MainFragmentPagerAdapter extends FragmentPagerAdapter {
+public class BKSYFragmentPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> mList_fragment;
     private List<String> mList_title;
 
-    public MainFragmentPagerAdapter(FragmentManager fm, List<Fragment> list_fragment, List<String> list_string) {
+    public BKSYFragmentPagerAdapter(FragmentManager fm, List<Fragment> list_fragment, List<String> list_string) {
         super(fm);
         mList_fragment = list_fragment;
         mList_title = list_string;

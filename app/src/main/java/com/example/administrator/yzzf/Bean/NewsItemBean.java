@@ -24,7 +24,7 @@ public class NewsItemBean {
     //发布的时间
     private String displayAdddate;
     //点赞数
-    private int states;
+    private String states;
     //是否首页显示
     private String isindex;
     //点击数
@@ -41,6 +41,8 @@ public class NewsItemBean {
     private String hourAgo;
     //文章的id
     private int id;
+    //新闻的来源
+    private String source;
 
     public int getId() {
         return id;
@@ -96,7 +98,7 @@ public class NewsItemBean {
         return displayAdddate;
     }
 
-    public int getStates() {
+    public String getStates() {
         return states;
     }
 
@@ -124,6 +126,9 @@ public class NewsItemBean {
         return usersId;
     }
 
+    public String getSource() {
+        return source;
+    }
 
     public void setTypeid(int typeid) {
         this.typeid = typeid;
@@ -138,7 +143,7 @@ public class NewsItemBean {
         this.displayAdddate = displayAdddate;
     }
 
-    public void setStates(int states) {
+    public void setStates(String states) {
         this.states = states;
     }
 
@@ -166,11 +171,15 @@ public class NewsItemBean {
         this.usersId = usersId;
     }
 
-    public String toString() {
-        return "NewsItem " + "[title=" + this.title + ", date=" + this.displayAdddate + ", num=" + this.states + ", newsType=" + "]";
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String toString() {
+        return "NewsItem " + "[title=" + this.title + ", date=" + this.displayAdddate + ", num=" + this.states + ", newsType=" + "]";
     }
 }

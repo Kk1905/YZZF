@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_login"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/main_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/qianlan"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="@string/jinri"
+            android:textColor="@color/daohang"/>
+
+        <TextView
+            android:id="@+id/bksy_jinri_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123"
+            android:textColor="@color/daohang"/>
+
+        <TextView
+            android:layout_width="@dimen/dialog_divider"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:background="@color/daohang"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="@string/huati"
+            android:textColor="@color/daohang"/>
+
+        <TextView
+            android:id="@+id/bksy_huati_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2223"
+            android:textColor="@color/daohang"/>
+    </LinearLayout>
+
+    <me.maxwin.view.XListView
+        android:id="@+id/bksy_activity_xlistview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"></me.maxwin.view.XListView>
+</LinearLayout>

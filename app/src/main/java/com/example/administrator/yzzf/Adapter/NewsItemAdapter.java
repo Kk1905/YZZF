@@ -218,6 +218,7 @@ public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener
         ImageView imageView03;
         TextView title_textView;
         TextView time_textView;
+        TextView fabu_textView;
         TextView num_textView;
         ImageView guanggaoImage;
     }

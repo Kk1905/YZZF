@@ -4,7 +4,9 @@
     <color name="colorPrimaryDark">#626266</color>
     <color name="colorAccent">#FF4081</color>
     <color name="toolbar_background">#fff</color>
-    <color name="main_background">#ece6e6</color>
+    <!--<color name="main_background">#efe9e9</color>-->
+    <color name="main_background">#efe9e9</color>
+    <color name="second_background">#dddddd</color>
     <color name="daohang">#212020</color>
     <color name="daohang02">#282727</color>
     <color name="yangzi">#059907</color>
@@ -13,10 +15,10 @@
     <color name="grzx_red">#fa0303</color>
     <color name="qianlan">#c4e7ef</color>
     <color name="b01">#f9f5f5</color>
-    <color name="second_background">#c9c0c0</color>
     <color name="login01">#ece4e4</color>
     <color name="login02">#d1c9c9</color>
     <color name="tiaokuan">#f1aa53</color>
     <color name="lunbo">#9a000000</color>
 
+    <color name="dialog_divider_color">#dddddd</color>
 </resources>

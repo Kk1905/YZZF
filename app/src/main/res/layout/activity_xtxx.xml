@@ -42,7 +42,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/dialog_divider"
             android:background="@color/main_background"/>
 
         <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX

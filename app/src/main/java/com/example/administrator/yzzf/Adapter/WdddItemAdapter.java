@@ -84,8 +84,9 @@ public class WdddItemAdapter extends BaseAdapter implements View.OnClickListener
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder = new ViewHolder();
+        ViewHolder holder = null;
         if (convertView == null) {
+            holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.item_wodedingdan, null);
             holder.imageView = (ImageView) convertView.findViewById(R.id.item_wodedingdan_image_view);
             holder.title = (TextView) convertView.findViewById(R.id.item_wodedingdan_title);

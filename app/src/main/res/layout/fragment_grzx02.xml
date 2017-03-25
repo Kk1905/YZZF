@@ -52,7 +52,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/dialog_divider"
         android:background="@color/main_background"/>
 
     <LinearLayout
@@ -71,7 +71,7 @@
             android:src="@drawable/grzx_daifukuan"
             custom:badge_bgColor="@color/toolbar_background"
             custom:badge_borderColor="@color/grzx_red"
-            custom:badge_borderWidth="1dp"
+            custom:badge_borderWidth="@dimen/dialog_divider"
             custom:badge_dragable="true"
             custom:badge_gravity="rightTop"
             custom:badge_padding="5dp"
@@ -92,7 +92,7 @@
             android:src="@drawable/grzx_daifahuo"
             custom:badge_bgColor="@color/toolbar_background"
             custom:badge_borderColor="@color/grzx_red"
-            custom:badge_borderWidth="1dp"
+            custom:badge_borderWidth="@dimen/dialog_divider"
             custom:badge_dragable="true"
             custom:badge_gravity="rightTop"
             custom:badge_padding="5dp"
@@ -113,7 +113,7 @@
             android:src="@drawable/grzx_daishouhuo"
             custom:badge_bgColor="@color/toolbar_background"
             custom:badge_borderColor="@color/grzx_red"
-            custom:badge_borderWidth="1dp"
+            custom:badge_borderWidth="@dimen/dialog_divider"
             custom:badge_dragable="true"
             custom:badge_gravity="rightTop"
             custom:badge_padding="5dp"
@@ -135,7 +135,7 @@
             android:src="@drawable/grzx_shouhoutuikuan"
             custom:badge_bgColor="@color/toolbar_background"
             custom:badge_borderColor="@color/grzx_red"
-            custom:badge_borderWidth="1dp"
+            custom:badge_borderWidth="@dimen/dialog_divider"
             custom:badge_dragable="true"
             custom:badge_gravity="rightTop"
             custom:badge_padding="5dp"
@@ -145,7 +145,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/dialog_divider"
         android:background="@color/main_background"/>
 
     <LinearLayout
@@ -180,7 +180,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/dialog_divider"
             android:background="@color/main_background"/>
 
         <LinearLayout
@@ -241,7 +241,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/dialog_divider"
             android:background="@color/main_background"/>
 
         <TextView
@@ -251,7 +251,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/dialog_divider"
             android:background="@color/main_background"/>
 
         <com.example.administrator.yzzf.CustomView.CustomGRZXItem

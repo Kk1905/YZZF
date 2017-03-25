@@ -16,7 +16,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
 
-        super(context, DB_NAME, null, 13);
+        super(context, DB_NAME, null, 14);
         mContext = context;
     }
 
@@ -28,10 +28,11 @@ public class DBHelper extends SQLiteOpenHelper {
                 "typeid integer," +
                 "picture text," +
                 "displayAdddate text," +
-                "states integer," +
+                "states text," +
                 "isindex text," +
                 "hits integer," +
                 "title text," +
+                "source text," +
                 "forumid integer," +
                 "reprint integer," +
                 "usersid integer," +

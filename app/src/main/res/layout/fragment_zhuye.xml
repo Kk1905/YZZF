@@ -12,7 +12,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0.6dp"
+        android:layout_height="@dimen/dialog_divider"
         android:background="@color/toolbar_background"/>
 
     <FrameLayout
@@ -25,7 +25,9 @@
             android:id="@+id/item_scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:divider="@null"
+            android:divider="@color/dialog_divider_color"
+            android:dividerHeight="@dimen/dialog_divider"
+            android:fadingEdge="none"
             android:footerDividersEnabled="false"
             android:headerDividersEnabled="false"
             android:scrollbars="none">

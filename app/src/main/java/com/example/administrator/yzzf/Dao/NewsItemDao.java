@@ -25,13 +25,13 @@ public class NewsItemDao {
 
     //添加一项新闻数据
     public void add(NewsItemBean newsItemBean) {
-        String sql = "insert into tb_NewsItem (typeid,picture,displayAdddate,states,isindex,hits,title,forumid,reprint,usersid,id)" +
-                "values(?,?,?,?,?,?,?,?,?,?,?);";
+        String sql = "insert into tb_NewsItem (typeid,picture,displayAdddate,states,isindex,hits,title,forumid,reprint,usersid,id,source)" +
+                "values(?,?,?,?,?,?,?,?,?,?,?,?);";
         SQLiteDatabase db = mDBHelper.getWritableDatabase();
         db.execSQL(sql,
                 new Object[]{newsItemBean.getTypeid(), newsItemBean.getPicture(), newsItemBean.getDisplayAdddate(),
                         newsItemBean.getStates(), newsItemBean.getIsindex(), newsItemBean.getHits(), newsItemBean.getTitle(), newsItemBean.getForumId(),
-                        newsItemBean.getReprint(), newsItemBean.getUsersId(), newsItemBean.getId()});
+                        newsItemBean.getReprint(), newsItemBean.getUsersId(), newsItemBean.getId(),newsItemBean.getSource()});
         db.close();
         Log.e("kkkboy", "添加一条主页新闻数据成功");
     }

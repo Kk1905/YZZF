@@ -64,7 +64,6 @@ public class BanKuaiFragment extends BaseFragment implements View.OnClickListene
                 mAppCompatActivity.startActivity(intent01);
                 break;
             case R.id.bankuai_meirijingxuan:
-                Log.e("kkkboy", "meirijingxuan");
                 Intent intent02 = new Intent(mAppCompatActivity, MeiRiJingXuanActivity.class);
                 mAppCompatActivity.startActivity(intent02);
                 break;
@@ -73,7 +72,6 @@ public class BanKuaiFragment extends BaseFragment implements View.OnClickListene
             case R.id.bankuai_wuyechangshi:
                 break;
             case R.id.bankuai_shequgonggao:
-                Log.e("kkkboy", "shequgonggao");
                 Intent intent = new Intent(mAppCompatActivity, ShangPinActivity.class);
                 mAppCompatActivity.startActivity(intent);
                 break;

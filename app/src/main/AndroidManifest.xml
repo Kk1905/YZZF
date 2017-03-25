@@ -123,6 +123,9 @@
         <activity
             android:name=".Activity.TiJiaoDingDanActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activity.BKSYActivity02"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

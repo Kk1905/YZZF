@@ -54,6 +54,23 @@
         <item name="android:windowAnimationStyle">@style/bottom_anim_style</item>
     </style>
 
+    <!--自定义CityPickerDialog主题-->
+    <style name="custom_city_picker_dialog_style" parent="android:Theme.Dialog">
+        <!-- 背景颜色及透明程度 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 是否没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否背景模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 设置背景模糊的透明度-->
+        <item name="android:backgroundDimAmount">0.5</item>
+
+    </style>
+    <!--自定义对话框的进入和退出动画-->
     <style name="bottom_anim_style">
         <item name="android:windowEnterAnimation">@anim/dialog_in_animation</item>
         <item name="android:windowExitAnimation">@anim/dialog_out_animation</item>

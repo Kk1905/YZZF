@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/bg_dialogue_all"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/custom_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="城市选择"
+        android:textColor="@color/daohang"
+        android:textSize="@dimen/dialog_title"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/dialog_divider_color"/>
+
+    <ListView
+        android:id="@+id/custom_dialog_listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/dialog_divider_color"
+        android:dividerHeight="@dimen/dialog_divider"
+        android:fadingEdge="none"
+        android:scrollbars="none"></ListView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/dialog_divider_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/custom_dialog_quxiao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_quxiao_queding_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/quxiao"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/dialog_title"/>
+
+        <TextView
+            android:layout_width="@dimen/dialog_divider"
+            android:layout_height="match_parent"
+            android:background="@color/dialog_divider_color"/>
+
+        <TextView
+            android:id="@+id/custom_dialog_queding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/dialog_quxiao_queding_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/queding"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/dialog_title"/>
+    </LinearLayout>
+</LinearLayout>

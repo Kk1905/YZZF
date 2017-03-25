@@ -13,6 +13,7 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.example.administrator.yzzf.Adapter.MainAdapter;
 import com.example.administrator.yzzf.CustomView.NoScrollViewPager;
 import com.example.administrator.yzzf.Fragment.BanKuaiFragment;
+import com.example.administrator.yzzf.Fragment.BanKuaiFragment02;
 import com.example.administrator.yzzf.Fragment.BaseFragment;
 import com.example.administrator.yzzf.Fragment.GRZXFragment;
 import com.example.administrator.yzzf.Fragment.GRZXFragment02;
@@ -30,7 +31,7 @@ import java.util.List;
  */
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener, View.OnClickListener,
-        ViewPager.OnPageChangeListener{
+        ViewPager.OnPageChangeListener {
 
     BottomNavigationBar bottomNavigationBar;
     NoScrollViewPager mViewPager;
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
     private void initViewPager() {
         mViewPager = (NoScrollViewPager) findViewById(R.id.main_viewPager);
         mFragments.add(new ZhuyeFragment());
-        mFragments.add(new BanKuaiFragment());
+        mFragments.add(new BanKuaiFragment02());
         mFragments.add(new GXQMFragment());
         mFragments.add(new GRZXFragment02());
         mMainAdapter = new MainAdapter(getSupportFragmentManager(), mFragments);

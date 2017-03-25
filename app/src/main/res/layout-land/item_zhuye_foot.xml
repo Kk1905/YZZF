@@ -70,7 +70,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/dialog_divider"
             android:background="@color/main_background"/>
 
         <LinearLayout
@@ -110,7 +110,7 @@
                 android:gravity="center_vertical">
 
                 <TextView
-                    android:layout_width="1dp"
+                    android:layout_width="@dimen/dialog_divider"
                     android:layout_height="match_parent"
 
                     android:background="@color/main_background"/>
@@ -138,7 +138,7 @@
                 android:gravity="center_vertical">
 
                 <TextView
-                    android:layout_width="1dp"
+                    android:layout_width="@dimen/dialog_divider"
                     android:layout_height="match_parent"
 
                     android:background="@color/main_background"/>
@@ -169,7 +169,7 @@
                 android:gravity="center_vertical">
 
                 <TextView
-                    android:layout_width="1dp"
+                    android:layout_width="@dimen/dialog_divider"
                     android:layout_height="match_parent"
 
                     android:background="@color/main_background"/>
@@ -207,7 +207,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/dialog_divider"
             android:background="@color/main_background"/>
     </LinearLayout>
 </merge>

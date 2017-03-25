@@ -73,8 +73,9 @@ public class Json2NewsUtil {
                         newsItemBean.setIsindex(news_json.getString("isindex"));
                         newsItemBean.setPicture(news_json.getString("picture"));
                         newsItemBean.setReprint(news_json.getInt("reprint"));
-                        newsItemBean.setStates(news_json.getInt("states"));
+                        newsItemBean.setStates(news_json.getString("states"));
                         newsItemBean.setUsersId(news_json.getInt("usersid"));
+                        newsItemBean.setSource((news_json.getString("source")));
                         Log.e("kkkboy", String.valueOf(i));
                         newsItems.add(newsItemBean);
                     }

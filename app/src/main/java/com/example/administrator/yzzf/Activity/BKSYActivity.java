@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import com.example.administrator.yzzf.Adapter.MainFragmentPagerAdapter;
+import com.example.administrator.yzzf.Adapter.BKSYFragmentPagerAdapter;
 import com.example.administrator.yzzf.CustomView.NoScrollViewPager;
 import com.example.administrator.yzzf.Fragment.BKSY_Quanbu_Fragment;
 import com.example.administrator.yzzf.Fragment.BKSY_Remen_Fragment;
@@ -27,7 +27,7 @@ import java.util.List;
 public class BKSYActivity extends AppCompatActivity implements View.OnClickListener {
     private TabLayout mTabLayout;
     private NoScrollViewPager container;
-    private MainFragmentPagerAdapter adapter;
+    private BKSYFragmentPagerAdapter adapter;
     private List<Fragment> mList_fragment;
     private List<String> mList_title;
 
@@ -68,7 +68,7 @@ public class BKSYActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < titles.length; i++) {
             mList_title.add(titles[i]);
         }
-        adapter = new MainFragmentPagerAdapter(getSupportFragmentManager(), mList_fragment, mList_title);
+        adapter = new BKSYFragmentPagerAdapter(getSupportFragmentManager(), mList_fragment, mList_title);
 
         //这里取消viewPager的左右滑动功能
         container.setNoScroll(true);

@@ -71,8 +71,8 @@
             android:id="@+id/item_zhuye_news02_image_fabu"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginBottom="1dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginBottom="@dimen/dialog_divider"
+            android:layout_marginTop="@dimen/dialog_divider"
             android:adjustViewBounds="true"
             android:src="@drawable/zhuye_guanggao"/>
 
@@ -114,9 +114,4 @@
     </LinearLayout>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/main_background"/>
 </LinearLayout>
