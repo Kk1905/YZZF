@@ -109,50 +109,14 @@
                 android:paddingTop="10dp">
 
                 <EditText
-                    android:id="@+id/tijiaodingdan_sheng"
+                    android:id="@+id/tijiaodingdan_sheng_shi_qu"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="11"
                     android:background="@drawable/edit_text_tijiaodingdan_shape"
                     android:clickable="true"
                     android:focusable="false"
-                    android:hint="@string/sheng"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="10dp"
-                    android:textSize="@dimen/sheng_shi_qu"/>
-
-                <EditText
-                    android:id="@+id/tijiaodingdan_shi"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_weight="11"
-                    android:background="@drawable/edit_text_tijiaodingdan_shape"
-                    android:clickable="true"
-                    android:focusable="false"
-                    android:hint="@string/shi"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="10dp"
-                    android:textSize="@dimen/sheng_shi_qu"/>
-
-                <EditText
-                    android:id="@+id/tijiaodingdan_qu"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_weight="11"
-                    android:background="@drawable/edit_text_tijiaodingdan_shape"
-                    android:clickable="true"
-                    android:focusable="false"
-                    android:hint="@string/qu"
+                    android:hint="@string/sheng_shi_qu"
                     android:inputType="text"
                     android:maxLines="1"
                     android:paddingBottom="10dp"

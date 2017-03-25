@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RadioButton;
 
+import com.example.administrator.yzzf.Model.ProvinceModel;
 import com.example.administrator.yzzf.R;
 
 import java.util.HashMap;
@@ -18,14 +19,14 @@ import java.util.Map;
  */
 
 public class DialogItemAdapter extends BaseAdapter {
-    private List<String> mDatas;
+    private List<ProvinceModel> mDatas;
     private Context mContext;
     private LayoutInflater mInflater;
     //Map集合用来保存每一个item的选中状态
     private Map<Integer, Boolean> checkedMap;
     private ItemSelectedListener mListener;
 
-    public DialogItemAdapter(Context context, List<String> datas, ItemSelectedListener listener) {
+    public DialogItemAdapter(Context context, List<ProvinceModel> datas, ItemSelectedListener listener) {
         mListener = listener;
         mContext = context;
         mDatas = datas;
@@ -35,7 +36,7 @@ public class DialogItemAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 20;
+        return mDatas.size();
     }
 
     @Override
@@ -59,7 +60,8 @@ public class DialogItemAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.mRadioButton.setText("江苏省" + position);
+        ProvinceModel provinceModel = mDatas.get(position);
+        holder.mRadioButton.setText(provinceModel.getName());
         holder.mRadioButton.setChecked(checkedMap.get(position));
         holder.mRadioButton.setOnClickListener(new View.OnClickListener() {
             @Override
