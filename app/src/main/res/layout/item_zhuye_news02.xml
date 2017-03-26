@@ -61,20 +61,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
-            android:visibility="gone"
             android:id="@+id/item_zhuye_news02_image_fabu"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/dialog_divider"
             android:layout_marginTop="@dimen/dialog_divider"
             android:adjustViewBounds="true"
-            android:src="@drawable/zhuye_guanggao"/>
+            android:src="@drawable/zhuye_guanggao"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/item_zhuye_news02_fabu"

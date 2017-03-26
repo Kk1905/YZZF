@@ -64,7 +64,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="@null"
+        android:divider="@color/dialog_divider_color"
+        android:dividerHeight="@dimen/dialog_divider"
+        android:fadingEdge="none"
         android:footerDividersEnabled="false"
-        android:headerDividersEnabled="false"></me.maxwin.view.XListView>
+        android:headerDividersEnabled="false"
+        android:scrollbars="none"></me.maxwin.view.XListView>
 </LinearLayout>

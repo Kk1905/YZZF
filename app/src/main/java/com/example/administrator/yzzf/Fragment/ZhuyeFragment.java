@@ -137,7 +137,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(mAppCompatActivity, TestActivity.class);
-                intent.putExtra("url", mDatas.get(position - 2).getStringUrl());//传递一个url参数过去给详情Activity
+//                intent.putExtra("url", mDatas.get(position - 2).getStringUrl());//传递一个url参数过去给详情Activity
                 mAppCompatActivity.startActivity(intent);
 
             }

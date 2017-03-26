@@ -2,6 +2,7 @@ package com.example.administrator.yzzf.Util;
 
 import com.example.administrator.yzzf.Model.CityModel;
 import com.example.administrator.yzzf.Model.DistrictModel;
+import com.example.administrator.yzzf.Model.Model;
 import com.example.administrator.yzzf.Model.ProvinceModel;
 
 import org.xml.sax.Attributes;
@@ -19,7 +20,7 @@ public class XmlParserHandler extends DefaultHandler {
     /*
     存储所有对象
      */
-    private List<ProvinceModel> provinceList = new ArrayList<>();
+    private List<Model> provinceList = new ArrayList<>();
     ProvinceModel provinceModel = new ProvinceModel();
     CityModel cityModel = new CityModel();
     DistrictModel districtModel = new DistrictModel();
@@ -28,7 +29,7 @@ public class XmlParserHandler extends DefaultHandler {
 
     }
 
-    public List<ProvinceModel> getProvinceList() {
+    public List<Model> getProvinceList() {
         return provinceList;
     }
 

@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RadioButton;
 
+import com.example.administrator.yzzf.Model.CityModel;
+import com.example.administrator.yzzf.Model.DistrictModel;
+import com.example.administrator.yzzf.Model.Model;
 import com.example.administrator.yzzf.Model.ProvinceModel;
 import com.example.administrator.yzzf.R;
 
@@ -19,20 +22,30 @@ import java.util.Map;
  */
 
 public class DialogItemAdapter extends BaseAdapter {
-    private List<ProvinceModel> mDatas;
+    //    private List<ProvinceModel> mProvinceModelList;
+//    private List<CityModel> mCityModelList;
+//    private List<DistrictModel> mDistrictModelList;
+    private List<Model> mDatas;
     private Context mContext;
     private LayoutInflater mInflater;
     //Map集合用来保存每一个item的选中状态
     private Map<Integer, Boolean> checkedMap;
     private ItemSelectedListener mListener;
 
-    public DialogItemAdapter(Context context, List<ProvinceModel> datas, ItemSelectedListener listener) {
+    private int flag;
+    private static final int SHENG = 0;
+    private static final int SHI = 1;
+    private static final int QU = 2;
+
+    public DialogItemAdapter(Context context, List<Model> datas, ItemSelectedListener listener, int flag) {
         mListener = listener;
         mContext = context;
-        mDatas = datas;
+        this.flag = flag;
         mInflater = LayoutInflater.from(context);
+        mDatas = datas;
         initCheckedMap();
     }
+
 
     @Override
     public int getCount() {
@@ -60,8 +73,16 @@ public class DialogItemAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        ProvinceModel provinceModel = mDatas.get(position);
-        holder.mRadioButton.setText(provinceModel.getName());
+        if (flag == SHENG) {
+            ProvinceModel provinceModel = (ProvinceModel) mDatas.get(position);
+            holder.mRadioButton.setText(provinceModel.getName());
+        } else if (flag == SHI) {
+            CityModel cityModel = (CityModel) mDatas.get(position);
+            holder.mRadioButton.setText(cityModel.getName());
+        } else if (flag == QU) {
+            DistrictModel districtModel = (DistrictModel) mDatas.get(position);
+            holder.mRadioButton.setText(districtModel.getName());
+        }
         holder.mRadioButton.setChecked(checkedMap.get(position));
         holder.mRadioButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,9 +92,9 @@ public class DialogItemAdapter extends BaseAdapter {
                 checkedMap.put(position, holder.mRadioButton.isChecked());
                 //通知Adapter更新ListView
                 DialogItemAdapter.this.notifyDataSetChanged();
-                String checkedItem = (String) holder.mRadioButton.getText();
-                //通过接口传递被选中的字符串
-                mListener.itemSelected(checkedItem);
+//                String checkedItem = (String) holder.mRadioButton.getText();
+                //通过接口传递被选中的position
+                mListener.itemSelected(position);
             }
         });
         return convertView;
@@ -101,6 +122,6 @@ public class DialogItemAdapter extends BaseAdapter {
 
     //跟Dialog交互的接口
     public interface ItemSelectedListener {
-        void itemSelected(String string);
+        void itemSelected(int position);
     }
 }

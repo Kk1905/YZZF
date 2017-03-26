@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Administrator on 2017/3/25 0025.
  */
 
-public class CityModel {
+public class CityModel extends Model{
     private String name;
     private List<DistrictModel> districts;
 

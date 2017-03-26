@@ -16,12 +16,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.administrator.yzzf.Adapter.DialogItemAdapter;
+import com.example.administrator.yzzf.Model.CityModel;
+import com.example.administrator.yzzf.Model.DistrictModel;
+import com.example.administrator.yzzf.Model.Model;
 import com.example.administrator.yzzf.Model.ProvinceModel;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Util.XmlParserHandler;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.SAXParser;
@@ -38,12 +42,15 @@ public class CityPickerDialog extends Dialog implements View.OnClickListener, Di
     private ChangeCityPickerDialogListener mListener;
     private ListView mListView;
     private DialogItemAdapter mAdapter;
-    private String itemSelectedString;
-    private List<ProvinceModel> mProvinceModels;
+    private int itemSelectedPosition;
+    private List<Model> mProvinceModels;
+    private List<Model> cityModelList;
+    private List<Model> districtModelList;
     private int flag;
     private static final int PROVINCE = 0;
     private static final int CITY = 1;
     private static final int DISTRICT = 2;
+    private String result = "";
 
 
     public CityPickerDialog(Context context, ChangeCityPickerDialogListener listener) {
@@ -58,10 +65,10 @@ public class CityPickerDialog extends Dialog implements View.OnClickListener, Di
     }
 
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            initCustomView();
-            initDialogSize();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initCustomView();
+        initDialogSize();
     }
 
     private void initDialogSize() {
@@ -91,7 +98,7 @@ public class CityPickerDialog extends Dialog implements View.OnClickListener, Di
         //初始化数据
         initProvinceDatas();
         //为ListView设置Adapter
-        mAdapter = new DialogItemAdapter(mContext, mProvinceModels, this);
+        mAdapter = new DialogItemAdapter(mContext, mProvinceModels, this, PROVINCE);
         mListView.setAdapter(mAdapter);
 
         setContentView(customView);
@@ -125,15 +132,49 @@ public class CityPickerDialog extends Dialog implements View.OnClickListener, Di
                 dismiss();
                 break;
             case R.id.custom_dialog_queding:
-                mListener.setContent(itemSelectedString);
-                dismiss();
+                if (flag == PROVINCE) {
+                    title.setText(R.string.xuanze_shi);
+
+                    cityModelList = new ArrayList<>();
+                    ProvinceModel provinceModel = (ProvinceModel) mProvinceModels.get(itemSelectedPosition);
+                    //清理缓存
+//                    cityModelList.clear();
+                    for (CityModel cityModel : provinceModel.getCityies()) {
+                        cityModelList.add(cityModel);
+                    }
+                    flag = CITY;
+                    result = ((ProvinceModel) mProvinceModels.get(itemSelectedPosition)).getName();//目前result中是省的名字
+                    mAdapter = new DialogItemAdapter(mContext, cityModelList, this, CITY);
+                    mAdapter.notifyDataSetChanged();//通知更新view
+                    mListView.setAdapter(mAdapter);
+                } else if (flag == CITY) {
+                    title.setText(R.string.xuanze_qu);
+
+                    districtModelList = new ArrayList<>();
+                    CityModel cityModel = (CityModel) cityModelList.get(itemSelectedPosition);
+                    //清理缓存
+//                    districtModelList.clear();
+                    for (DistrictModel districtModel : cityModel.getDistricts()) {
+                        districtModelList.add(districtModel);
+                    }
+                    flag = DISTRICT;
+                    result = result + "--" + ((CityModel) cityModelList.get(itemSelectedPosition)).getName();//目前result中是"省"--"市"
+                    mAdapter = new DialogItemAdapter(mContext, districtModelList, this, DISTRICT);
+                    mAdapter.notifyDataSetChanged();//通知更新view
+                    mListView.setAdapter(mAdapter);
+                } else if (flag == DISTRICT) {
+                    result = result + "--" + ((DistrictModel) districtModelList.get(itemSelectedPosition)).getName();
+                    mListener.setContent(result);
+                    dismiss();
+                }
+
                 break;
         }
     }
 
     @Override
-    public void itemSelected(String string) {
-        itemSelectedString = string;
+    public void itemSelected(int position) {
+        itemSelectedPosition = position;
     }
 
     //跟Activity交互的接口
