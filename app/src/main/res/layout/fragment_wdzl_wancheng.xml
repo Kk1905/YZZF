@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@color/toolbar_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/wdzl_wancheng_name_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:text="@string/xingming"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/wdzl01"/>
+
+        <TextView
+            android:id="@+id/wdzl_wancheng_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="@dimen/wdzl02"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/main_background"/>
+
+    <LinearLayout
+        android:id="@+id/wdzl_wancheng_nickname_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:text="@string/nicheng"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/wdzl01"/>
+
+        <TextView
+            android:id="@+id/wdzl_wancheng_nickname_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="@dimen/wdzl02"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/main_background"/>
+
+    <LinearLayout
+        android:id="@+id/wdzl_wancheng_sex_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:text="@string/xingbie"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/wdzl01"/>
+
+        <TextView
+            android:id="@+id/wdzl_wancheng_sex_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:textSize="@dimen/wdzl02"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/second_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/main_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/second_background"/>
+
+    <LinearLayout
+        android:id="@+id/wdzl_wancheng_address_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:text="@string/zhuzhi"
+            android:textColor="@color/daohang"
+            android:textSize="@dimen/wdzl01"/>
+
+        <TextView
+            android:id="@+id/wdzl_wancheng_address_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:maxLines="3"
+            android:textSize="@dimen/wdzl02"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/second_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/main_background"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/second_background"/>
+
+</LinearLayout>

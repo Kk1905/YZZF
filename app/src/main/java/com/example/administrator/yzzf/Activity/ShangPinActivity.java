@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.administrator.yzzf.CustomView.ImageCycleView;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.ActivityStack;
+import com.example.administrator.yzzf.Util.MyApplication;
 
 
 /**
@@ -51,6 +53,8 @@ public class ShangPinActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.shangpin_image_jian).setOnClickListener(this);
         findViewById(R.id.shangpin_lijigoumai).setOnClickListener(this);
         num = Integer.parseInt(mEditText.getText().toString());
+
+        ActivityStack.getInstance().addActivity(this);
     }
 
     @Override

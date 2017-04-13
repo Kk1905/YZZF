@@ -3,9 +3,19 @@ package com.example.administrator.yzzf.WeChat;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.Json2NewsUtil;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXImageObject;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
@@ -14,6 +24,15 @@ import com.tencent.mm.opensdk.modelmsg.WXVideoObject;
 import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+
+import static android.R.attr.bitmap;
+import static com.example.administrator.yzzf.Util.Json2NewsUtil.GetLocalOrNetBitmap;
+import static com.example.administrator.yzzf.Util.Json2NewsUtil.getBmp;
+import static com.sina.weibo.sdk.openapi.legacy.AccountAPI.CAPITAL.F;
 
 
 /**
@@ -48,6 +67,9 @@ public class WeChatShareManager {
         protected abstract String getUrl();
 
         protected abstract int getPictureResource();
+
+        protected abstract String getPictureUrl();
+
     }
 
     //构造不同的类来继承ShareContent
@@ -83,6 +105,11 @@ public class WeChatShareManager {
         protected int getPictureResource() {
             return -1;
         }
+
+        @Override
+        protected String getPictureUrl() {
+            return null;
+        }
     }
 
     //图片
@@ -117,6 +144,11 @@ public class WeChatShareManager {
         protected int getPictureResource() {
             return pictureResource;
         }
+
+        @Override
+        protected String getPictureUrl() {
+            return null;
+        }
     }
 
     //链接
@@ -124,12 +156,13 @@ public class WeChatShareManager {
         private String content;
         private String title;
         private int pictureResource;
+        private String pictureUrl;
         private String url;
 
-        public ShareContentWebPage(String content, String title, int pictureResource, String url) {
+        public ShareContentWebPage(String content, String title, String pictureUrl, String url) {
             this.content = content;
             this.title = title;
-            this.pictureResource = pictureResource;
+            this.pictureUrl = pictureUrl;
             this.url = url;
         }
 
@@ -156,6 +189,11 @@ public class WeChatShareManager {
         @Override
         protected int getPictureResource() {
             return pictureResource;
+        }
+
+        @Override
+        protected String getPictureUrl() {
+            return pictureUrl;
         }
     }
 
@@ -191,6 +229,11 @@ public class WeChatShareManager {
         protected int getPictureResource() {
             return -1;
         }
+
+        @Override
+        protected String getPictureUrl() {
+            return null;
+        }
     }
 
     //获取文字内容对象的方法，相当于实例化了内部类对象
@@ -210,9 +253,9 @@ public class WeChatShareManager {
     }
 
     //获取链接内容对象的方法
-    public ShareContentWebPage getShareContentWebPage(String content, String title, int pictureResource, String url) {
+    public ShareContentWebPage getShareContentWebPage(String content, String title, String pictureUrl, String url) {
         if (mShareContentWebPage == null) {
-            mShareContentWebPage = new ShareContentWebPage(content, title, pictureResource, url);
+            mShareContentWebPage = new ShareContentWebPage(content, title, pictureUrl, url);
         }
         return (ShareContentWebPage) mShareContentWebPage;
     }
@@ -313,24 +356,39 @@ public class WeChatShareManager {
     }
 
     //分享网页链接
-    private void shareWebPage(ShareContent shareContent, int shareType) {
+    private void shareWebPage(final ShareContent shareContent, int shareType) {
         WXWebpageObject wxWebpageObject = new WXWebpageObject();
         wxWebpageObject.webpageUrl = shareContent.getUrl();
-        WXMediaMessage wxMediaMessage = new WXMediaMessage(wxWebpageObject);
+        final WXMediaMessage wxMediaMessage = new WXMediaMessage(wxWebpageObject);
         wxMediaMessage.description = shareContent.getContent();
         wxMediaMessage.title = shareContent.getTitle();
 
-        Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), shareContent.getPictureResource());
-        if (bitmap == null) {
-            Toast.makeText(mContext, "图片不能为空", Toast.LENGTH_SHORT).show();
-        } else {
-            wxMediaMessage.thumbData = Util.bmpToByteArray(bitmap, true);
+//        Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), shareContent.getPictureResource());
+        FutureTask<byte[]> futureTask = new FutureTask(new Callable<byte[]>() {
+            @Override
+            public byte[] call() throws Exception {
+                Bitmap thumb = Bitmap.createScaledBitmap(Json2NewsUtil.getBmp(shareContent.getPictureUrl()), 300, 300, true);//压缩Bitmap
+
+                return Util.bmpToByteArray(thumb, true);
+            }
+        });
+        new Thread(futureTask).start();
+        try {
+
+            wxMediaMessage.thumbData = futureTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
         }
 
+//        new DownLoadBitmap().execute(shareContent.getPictureUrl(), shareContent, shareType);
+//        wxMediaMessage.thumbData = Util.bmpToByteArray(thumb, true);
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = buildTransaction("webPageShare");
         req.message = wxMediaMessage;
         req.scene = shareType;
+
         mIWXAPI.sendReq(req);
     }
 
@@ -361,5 +419,36 @@ public class WeChatShareManager {
 
     private String buildTransaction(final String type) {
         return type == null ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
+    }
+
+    private class DownLoadBitmap extends AsyncTask<Object, Void, Bitmap> {
+        ShareContent mShareContent;
+        int shareType;
+
+        @Override
+        protected Bitmap doInBackground(Object... params) {
+            mShareContent = (ShareContent) params[1];
+            shareType = (int) params[2];
+//            return Json2NewsUtil.getBmp((String) params[0]);
+            return BitmapFactory.decodeResource(mContext.getResources(), R.drawable.yangzi);
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+
+            WXWebpageObject wxWebpageObject = new WXWebpageObject();
+            wxWebpageObject.webpageUrl = mShareContent.getUrl();
+            final WXMediaMessage wxMediaMessage = new WXMediaMessage(wxWebpageObject);
+            wxMediaMessage.description = mShareContent.getContent();
+            wxMediaMessage.title = mShareContent.getTitle();
+            Bitmap thumb = Bitmap.createScaledBitmap(bitmap, 300, 300, true);//压缩Bitmap
+            wxMediaMessage.thumbData = Util.bmpToByteArray(thumb, true);
+            SendMessageToWX.Req req = new SendMessageToWX.Req();
+            req.transaction = buildTransaction("webPageShare");
+            req.message = wxMediaMessage;
+            req.scene = shareType;
+
+            mIWXAPI.sendReq(req);
+        }
     }
 }

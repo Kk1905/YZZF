@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.ActivityStack;
+import com.example.administrator.yzzf.Util.MyApplication;
 
 /**
  * Created by Administrator on 2017/2/22 0022.
@@ -35,6 +37,7 @@ public class MeiRiJingXuanActivity extends AppCompatActivity implements View.OnC
         View xinwenView = findViewById(R.id.item_recyclerview);
         xinwenView.setOnClickListener(this);
 
+        ActivityStack.getInstance().addActivity(this);
     }
 
     @Override

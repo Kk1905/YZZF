@@ -16,7 +16,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public DBHelper(Context context) {
 
-        super(context, DB_NAME, null, 14);
+        super(context, DB_NAME, null, 1);
         mContext = context;
     }
 
@@ -26,7 +26,9 @@ public class DBHelper extends SQLiteOpenHelper {
         String sql = "create table tb_NewsItem(" +
                 "_id integer primary key autoincrement," +
                 "typeid integer," +
-                "picture text," +
+                "picture1 text," +
+                "picture2 text," +
+                "picture3 text," +
                 "displayAdddate text," +
                 "states text," +
                 "isindex text," +

@@ -124,7 +124,7 @@ public class TencentShareManager {
     private void shareToQQ_Text(Bundle qqBundle) {
         final Bundle bundle = new Bundle();
         //分享的类型，为默认类型,必选
-        bundle.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, SHARE_TO_QQ_TYPE_DEFAULT);
+        bundle.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
         //分享的标题，必选
         bundle.putString(QQShare.SHARE_TO_QQ_TITLE, qqBundle.getString(TITLE));
         //分享的摘要，可选

@@ -17,6 +17,9 @@ import com.example.administrator.yzzf.Fragment.BKSY_Quanbu_Fragment;
 import com.example.administrator.yzzf.Fragment.BKSY_Remen_Fragment;
 import com.example.administrator.yzzf.Fragment.BKSY_Zuixin_Fragment;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.ActivityStack;
+import com.example.administrator.yzzf.Util.MyApplication;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +51,7 @@ public class BKSYActivity extends AppCompatActivity implements View.OnClickListe
         toolbar.findViewById(R.id.toolbar_bksy_sousuo).setOnClickListener(this);
         findViewById(R.id.bksy_imageview_fatie).setOnClickListener(this);
 
+        ActivityStack.getInstance().addActivity(this);
     }
 
     //初始化各个数据

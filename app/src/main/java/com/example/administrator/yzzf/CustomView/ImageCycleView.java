@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.administrator.yzzf.Activity.TestActivity;
+import com.example.administrator.yzzf.Activity.TestActivity02;
 import com.example.administrator.yzzf.Bean.LunboBean;
 import com.example.administrator.yzzf.R;
 import com.nostra13.universalimageloader.core.ImageLoader;

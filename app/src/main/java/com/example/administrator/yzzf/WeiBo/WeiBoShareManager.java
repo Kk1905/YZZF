@@ -5,9 +5,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+
 import android.widget.Toast;
 
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.Json2NewsUtil;
 import com.sina.weibo.sdk.api.ImageObject;
 import com.sina.weibo.sdk.api.MusicObject;
 import com.sina.weibo.sdk.api.TextObject;
@@ -21,6 +23,10 @@ import com.sina.weibo.sdk.api.share.SendMessageToWeiboRequest;
 import com.sina.weibo.sdk.api.share.SendMultiMessageToWeiboRequest;
 import com.sina.weibo.sdk.api.share.WeiboShareSDK;
 import com.sina.weibo.sdk.utils.Utility;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
 
 
 /**
@@ -37,6 +43,7 @@ public class WeiBoShareManager {
     public static final String IMAGE_PATH = "image_path";
 
     public static final String TITLE = "title";
+    public static final String IMAGE_URL = "image_url";
     public static final String DESCRIPTION = "description";
     public static final String ACTION_URL = "action_url";
     public static final String DATA_URL = "data_url";
@@ -73,9 +80,26 @@ public class WeiBoShareManager {
         return textObject;
     }
 
-    private ImageObject getImageObj(Bundle bundle) {
+    private ImageObject getImageObj(final Bundle bundle) {
         ImageObject imageObject = new ImageObject();
-        Bitmap bitmap = BitmapFactory.decodeFile(bundle.getString(IMAGE_PATH));//通过本地图片来产生位图对象
+//        Bitmap bitmap = BitmapFactory.decodeFile(bundle.getString(IMAGE_PATH));//通过本地图片来产生位图对象
+        FutureTask<Bitmap> futureTask = new FutureTask(new Callable<Bitmap>() {
+            @Override
+            public Bitmap call() throws Exception {
+                Bitmap thumb = Bitmap.createScaledBitmap(Json2NewsUtil.getBmp(bundle.getString(IMAGE_URL)), 300, 300, true);//压缩Bitmap
+
+                return thumb;
+            }
+        });
+        new Thread(futureTask).start();
+        Bitmap bitmap = null;
+        try {
+            bitmap = futureTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
         imageObject.setImageObject(bitmap);
         return imageObject;
     }
@@ -85,14 +109,32 @@ public class WeiBoShareManager {
      *
      * @return 多媒体（网页）消息对象。
      */
-    private WebpageObject getWebpageObj(Bundle bundle) {
+    private WebpageObject getWebpageObj(final Bundle bundle) {
         WebpageObject mediaObject = new WebpageObject();
         mediaObject.identify = Utility.generateGUID();
         mediaObject.title = bundle.getString(TITLE);
         mediaObject.description = bundle.getString(DESCRIPTION);
 
         // 设置 Bitmap 类型的图片到网页对象里
-        mediaObject.setThumbImage(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.yangzi));
+//        mediaObject.setThumbImage(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.yangzi));
+        FutureTask<Bitmap> futureTask = new FutureTask(new Callable<Bitmap>() {
+            @Override
+            public Bitmap call() throws Exception {
+                Bitmap thumb = Bitmap.createScaledBitmap(Json2NewsUtil.getBmp(bundle.getString(IMAGE_URL)), 300, 300, true);//压缩Bitmap
+
+                return thumb;
+            }
+        });
+        new Thread(futureTask).start();
+        Bitmap bitmap = null;
+        try {
+            bitmap = futureTask.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        mediaObject.setThumbImage(bitmap);
         mediaObject.actionUrl = bundle.getString(ACTION_URL);
         mediaObject.defaultText = bundle.getString(DEFAULT_TEXT);
         return mediaObject;

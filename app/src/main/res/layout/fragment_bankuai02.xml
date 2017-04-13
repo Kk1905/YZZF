@@ -28,7 +28,7 @@
         android:paddingTop="25dp">
 
         <ImageView
-            android:id="@+id/fragment_bankuai_tuijian"
+            android:id="@+id/fragment_bankuai_01"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -36,10 +36,10 @@
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/zhuye_tuijian"/>
+            android:src="@drawable/tuijian"/>
 
         <ImageView
-            android:id="@+id/fragment_bankuai_remen"
+            android:id="@+id/fragment_bankuai_02"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -48,10 +48,10 @@
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/zhuye_remen"/>
+            android:src="@drawable/remen"/>
 
         <ImageView
-            android:id="@+id/fragment_bankuai_junshi"
+            android:id="@+id/fragment_bankuai_03"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -60,10 +60,10 @@
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/zhuye_junshi"/>
+            android:src="@drawable/shehui"/>
 
         <ImageView
-            android:id="@+id/fragment_bankuai_caijing"
+            android:id="@+id/fragment_bankuai_04"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -72,10 +72,10 @@
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/zhuye_zhengjing"/>
+            android:src="@drawable/yule"/>
 
         <ImageView
-            android:id="@+id/fragment_bankuai_wenti"
+            android:id="@+id/fragment_bankuai_05"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -85,7 +85,7 @@
             android:focusable="true"
             android:scaleType="fitXY"
 
-            android:src="@drawable/zhuye_wenti"/>
+            android:src="@drawable/keji"/>
 
     </LinearLayout>
 
@@ -94,13 +94,13 @@
         android:layout_height="wrap_content"
         android:background="@color/b01"
         android:gravity="center"
-        android:paddingBottom="25dp"
+        android:paddingBottom="15dp"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
         android:paddingTop="15dp">
 
         <ImageView
-            android:id="@+id/fragment_bankuai_tuijian02"
+            android:id="@+id/fragment_bankuai_06"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -108,10 +108,10 @@
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/zhuye_tuijian"/>
+            android:src="@drawable/tiyu"/>
 
         <ImageView
-            android:id="@+id/fragment_bankuai_remen02"
+            android:id="@+id/fragment_bankuai_07"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -120,10 +120,10 @@
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/zhuye_remen"/>
+            android:src="@drawable/qiche"/>
 
         <ImageView
-            android:id="@+id/fragment_bankuai_junshi02"
+            android:id="@+id/fragment_bankuai_08"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -132,10 +132,10 @@
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/zhuye_junshi"/>
+            android:src="@drawable/caijing"/>
 
         <ImageView
-            android:id="@+id/fragment_bankuai_caijing02"
+            android:id="@+id/fragment_bankuai_09"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -144,10 +144,10 @@
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/zhuye_zhengjing"/>
+            android:src="@drawable/gaoxiao"/>
 
         <ImageView
-            android:id="@+id/fragment_bankuai_wenti02"
+            android:id="@+id/fragment_bankuai_10"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -156,6 +156,220 @@
             android:clickable="true"
             android:focusable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/zhuye_wenti"/>
+            android:src="@drawable/junshi"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/b01"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="15dp">
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_11"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/guoji"/>
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_12"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/shishang"/>
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_13"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/lvyou"/>
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_14"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/tansuo"/>
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_15"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/yuer"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/b01"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="15dp">
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_16"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/yangsheng"/>
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_17"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/gushi"/>
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_18"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/meiwen"/>
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_19"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/youxi"/>
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_20"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/lishi"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/b01"
+        android:gravity="center"
+        android:paddingBottom="15dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="15dp">
+
+        <ImageView
+            android:id="@+id/fragment_bankuai_21"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/meishi"/>
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/fragment_bankuai_22"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/qiche"/>
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/fragment_bankuai_23"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/caijing"/>
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/fragment_bankuai_24"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/gaoxiao"/>
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/fragment_bankuai_25"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/junshi"/>
     </LinearLayout>
 </LinearLayout>

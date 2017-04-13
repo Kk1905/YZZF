@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.example.administrator.yzzf.Adapter.DialogItemAdapter;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.ShowDialog.CityPickerDialog;
+import com.example.administrator.yzzf.Util.ActivityStack;
+import com.example.administrator.yzzf.Util.MyApplication;
 
 /**
  * Created by Administrator on 2017/3/24 0024.
@@ -59,6 +61,8 @@ public class TiJiaoDingDanActivity extends AppCompatActivity implements View.OnC
         mTextView_num.setText(num + "");
         mTextView_yunfei.setText(yunfei + "");
         mTextView_heji.setText("¥" + (danjia * num + yunfei) * 1.0);
+
+        ActivityStack.getInstance().addActivity(this);
     }
 
     @Override

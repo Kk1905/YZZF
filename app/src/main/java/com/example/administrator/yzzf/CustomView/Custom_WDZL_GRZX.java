@@ -73,9 +73,10 @@ public class Custom_WDZL_GRZX extends LinearLayout{
             mImageView_jiantou.setVisibility(INVISIBLE);
         }
         typedArray.recycle();
+        setClickable(true);
+
     }
 //    public void setOnClickListener(OnClickListener listener) {
 //        mLinearLayout.setOnClickListener(listener);
 //    }
-
 }

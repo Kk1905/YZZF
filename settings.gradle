@@ -1,4 +1,4 @@
-include ':app', 'badgeViewLibrary', ':XListView'
+include ':app', 'badgeViewLibrary', ':XListView', 'yalantis_pull_to_refresh', 'SpringViewLibrary'
 include ':weiboSDK'
 include ':library'
 include ':imageloadlibrary'

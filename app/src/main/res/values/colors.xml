@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="toolbar_background">#fff</color>
     <!--<color name="main_background">#efe9e9</color>-->
-    <color name="main_background">#efe9e9</color>
+    <color name="main_background">#ededed</color>
     <color name="second_background">#dddddd</color>
     <color name="daohang">#212020</color>
     <color name="daohang02">#282727</color>
@@ -21,4 +21,9 @@
     <color name="lunbo">#9a000000</color>
 
     <color name="dialog_divider_color">#dddddd</color>
+    <color name="xiangqing">#ededed</color>
+    <color name="xinwen_xiangqing">#f9f9f9</color>
+    <color name="pinglun_username">#4b72ce</color>
+
+    <color name="dan_se">#d2d2d2</color>
 </resources>

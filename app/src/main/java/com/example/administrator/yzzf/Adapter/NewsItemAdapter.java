@@ -38,7 +38,7 @@ import java.util.List;
 public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener {
     private Context mContext;
     private LayoutInflater mLayoutInflater;
-    private List<NewsItemBean> mDatas;
+    private List<NewsItemBean> mDatas = new ArrayList<>();
     private CallBack mCallBack;
 
     private ArrayList<LunboBean> mlunboDatas;
@@ -112,9 +112,9 @@ public class NewsItemAdapter extends BaseAdapter implements View.OnClickListener
 
             convertView.findViewById(R.id.item_zhuye_head_tuijian).setOnClickListener(this);
             convertView.findViewById(R.id.item_zhuye_head_remen).setOnClickListener(this);
-            convertView.findViewById(R.id.item_zhuye_head_junshi).setOnClickListener(this);
-            convertView.findViewById(R.id.item_zhuye_head_caijing).setOnClickListener(this);
-            convertView.findViewById(R.id.item_zhuye_head_wenti).setOnClickListener(this);
+            convertView.findViewById(R.id.item_zhuye_head_shehui).setOnClickListener(this);
+            convertView.findViewById(R.id.item_zhuye_head_yule).setOnClickListener(this);
+            convertView.findViewById(R.id.item_zhuye_head_keji).setOnClickListener(this);
             convertView.findViewById(R.id.item_zhuye_head_gengduo).setOnClickListener(this);
 
             imageCycleView.setImageResources(mlunboDatas);

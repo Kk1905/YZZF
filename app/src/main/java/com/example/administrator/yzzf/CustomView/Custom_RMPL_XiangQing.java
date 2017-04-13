@@ -66,24 +66,24 @@ public class Custom_RMPL_XiangQing extends LinearLayout {
         mImageView_user = imageView_user;
     }
 
-    public void setTextView_username(TextView textView_username) {
-        mTextView_username = textView_username;
+    public void setTextView_username(String textView_username) {
+        mTextView_username.setText(textView_username);
     }
 
-    public void setTextView_time01(TextView textView_time01) {
-        mTextView_time01 = textView_time01;
+    public void setTextView_time01(String textView_time01) {
+        mTextView_time01.setText(textView_time01);
     }
 
-    public void setTextView_num(TextView textView_num) {
-        mTextView_num = textView_num;
+    public void setTextView_num(String textView_num) {
+        mTextView_num.setText(textView_num);
     }
 
-    public void setTextView_content(TextView textView_content) {
-        mTextView_content = textView_content;
+    public void setTextView_content(String textView_content) {
+        mTextView_content.setText(textView_content);
     }
 
-    public void setTextView_time02(TextView textView_time02) {
-        mTextView_time02 = textView_time02;
+    public void setTextView_time02(String textView_time02) {
+        mTextView_time02.setText(textView_time02);
     }
 
     public void setLl(boolean isVisible) {
@@ -107,7 +107,7 @@ public class Custom_RMPL_XiangQing extends LinearLayout {
         mTextView_jubao = (TextView) findViewById(R.id.custom_rmpl_jubao);
         ll = (LinearLayout) findViewById(R.id.custom_rmpl_visible_ll);
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.Custom_RMPL_XiangQing);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Custom_RMPL_XiangQing);
         int userimageId = typedArray.getResourceId(R.styleable.Custom_RMPL_XiangQing_rmpl_userimage_src, R.drawable.grzx_user);
         mImageView_user.setImageResource(userimageId);
         String username = typedArray.getString(R.styleable.Custom_RMPL_XiangQing_rmpl_username);

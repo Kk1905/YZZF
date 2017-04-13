@@ -1,73 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <include
-        layout="@layout/toolbar_login"/>
-
-    <TextView
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dialog_divider"
-        android:background="@color/main_background"/>
+        android:layout_height="wrap_content">
 
-    <LinearLayout
+        <include
+            layout="@layout/toolbar_login"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dialog_divider"
+            android:background="@color/main_background"/>
+
+        <!--<include-->
+            <!--layout="@layout/item_bksy"/>-->
+    </android.support.design.widget.AppBarLayout>
+
+    <com.liaoinstan.springview.widget.SpringView
+        android:id="@+id/activity_bksy_spring_view"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/qianlan"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingBottom="5dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="15dp"
-        android:paddingTop="5dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:text="@string/jinri"
-            android:textColor="@color/daohang"/>
-
-        <TextView
-            android:id="@+id/bksy_jinri_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="123"
-            android:textColor="@color/daohang"/>
-
-        <TextView
-            android:layout_width="@dimen/dialog_divider"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:background="@color/daohang"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:text="@string/huati"
-            android:textColor="@color/daohang"/>
-
-        <TextView
-            android:id="@+id/bksy_huati_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2223"
-            android:textColor="@color/daohang"/>
-    </LinearLayout>
-
-    <me.maxwin.view.XListView
-        android:id="@+id/bksy_activity_xlistview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:divider="@color/dialog_divider_color"
-        android:dividerHeight="@dimen/dialog_divider"
-        android:fadingEdge="none"
-        android:footerDividersEnabled="false"
-        android:headerDividersEnabled="false"
-        android:scrollbars="none"></me.maxwin.view.XListView>
-</LinearLayout>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView
+            android:background="@color/toolbar_background"
+            android:id="@+id/activity_bksy_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </com.liaoinstan.springview.widget.SpringView>
+</android.support.design.widget.CoordinatorLayout>

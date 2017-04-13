@@ -1,0 +1,19 @@
+
+	* {
+		font-size:49px;/*文章字体大小*/
+		line-height:78px;/*行高*/
+		color:#000;/*标题字体颜色*/
+		font-weight:bold;/*标题加粗*/
+		width:100%;/*总宽度*/
+	    margin:0 0 0 0%;
+
+	} 
+	p{
+		color:#333;/*正文字体颜色*/
+		font-weight:100;/*正文字体加粗取消*/
+		margin:10px 0 50px 0;
+	}
+	img{
+	    width:100%;/*图片大小*/
+	    margin:0% 0 0% 0;/*图片与文字上下距离*/
+	}

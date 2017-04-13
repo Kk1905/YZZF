@@ -8,11 +8,8 @@ import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.telephony.SmsMessage;
-
 import java.util.Date;
 
-import static com.sina.weibo.sdk.openapi.legacy.AccountAPI.CAPITAL.S;
-import static okhttp3.internal.http.HttpDate.format;
 
 /**
  * 监听短信的广播接收器

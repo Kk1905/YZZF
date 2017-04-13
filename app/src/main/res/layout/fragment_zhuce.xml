@@ -26,12 +26,26 @@
 
 
         <EditText
-            android:id="@+id/edit_text_shoujihao"
+            android:id="@+id/zhuce_edit_text_shoujihao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/login_shape"
-            android:hint="@string/shouji"
-            android:maxLength="11"
+            android:digits="@string/filter_vcode_moible"
+            android:hint="@string/zhanghao"
+            android:inputType="number"
+            android:maxLines="1"
+            android:padding="18dp"
+            android:textSize="@dimen/login"/>
+
+        <EditText
+            android:id="@+id/zhuce_edit_text_mima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/login_shape"
+            android:digits="@string/filter_vcode_pwd"
+            android:hint="@string/zhuce_mima"
+            android:inputType="numberPassword"
             android:maxLines="1"
             android:padding="18dp"
             android:textSize="@dimen/login"/>
@@ -41,7 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@drawable/login_shape"
-            android:padding="18dp">
+            android:padding="18dp"
+            android:visibility="gone">
 
             <EditText
                 android:id="@+id/edit_text_yanzhengma"

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_login"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/dialog_divider_color"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tuiguang"
+                        android:textColor="@color/daohang02"
+                        android:textSize="@dimen/tuiguang"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tuiguang_xinxi"
+                        android:textColor="@color/tiaokuan"
+                        android:textSize="@dimen/xinxi"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dialog_divider"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/dialog_divider_color"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.example.administrator.yzzf.CustomView.CustomGuangGao
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:image_src_dianji="@drawable/dianjifenxiang02"
+                        app:jifenzhi="10"
+                        app:yifengxiang_num="56"></com.example.administrator.yzzf.CustomView.CustomGuangGao>
+
+                    <com.example.administrator.yzzf.CustomView.CustomGuangGao
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        app:image_src_dianji="@drawable/dianjifenxiang02"
+                        app:jifenzhi="15"
+                        app:yifengxiang_num="874"></com.example.administrator.yzzf.CustomView.CustomGuangGao>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/dialog_divider_color"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/shangpin"
+                    android:textColor="@color/daohang02"
+                    android:textSize="@dimen/tuiguang"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/xinxi02"
+                    android:textColor="@color/yangzi"
+                    android:textSize="@dimen/xinxi"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dialog_divider"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/dialog_divider_color"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.example.administrator.yzzf.CustomView.CustomGuangGao
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:image_src_dianji="@drawable/dianjifenxiang01"
+                        app:jifenzhi="20"
+                        app:yifengxiang_num="56"></com.example.administrator.yzzf.CustomView.CustomGuangGao>
+
+                    <com.example.administrator.yzzf.CustomView.CustomGuangGao
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        app:image_src_dianji="@drawable/dianjifenxiang01"
+                        app:jifenzhi="15"
+                        app:yifengxiang_num="874"></com.example.administrator.yzzf.CustomView.CustomGuangGao>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.example.administrator.yzzf.CustomView.CustomGuangGao
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:image_src_dianji="@drawable/dianjifenxiang01"
+                        app:jifenzhi="10"
+                        app:yifengxiang_num="56"></com.example.administrator.yzzf.CustomView.CustomGuangGao>
+
+                    <com.example.administrator.yzzf.CustomView.CustomGuangGao
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        app:image_src_dianji="@drawable/dianjifenxiang01"
+                        app:jifenzhi="15"
+                        app:yifengxiang_num="874"></com.example.administrator.yzzf.CustomView.CustomGuangGao>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.example.administrator.yzzf.CustomView.CustomGuangGao
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:image_src_dianji="@drawable/dianjifenxiang01"
+                        app:jifenzhi="10"
+                        app:yifengxiang_num="56"></com.example.administrator.yzzf.CustomView.CustomGuangGao>
+
+                    <com.example.administrator.yzzf.CustomView.CustomGuangGao
+                        android:visibility="invisible"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1"
+                        app:image_src_dianji="@drawable/dianjifenxiang01"
+                        app:jifenzhi="15"
+                        app:yifengxiang_num="874"></com.example.administrator.yzzf.CustomView.CustomGuangGao>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

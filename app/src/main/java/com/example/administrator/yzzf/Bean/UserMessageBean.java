@@ -5,6 +5,25 @@ package com.example.administrator.yzzf.Bean;
  */
 
 public class UserMessageBean {
+    /**
+     * "address":null,   ------------->用户的地址
+     * "id":47, ----------->用户的id
+     * "flag":"1",
+     * "displayAdddate":null,
+     * "displayBirthday":null,
+     * "money":0.0,
+     * "loginpwd":"812240",   ----------->密码
+     * "adddate":1491408000000,
+     * "mobile":"13862930224",   ----------------->手机号
+     * "score":123.0,       -------------->积分
+     * "levels":0,
+     * "nickname":null,   -------------->昵称
+     * "realname":null,    ------------->真名
+     * "sex":null,
+     * "districtid":null,     ------------->城市的id号，暂时不用了
+     * "birthday":null
+     */
+    private int id;
     private String address;
     private double score;
     private String nickName;
@@ -18,6 +37,14 @@ public class UserMessageBean {
     private String flag;
     private String displayAdddate;
     private int levels;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getAddress() {
         return address;

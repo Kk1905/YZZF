@@ -86,7 +86,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
         super.onCreateView(inflater, container, savedInstanceState);
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_zhuye, container, false);
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar_zhuye02);
-        view.findViewById(R.id.toolbar_zhuye_login).setOnClickListener(this);
+        view.findViewById(R.id.toolbar_zhuye_login02).setOnClickListener(this);
 
         return view;
     }
@@ -105,18 +105,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
                     case R.id.item_zhuye_head_remen:
 
                         break;
-                    case R.id.item_zhuye_head_junshi:
 
-                        break;
-                    case R.id.item_zhuye_head_caijing:
-
-                        break;
-                    case R.id.item_zhuye_head_wenti:
-
-                        break;
-                    case R.id.item_zhuye_head_gengduo:
-
-                        break;
                 }
             }
 
@@ -187,7 +176,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.toolbar_zhuye_login:
+            case R.id.toolbar_zhuye_login02:
                 Intent intent = new Intent(mAppCompatActivity, LoginActivity.class);
                 mAppCompatActivity.startActivity(intent);
                 break;
@@ -250,7 +239,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
                 return ERROR_SERVICE;
             }
             //此时清除手机SQLite数据库里的旧数据,isindex=1
-            mNewsItemDao.removeAll("0");
+            mNewsItemDao.removeAllisIndex("0");
             //将新的数据保存，在没有网络的时候用
             mNewsItemDao.add(mDatas);
             //TODO 还有一个表也要操作
@@ -260,7 +249,7 @@ public class ZhuyeFragment extends BaseFragment implements IXListViewRefreshList
             hasNetWork = false;
             isDataFromNet = false;
             //TODO 从数据库加载数据显示
-            mDatas = mNewsItemDao.list("0");
+//            mDatas = mNewsItemDao.list("0");
             //返回没有网络的flag
             return NON_NETWORK;
         }

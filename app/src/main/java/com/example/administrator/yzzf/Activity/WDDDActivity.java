@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.example.administrator.yzzf.Adapter.WDDDAdapter;
 import com.example.administrator.yzzf.Fragment.WDDDFragment;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.ActivityStack;
+import com.example.administrator.yzzf.Util.MyApplication;
 import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.ArrayList;
@@ -46,6 +48,7 @@ public class WDDDActivity extends AppCompatActivity implements ViewPager.OnPageC
         mTabPageIndicator = (TabPageIndicator) findViewById(R.id.tab_page_indicator);
         initView();
 
+        ActivityStack.getInstance().addActivity(this);
     }
 
     private void initView() {

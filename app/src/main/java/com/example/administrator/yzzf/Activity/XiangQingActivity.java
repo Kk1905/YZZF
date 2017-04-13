@@ -16,6 +16,8 @@ import com.example.administrator.yzzf.Tencent.BaseIUIListener;
 import com.example.administrator.yzzf.Tencent.TencentShareManager;
 import com.example.administrator.yzzf.ShowDialog.Show_FenXiang_Dialog;
 import com.example.administrator.yzzf.ShowDialog.Show_XiangQing_Write_Pinglun_Dialog;
+import com.example.administrator.yzzf.Util.ActivityStack;
+import com.example.administrator.yzzf.Util.MyApplication;
 import com.example.administrator.yzzf.WeChat.WeChatShareManager;
 import com.example.administrator.yzzf.WeiBo.WeiBoShareManager;
 import com.sina.weibo.sdk.api.share.BaseResponse;
@@ -50,19 +52,19 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
 
         initView();
         editText = (EditText) findViewById(R.id.woyao_edittext);
-        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    if (mShow_xiangQing_write_pinglun_dialog == null) {
-                        mShow_xiangQing_write_pinglun_dialog =
-                                new Show_XiangQing_Write_Pinglun_Dialog(XiangQingActivity.this);
-                    }
-                    mShow_xiangQing_write_pinglun_dialog.showDialog(R.layout.custom_xiangqing_pinglun_dialog);
-                    editText.clearFocus();
-                }
-            }
-        });
+//        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                if (hasFocus) {
+//                    if (mShow_xiangQing_write_pinglun_dialog == null) {
+//                        mShow_xiangQing_write_pinglun_dialog =
+//                                new Show_XiangQing_Write_Pinglun_Dialog(XiangQingActivity.this);
+//                    }
+//                    mShow_xiangQing_write_pinglun_dialog.showDialog(R.layout.custom_xiangqing_pinglun_dialog);
+//                    editText.clearFocus();
+//                }
+//            }
+//        });
         mIWXAPI = WeChatShareManager.getInstance(this).getIWXAPI();
         mIWeiboShareAPI = WeiBoShareManager.getWeiBoShareManager(this).getIWeiboShareAPI();
         if (savedInstanceState != null) {
@@ -73,6 +75,8 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
         findViewById(R.id.xiangqing_rootview).setOnClickListener(this);
 
         mBaseIUIListener = TencentShareManager.getTencentShareManager(this).getBaseIUIListener();
+
+        ActivityStack.getInstance().addActivity(this);
     }
 
     private void initView() {
@@ -94,10 +98,6 @@ public class XiangQingActivity extends AppCompatActivity implements View.OnClick
 //                imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
 //                break;
             case R.id.pinglun_fenxiang:
-                if (mShow_fenXiang_dialog == null) {
-                    mShow_fenXiang_dialog = new Show_FenXiang_Dialog(XiangQingActivity.this);
-                }
-                mShow_fenXiang_dialog.showDialog(R.layout.custom_xiangqing_fenxiang_dialog);
                 break;
 
         }

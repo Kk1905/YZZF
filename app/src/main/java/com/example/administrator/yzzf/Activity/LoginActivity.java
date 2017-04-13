@@ -13,7 +13,11 @@ import android.view.View;
 import com.example.administrator.yzzf.Fragment.BaseFragment;
 import com.example.administrator.yzzf.Fragment.LoginFragment;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.ActivityStack;
 import com.example.administrator.yzzf.Util.FragmentFactory;
+import com.example.administrator.yzzf.Util.MyApplication;
+
+import java.io.Serializable;
 
 
 /**
@@ -34,16 +38,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         initView();
+
+        ActivityStack.getInstance().addActivity(this);
     }
 
     private void initView() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.login_container);
         if (fragment == null) {
-//            getSupportFragmentManager().beginTransaction()
-//                    .addToBackStack(null)
-//                    .add(R.id.login_container, new LoginFragment())
-//                    .commit();
-            FragmentFactory.addFragment(LoginActivity.this, new LoginFragment(), R.id.login_container);
+            fragment = new LoginFragment();
+            FragmentFactory.addFragment(LoginActivity.this, fragment, R.id.login_container);
         }
     }
 

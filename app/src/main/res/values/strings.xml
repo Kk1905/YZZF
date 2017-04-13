@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">社区头条</string>
+
     <!--登陆界面-->
-    <string name="zhanghao">账号</string>
+    <string name="zhanghao">账号（手机号）</string>
     <string name="mima">密码</string>
     <string name="zhuce">注册新的账号</string>
     <string name="zhuce_toolbar">注册</string>
@@ -16,6 +17,17 @@
     <string name="xinmima">新密码</string>
     <string name="tongyi">注册即表示您同意</string>
     <string name="tiaokuan">《用户使用条款》</string>
+    <string name="login_kong">账号或密码不能为空</string>
+    <string name="login_service">服务器异常</string>
+    <string name="zhuce_success">注册成功</string>
+    <string name="login_cunzai">账号已存在</string>
+    <string name="login_mima_error">账号或密码错误</string>
+    <string name="login_success">欢迎，</string>
+    <string name="zhuce_mima">密码（只能是数字和字母）</string>
+    <string name="filter_vcode_moible">0123456789</string>
+    <string name="zhuce_xiao">密码不得小于6位</string>
+    <string name="zhuce_11">请正确填写11位数手机号</string>
+    <string name="filter_vcode_pwd">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
 
 
     <string name="dingwei">定位</string>
@@ -30,7 +42,7 @@
     <string name="wode">个人中心</string>
     <string name="meirijingxuan">每日精选</string>
     <string name="fanhui">返回</string>
-    <string name="xiangqing">详情</string>
+    <string name="xiangqing">新闻详情</string>
     <string name="jubao">举报</string>
     <string name="remenpinglun">热门评论</string>
     <string name="gengduopinglun">更多评论>></string>
@@ -104,7 +116,7 @@
     <string name="queding">确定</string>
 
     <!--个人中心-->
-    <string name="gerenjifen">个人积分</string>
+    <string name="gerenjifen">个人积分：</string>
     <string name="jifenduihuan">积分兑换</string>
     <string name="wodedingdan">我的订单</string>
     <string name="chakanquanbudingdan">查看全部订单></string>
@@ -118,6 +130,19 @@
     <string name="keyi">您可以点击按钮重新加载</string>
     <string name="chongxinjiazai">重新加载</string>
     <string name="fuwuqicuowu">服务器错误，请稍后重试</string>
+    <string name="grzx_bianji">编辑</string>
+    <string name="grzx_sex_man">男</string>
+    <string name="grzx_sex_woman">女</string>
+    <string name="tishi">提示</string>
+    <string name="baocun">保存</string>
+    <string name="grzx_xiugai">点击 确定 将保存您的修改</string>
+    <string name="grzx_fanhui">您可能还未保存数据，如果返回将不会对您的数据进行任何修改，确定要返回么？</string>
+    <string name="grzx_no_network">网络不给力啊</string>
+    <string name="grzx_jifenduihuan">暂未开放积分兑换</string>
+    <string name="grzx_wei_login">您还未登录</string>
+
+    <!--个性签名-->
+    <string name="gxqm_tuiguang">推广图片请联系客服人员上传</string>
 
     <!--商品详情-->
     <string name="goumaishuliang">购买数量：</string>
@@ -136,6 +161,33 @@
     <string name="xuanze_sheng">选择省</string>
     <string name="xuanze_shi">选择市</string>
     <string name="xuanze_qu">选择区</string>
+
+    <!--分享出去之前的设置广告页面-->
+    <string name="tuiguang">广告推广</string>
+    <string name="shangpin">商品推广</string>
+    <string name="querenfenxiang">确认分享</string>
+    <string name="tuiguang_xinxi">(设置一次之后,每次分享都会带上你的广告)</string>
+    <string name="xinxi02">(分享一下广告,赚取积分,兑换现金)</string>
+    <string name="jifenzhi">积分值:</string>
+    <string name="yifenxiang_num">人已分享</string>
+
+    <!--新闻详情-->
+    <string name="xinwen_source">新闻来源：</string>
+    <string name="xinwen_pinglun_tishi">您还未登录，赶快去登录,再来发表您的高见吧！</string>
+    <string name="xinwen_fenxiang_tishi">您还未登录，赶快去登录，再来分享吧！</string>
+    <string name="xinwen_qu_denglun">知道了</string>
+    <string name="xinwen_quxiao">算了</string>
+    <string name="xinwen_service">服务器异常</string>
+    <string name="xinwen_no_net">网络不给力啊</string>
+    <string name="xinwen_pinglun_success">评论成功</string>
+    <string name="xinwen_pinglun_shibai">服务器异常，评论失败</string>
+
+    <!--系统信息-->
+    <string name="xtxx_about">后续会更新关于我们的第一手资料</string>
+    <string name="xtxx_banben">已是最新版本</string>
+    <string name="xtxx_gengxin">目前无需更新</string>
+    <string name="xtxx_exit">您确定要退出程序么？</string>
+
 
     <!--微博-->
     <string name="weibosdk_not_support_api_hint">微博客户端不支持 SDK 分享或微博客户端未安装或微博客户端是非官方版本。</string>

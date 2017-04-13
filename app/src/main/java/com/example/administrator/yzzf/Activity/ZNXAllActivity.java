@@ -10,12 +10,14 @@ import android.view.View;
 
 import com.example.administrator.yzzf.CustomView.Custom_ZNX_GRZX;
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.ActivityStack;
+import com.example.administrator.yzzf.Util.MyApplication;
 
 /**
  * Created by Administrator on 2017/2/27 0027.
  */
 
-public class ZNXAllActivity extends AppCompatActivity implements View.OnClickListener{
+public class ZNXAllActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,8 @@ public class ZNXAllActivity extends AppCompatActivity implements View.OnClickLis
         }
         Custom_ZNX_GRZX custom_znx_grzx01 = (Custom_ZNX_GRZX) findViewById(R.id.znx_haoyou_duihua01);
         custom_znx_grzx01.setOnClickListener(this);
+
+        ActivityStack.getInstance().addActivity(this);
     }
 
     @Override

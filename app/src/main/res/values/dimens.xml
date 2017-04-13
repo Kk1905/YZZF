@@ -7,7 +7,7 @@
     <dimen name="toolbar_fanhui_size">16sp</dimen>
     <dimen name="toolbar_menu">16sp</dimen>
     <dimen name="zhuye_htjl_title">16sp</dimen>
-    <dimen name="zhuye_xinwen_title">16sp</dimen>
+    <dimen name="zhuye_xinwen_title">17sp</dimen>
     <dimen name="moren_size">12sp</dimen>
     <dimen name="xiangqing_title">18sp</dimen>
     <dimen name="xiangqing_content">16sp</dimen>
@@ -21,8 +21,8 @@
     <dimen name="huoqu">14sp</dimen>
 
     <!--我的资料item-->
-    <dimen name="wdzl01">17sp</dimen>
-    <dimen name="wdzl02">16dp</dimen>
+    <dimen name="wdzl01">16sp</dimen>
+    <dimen name="wdzl02">15dp</dimen>
 
     <!--个人中心-->
     <dimen name="jifenduihuan">16sp</dimen>
@@ -51,4 +51,16 @@
     <dimen name="dialog_title">18sp</dimen>
     <dimen name="dialog_item">16sp</dimen>
     <dimen name="dialog_divider">2px</dimen>
+
+    <!--广告分享-->
+    <dimen name="tuiguang">18sp</dimen>
+    <dimen name="xinxi">14sp</dimen>
+    <dimen name="jifenzhi">12sp</dimen>
+
+    <!--新闻详情-->
+    <dimen name="xinwen_title">20sp</dimen>
+    <dimen name="xinwen_source">12sp</dimen>
+    <dimen name="xinwen_username">14sp</dimen>
+    <dimen name="xinwen_pinlun">16sp</dimen>
+    <dimen name="xinwen_time">12sp</dimen>
 </resources>

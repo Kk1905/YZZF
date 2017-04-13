@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.administrator.yzzf.R;
+import com.example.administrator.yzzf.Util.ActivityStack;
+import com.example.administrator.yzzf.Util.MyApplication;
 
 /**
  * Created by Administrator on 2017/2/28 0028.
@@ -27,6 +29,8 @@ public class FaTieActivity extends AppCompatActivity implements View.OnClickList
             actionBar.setDisplayShowTitleEnabled(false);
         }
         toolbar.findViewById(R.id.toolbar_fatie_fabu).setOnClickListener(this);
+
+        ActivityStack.getInstance().addActivity(this);
     }
 
     @Override

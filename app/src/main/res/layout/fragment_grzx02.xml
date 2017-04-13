@@ -6,16 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <include
         layout="@layout/toolbar_grzx"/>
 
-
-    <com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        custom:my_background="@drawable/grzx_background02"
-        custom:text1="151****4397"
-        custom:text2="1"></com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX>
+        android:layout_height="@dimen/dialog_divider"
+        android:background="@color/dialog_divider_color"/>
+
+    <include
+        layout="@layout/grzx_user"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +25,8 @@
         android:paddingBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingTop="10dp">
+        android:paddingTop="10dp"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,13 +55,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dialog_divider"
-        android:background="@color/main_background"/>
+        android:background="@color/dialog_divider_color"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="66dp"
         android:paddingBottom="8dp"
-        android:paddingTop="8dp">
+        android:paddingTop="8dp"
+        android:visibility="gone">
 
         <cn.bingoogolapple.badgeview.BGABadgeImageView
             android:id="@+id/grzx_daifukuan"
@@ -146,7 +149,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dialog_divider"
-        android:background="@color/main_background"/>
+        android:background="@color/dialog_divider_color"
+        android:visibility="gone"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -164,24 +168,15 @@
 
         </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
 
-        <com.example.administrator.yzzf.CustomView.CustomGRZXItem
-            android:id="@+id/my_tiezi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            custom:imageView_src="@drawable/grzx_wodetiezi"
-            custom:textView_text="@string/wodetiezi">
-
-        </com.example.administrator.yzzf.CustomView.CustomGRZXItem>
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="12dp"
-            android:background="@color/b01"/>
+            android:background="@color/main_background"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dialog_divider"
-            android:background="@color/main_background"/>
+            android:background="@color/dialog_divider_color"/>
 
         <LinearLayout
             android:id="@+id/grzx_jifen"
@@ -212,9 +207,17 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="30dp"
                 android:text="@string/gerenjifen"
-                android:textColor="@color/daohang02"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
+            <TextView
+                android:id="@+id/grzx_jifenzhi_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="0"
+                android:textColor="@color/yangzi"
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/grzx_jifen_textview_duihuan"
@@ -242,17 +245,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dialog_divider"
-            android:background="@color/main_background"/>
+            android:background="@color/dialog_divider_color"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="12dp"
-            android:background="@color/b01"/>
+            android:background="@color/main_background"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/dialog_divider"
-            android:background="@color/main_background"/>
+            android:background="@color/dialog_divider_color"/>
 
         <com.example.administrator.yzzf.CustomView.CustomGRZXItem
             android:id="@+id/xitong"

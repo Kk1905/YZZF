@@ -18,15 +18,4 @@
         android:textColor="@color/daohang"
         android:textSize="@dimen/toolbar_text_size"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginRight="15dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="@string/wancheng"
-        android:textColor="@color/daohang"
-        android:textSize="@dimen/toolbar_menu"/>
-
 </android.support.v7.widget.Toolbar>

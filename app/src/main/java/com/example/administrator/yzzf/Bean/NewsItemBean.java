@@ -15,15 +15,19 @@ import java.util.Date;
  */
 
 public class NewsItemBean {
-    //新闻的类型（军事啥的）
+    //内容
+    private String content;
+    //类别号（暂时未知是干啥的）
     private int typeid;
     //配图的url
-    private String picture;
+    private String picture1;
+    private String picture2;
+    private String picture3;
     //跳转的url,跟id唯一相关
     private String stringUrl;
     //发布的时间
     private String displayAdddate;
-    //点赞数
+    //判断排版方式，"0"是左右排版，"1"是上下排版，"2"是广告代言
     private String states;
     //是否首页显示
     private String isindex;
@@ -31,7 +35,7 @@ public class NewsItemBean {
     private int hits;
     //标题
     private String title;
-    //所属的板块号
+    //所属的板块号（军事啥的）
     private int forumId;
     //被转载的次数
     private int reprint;
@@ -44,13 +48,17 @@ public class NewsItemBean {
     //新闻的来源
     private String source;
 
+    public String getContent() {
+        return content;
+    }
+
     public int getId() {
         return id;
     }
 
     @TargetApi(Build.VERSION_CODES.N)
     public String getHourAgo() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 //        HH:mm:ss
         //之间相差的毫秒数
         long time = 0;
@@ -59,6 +67,8 @@ public class NewsItemBean {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        //转换成分钟
+        int time_min = (int) (time / (1000 * 60));
         //转换成小时
         int time_hour = (int) (time / (1000 * 60 * 60));
         //转换成天
@@ -69,7 +79,9 @@ public class NewsItemBean {
         int time_year = time_day / 365;
 
         String result = "";
-        if (time_hour < 24) {
+        if (time_min < 60) {
+            result = time_min + "分钟之前";
+        } else if (time_hour < 24) {
             //如果小于24小时，则用小时显示
             result = time_hour + "小时之前";
         } else if (time_day < 30) {
@@ -86,12 +98,20 @@ public class NewsItemBean {
         return typeid;
     }
 
-    public String getPicture() {
-        return picture;
+    public String getPicture1() {
+        return picture1;
+    }
+
+    public String getPicture2() {
+        return picture2;
+    }
+
+    public String getPicture3() {
+        return picture3;
     }
 
     public String getStringUrl() {
-        return "http://news.sina.com.cn/o/2017-03-09/doc-ifychavf2203014.shtml";
+        return "http://news.sina.com.cn/o/2017-03-29/doc-ifycspxp0254935.shtml";
     }
 
     public String getDisplayAdddate() {
@@ -126,6 +146,10 @@ public class NewsItemBean {
         return usersId;
     }
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public String getSource() {
         return source;
     }
@@ -134,10 +158,17 @@ public class NewsItemBean {
         this.typeid = typeid;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setPicture1(String picture1) {
+        this.picture1 = picture1;
     }
 
+    public void setPicture2(String picture2) {
+        this.picture2 = picture2;
+    }
+
+    public void setPicture3(String picture3) {
+        this.picture3 = picture3;
+    }
 
     public void setDisplayAdddate(String displayAdddate) {
         this.displayAdddate = displayAdddate;

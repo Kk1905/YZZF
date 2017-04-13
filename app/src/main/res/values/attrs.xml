@@ -67,4 +67,11 @@
         <attr name="htjl_pinglunnum" format="string"/>
         <attr name="htjl_is_bottomTextView_visible" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="CustomGuangGao">
+        <attr name="image_src_guanggao" format="reference"/>
+        <attr name="image_src_dianji" format="reference"/>
+        <attr name="jifenzhi" format="string"/>
+        <attr name="yifengxiang_num" format="string"/>
+    </declare-styleable>
 </resources>

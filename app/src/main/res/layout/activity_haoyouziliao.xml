@@ -16,7 +16,7 @@
     <com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:my_background="@drawable/grzx_background02"></com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX>
+        app:my_background="@drawable/grzx_background"></com.example.administrator.yzzf.CustomView.Custom_ZuHe_GRZX>
 
     <com.example.administrator.yzzf.CustomView.Custom_WDZL_GRZX
         android:id="@+id/grez_haoyouziliao_xingming"

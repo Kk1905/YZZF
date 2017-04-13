@@ -13,18 +13,18 @@
     <TextView
         android:id="@+id/item_zhuye_news02_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:ellipsize="end"
         android:gravity="center_vertical"
-        android:lines="2"
+        android:maxLines="2"
         android:text="苏通大桥迎反程最高峰 春节七天假期约65万辆车免费国境"
         android:textColor="@color/daohang"
         android:textSize="@dimen/zhuye_xinwen_title"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        android:layout_height="80dp"
+        android:layout_marginTop="5dp">
 
         <ImageView
             android:id="@+id/item_zhuye_news02_image01"
@@ -60,10 +60,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="8dp"
-        android:layout_weight="1"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -74,7 +73,7 @@
             android:layout_marginBottom="@dimen/dialog_divider"
             android:layout_marginTop="@dimen/dialog_divider"
             android:adjustViewBounds="true"
-            android:src="@drawable/zhuye_guanggao"
+            android:src="@drawable/zhuye_daiyan"
             android:visibility="gone"/>
 
         <TextView
@@ -99,9 +98,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
-            android:scaleX="0.7"
-
-            android:scaleY="0.7"
             android:src="@drawable/zhuye_eye"/>
 
         <TextView

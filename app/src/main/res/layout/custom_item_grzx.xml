@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="30dp"
-            android:textColor="@color/daohang02"
+
             android:textSize="20dp"
             tools:text="我的帖子"/>
 
@@ -64,6 +64,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dialog_divider"
-        android:background="@color/main_background"/>
+        android:background="@color/dialog_divider_color"/>
 
 </LinearLayout>

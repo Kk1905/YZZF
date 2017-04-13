@@ -1,12 +1,15 @@
 package com.example.administrator.yzzf.ShowDialog;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.administrator.yzzf.Activity.FengxiangActivity;
 import com.example.administrator.yzzf.R;
 import com.example.administrator.yzzf.Tencent.BaseIUIListener;
 import com.example.administrator.yzzf.Tencent.TencentShareManager;
@@ -29,9 +32,22 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
     private WeiBoShareManager mWeiBoShareManager;
     private Tencent mTencent;
     private BaseIUIListener mBaseIUIListener;
+    private Context mContext;
 
-    public Show_FenXiang_Dialog(Activity activity) {
+    //文章标题
+    private String article_title = "";
+    //图片
+    private String pictureUrl = "";
+    //跳转url，这个是重点，要带参数
+    private String article_url = "";
+
+    public Show_FenXiang_Dialog(Activity activity, String title, String pictureUrl, String article_url) {
         super(activity);
+        mContext = activity;
+        article_title = title;
+        this.pictureUrl = pictureUrl;
+        this.article_url = article_url;
+
         mWeiBoShareManager = WeiBoShareManager.getWeiBoShareManager(mActivity);
         mWeChatShareManager = WeChatShareManager.getInstance(mActivity);
         //获取Tencent实例，Tencent是QQ分享SDK中的一个重要类，开发者可通过Tencent类访问腾讯开放的OpenAPI。
@@ -48,9 +64,6 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
         mAlertDialog.findViewById(R.id.xiangqing_dialog_qqkongjian).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_weixin_pengyouquan).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_weibo).setOnClickListener(this);
-        mAlertDialog.findViewById(R.id.xiangqing_dialog_shuaxin).setOnClickListener(this);
-        mAlertDialog.findViewById(R.id.xiangqing_dialog_fuzhilianjie).setOnClickListener(this);
-        mAlertDialog.findViewById(R.id.xiangqing_dialog_jubao).setOnClickListener(this);
         mAlertDialog.findViewById(R.id.xiangqing_dialog_quxiao).setOnClickListener(this);
     }
 
@@ -66,7 +79,10 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
 
     @Override
     public void onClick(View v) {
-
+        Intent intent = new Intent(mContext, FengxiangActivity.class);
+        intent.putExtra("title", article_title);
+        intent.putExtra("pictureUrl", pictureUrl);
+        intent.putExtra("targetUrl", article_url);
         switch (v.getId()) {
             case R.id.xiangqing_dialog_quxiao:
                 dismiss();
@@ -75,68 +91,42 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
                 if (!isWeChatAvaliable()) {
                     Toast.makeText(mActivity, R.string.wxapp_not_installed, Toast.LENGTH_SHORT).show();
                 }
-                WeChatShareManager.ShareContentText shareContentText = mWeChatShareManager.getShareContentText("这是来自扬子社区头条的微信SDK测试信息");
-                mWeChatShareManager.shareByWeChat(shareContentText, WeChatShareManager.WECHAT_SHARE_TYPE_FRIENDS);
+                intent.putExtra("share", "朋友圈");
+                mContext.startActivity(intent);
                 dismiss();
                 break;
             case R.id.xiangqing_dialog_weixin:
                 if (!isWeChatAvaliable()) {
                     Toast.makeText(mActivity, R.string.wxapp_not_installed, Toast.LENGTH_SHORT).show();
                 }
-                WeChatShareManager.ShareContentVideo shareContentVideo = mWeChatShareManager.getShareContentVideo(SDCARD_ROOT + "/kk.mp4");
-                mWeChatShareManager.shareByWeChat(shareContentVideo,WeChatShareManager.WECHAT_SHARE_TYPE_TALK);
+                intent.putExtra("share", "微信好友");
+                mContext.startActivity(intent);
                 dismiss();
                 break;
             case R.id.xiangqing_dialog_qq:
-                //分享到qq好友,模拟发送一次音乐
-                Bundle qqBundle = new Bundle();
-                //标题
-                qqBundle.putString(TencentShareManager.TITLE, "Title:666");
-                //music_url
-                qqBundle.putString(TencentShareManager.AUDIO_URL, "http://staff2.ustc.edu.cn/~wdw/softdown/index.asp/0042515_05.ANDY.mp3");
-                //target_url
-                qqBundle.putString(TencentShareManager.TARGET_URL, "http://staff2.ustc.edu.cn/~wdw/softdown/index.asp/0042515_05.ANDY.mp3");
-                //概要
-                qqBundle.putString(TencentShareManager.SUMMARY, "summary:这么长写毛啊");
-                qqBundle.putString(TencentShareManager.APP_NAME, "扬子智服头条");
-                mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QQ,
-                        QQShare.SHARE_TO_QQ_TYPE_AUDIO, qqBundle);
+                intent.putExtra("share", "QQ");
+                mContext.startActivity(intent);
                 dismiss();
                 break;
             case R.id.xiangqing_dialog_qqkongjian:
-                //发表一个说说到空间测试一下
-                Bundle qzoneBundle = new Bundle();
-                qzoneBundle.putString(TencentShareManager.TITLE, "扬子智服社区头条测试");
-                qzoneBundle.putString(TencentShareManager.SUMMARY, "扬子智服社区头条测试,请别赞我，我会骄傲的");
-                String url01 = SDCARD_ROOT + "/logo.png";
-                String url02 = SDCARD_ROOT + "/kk.mp4";
-//                qzoneBundle.putString(TencentShareManager.VIDEO_PATH, url02);
-                ArrayList<String> imageUrls = new ArrayList<>();
-                imageUrls.add(url01);
-                qzoneBundle.putStringArrayList(TencentShareManager.IMAGE_URL_LIST, imageUrls);
-//                qzoneBundle.putString(TencentShareManager.TARGET_URL, "http://blog.csdn.net/pdskyzcc1/article/details/51881693");
-                mTencentShareManager.shareByTencent(TencentShareManager.SHARE_TO_QZONE,
-                        QzonePublish.PUBLISH_TO_QZONE_TYPE_PUBLISHMOOD, qzoneBundle);
+                intent.putExtra("share", "QQ空间");
+                mContext.startActivity(intent);
                 dismiss();
                 break;
             case R.id.xiangqing_dialog_weibo:
-                //分享一个文本到微博试一下
-                Bundle weiBoBundle = new Bundle();
-                weiBoBundle.putString(WeiBoShareManager.TITLE, "微博分享");
-                weiBoBundle.putString(WeiBoShareManager.TEXT, "这是正文");
-                String image_path = SDCARD_ROOT + "/logo.png";
-                weiBoBundle.putString(WeiBoShareManager.IMAGE_PATH, image_path);
-                mWeiBoShareManager.sendMessage(weiBoBundle, true, true, false, false, false, false);
-                Toast.makeText(mActivity, "weibo--------->", Toast.LENGTH_SHORT).show();
+                intent.putExtra("share", "微博");
+                mContext.startActivity(intent);
                 dismiss();
+//                //分享一个文本到微博试一下
+//                Bundle weiBoBundle = new Bundle();
+//                weiBoBundle.putString(WeiBoShareManager.TITLE, "微博分享");
+//                weiBoBundle.putString(WeiBoShareManager.TEXT, "这是正文");
+//                String image_path = SDCARD_ROOT + "/logo.png";
+//                weiBoBundle.putString(WeiBoShareManager.IMAGE_PATH, image_path);
+//                mWeiBoShareManager.sendMessage(weiBoBundle, true, true, false, false, false, false);
+//
+//                dismiss();
                 break;
-            case R.id.xiangqing_dialog_shuaxin:
-                break;
-            case R.id.xiangqing_dialog_fuzhilianjie:
-                break;
-            case R.id.xiangqing_dialog_jubao:
-                break;
-
             case R.id.xiangqing_pinglun_dialog_quxiao:
                 dismiss();
                 break;
@@ -146,9 +136,7 @@ public class Show_FenXiang_Dialog extends BaseShowDialog implements View.OnClick
             case R.id.xiangqing_pinglun_dialog_content:
 
                 break;
-            case R.id.xiangqing_pinglun_dialog_face:
 
-                break;
         }
 
     }
